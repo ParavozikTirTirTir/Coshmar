@@ -1,0 +1,1226 @@
+fileFormatVersion: 2
+guid: 970173b3c30203748aa3b30ee103d758
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7445251177295232660
+    second: ores_0
+  - first:
+      213: -1994067193690870337
+    second: ores_1
+  - first:
+      213: -8848367019164464449
+    second: ores_2
+  - first:
+      213: 6122139367658508819
+    second: ores_3
+  - first:
+      213: 5877696100643089304
+    second: ores_4
+  - first:
+      213: -6752915232109121509
+    second: ores_5
+  - first:
+      213: -1968840719456152539
+    second: ores_6
+  - first:
+      213: -4381812301800334281
+    second: ores_7
+  - first:
+      213: 3980307627822178394
+    second: ores_8
+  - first:
+      213: 482485394193971003
+    second: ores_9
+  - first:
+      213: -6332166770112583456
+    second: ores_10
+  - first:
+      213: -2580662489930611227
+    second: ores_11
+  - first:
+      213: 7421968287707335744
+    second: ores_12
+  - first:
+      213: -6765049012558329592
+    second: ores_13
+  - first:
+      213: -970338810516241644
+    second: ores_14
+  - first:
+      213: -2107478717022909560
+    second: ores_15
+  - first:
+      213: -3805176982701891760
+    second: ores_16
+  - first:
+      213: -38575714190751638
+    second: ores_17
+  - first:
+      213: 1330355704710470723
+    second: ores_18
+  - first:
+      213: -1268321082890858513
+    second: ores_19
+  - first:
+      213: 1334103205277339539
+    second: ores_20
+  - first:
+      213: -6301853602558106456
+    second: ores_21
+  - first:
+      213: 8860756691980346919
+    second: ores_22
+  - first:
+      213: -4147834940800655985
+    second: ores_23
+  - first:
+      213: 7841242250691011818
+    second: ores_24
+  - first:
+      213: -6232481922162138198
+    second: ores_25
+  - first:
+      213: 6225532112804563855
+    second: ores_26
+  - first:
+      213: 1672498081916296274
+    second: ores_27
+  - first:
+      213: -556543680258815019
+    second: ores_28
+  - first:
+      213: 1581371391492706422
+    second: ores_29
+  - first:
+      213: -3589170843005148268
+    second: ores_30
+  - first:
+      213: 2070808497293192393
+    second: ores_31
+  - first:
+      213: -1000554687085380039
+    second: ores_32
+  - first:
+      213: -8595949608880710018
+    second: ores_33
+  - first:
+      213: -2607461156871664633
+    second: ores_34
+  - first:
+      213: 2951899650582777278
+    second: ores_35
+  - first:
+      213: 2807022876680817524
+    second: ores_36
+  - first:
+      213: 2762728650153086018
+    second: ores_37
+  - first:
+      213: -4634142286316101221
+    second: ores_38
+  - first:
+      213: 4218407718090411669
+    second: ores_39
+  - first:
+      213: -4763825655313650330
+    second: ores_40
+  - first:
+      213: 2947448420318429669
+    second: ores_41
+  - first:
+      213: -5814471326072471993
+    second: ores_42
+  - first:
+      213: 7908934802325649022
+    second: ores_43
+  - first:
+      213: -6889549021138832249
+    second: ores_44
+  - first:
+      213: 5901306219482726950
+    second: ores_45
+  - first:
+      213: 4035201250974031725
+    second: ores_46
+  - first:
+      213: -4374567688634653820
+    second: ores_47
+  - first:
+      213: 4006470368229822478
+    second: ores_48
+  - first:
+      213: 5282491864876231704
+    second: ores_49
+  - first:
+      213: 6465474023214386422
+    second: ores_50
+  - first:
+      213: -3325186316252134442
+    second: ores_51
+  - first:
+      213: -3734316489244285953
+    second: ores_52
+  - first:
+      213: -6865594393476018036
+    second: ores_53
+  - first:
+      213: 6712522753362549314
+    second: ores_54
+  - first:
+      213: 8116924317971611274
+    second: ores_55
+  - first:
+      213: -5559223439563825719
+    second: ores_56
+  - first:
+      213: -2093525858710976713
+    second: ores_57
+  - first:
+      213: -6299227631964929750
+    second: ores_58
+  - first:
+      213: -4674278074332916372
+    second: ores_59
+  - first:
+      213: -619287234973344591
+    second: ores_60
+  - first:
+      213: -1396091704341771759
+    second: ores_61
+  - first:
+      213: -4349844955497848115
+    second: ores_62
+  - first:
+      213: 2088710543357175861
+    second: ores_63
+  - first:
+      213: 6878332892914951353
+    second: ores_64
+  - first:
+      213: -2830914109728985667
+    second: ores_65
+  - first:
+      213: 1965741535312739584
+    second: ores_66
+  - first:
+      213: -4361305939880318393
+    second: ores_67
+  - first:
+      213: -2408988540817946114
+    second: ores_68
+  - first:
+      213: 8318775519717023210
+    second: ores_69
+  - first:
+      213: 5802208282959484794
+    second: ores_70
+  - first:
+      213: -2320612228730977696
+    second: ores_71
+  - first:
+      213: -2893718794004071034
+    second: ores_72
+  - first:
+      213: -3200240274440645677
+    second: ores_73
+  - first:
+      213: -4057980335096486294
+    second: ores_74
+  - first:
+      213: -8630818779495805688
+    second: ores_75
+  - first:
+      213: -5136024219321117141
+    second: ores_76
+  - first:
+      213: 78841895692422825
+    second: ores_77
+  - first:
+      213: 6222484228821247195
+    second: ores_78
+  - first:
+      213: 3513742419656661386
+    second: ores_79
+  - first:
+      213: 322867176049867280
+    second: ores_80
+  - first:
+      213: 6061846942903594139
+    second: ores_81
+  - first:
+      213: 4395916033537367843
+    second: ores_82
+  - first:
+      213: -1892943098203601484
+    second: ores_83
+  - first:
+      213: 3349562663549368583
+    second: ores_84
+  - first:
+      213: 4654132554635278301
+    second: ores_85
+  - first:
+      213: 5203918665690340507
+    second: ores_86
+  - first:
+      213: 3858667069098175372
+    second: ores_87
+  - first:
+      213: -1793232942762342601
+    second: ores_88
+  - first:
+      213: 430649381514184508
+    second: ores_89
+  - first:
+      213: -6915889309506222073
+    second: ores_90
+  - first:
+      213: -3278931002243434722
+    second: ores_91
+  - first:
+      213: -1082760818191096814
+    second: ores_92
+  - first:
+      213: 4234245639531633363
+    second: ores_93
+  - first:
+      213: 7598631730014717127
+    second: ores_94
+  - first:
+      213: 5684259269182176268
+    second: ores_95
+  - first:
+      213: -4181733112189642323
+    second: ores_96
+  - first:
+      213: 1871819891639878847
+    second: ores_97
+  - first:
+      213: 9166509920879146868
+    second: ores_98
+  - first:
+      213: -7449036737109693233
+    second: ores_99
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ores_4
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 914
+        width: 163
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ba7805675c19150800000000000000
+      internalID: 5877696100643089304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_5
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 914
+        width: 163
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10bfc7ff53d842a0800000000000000
+      internalID: -6752915232109121509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_7
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 914
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c11c66deca033c0800000000000000
+      internalID: -4381812301800334281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_9
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 939
+        width: 111
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37fe32e8e122b600800000000000000
+      internalID: 482485394193971003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_11
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 939
+        width: 125
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e5c28a6325af2cd0800000000000000
+      internalID: -2580662489930611227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_14
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 936
+        width: 88
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413876f2ef9a882f0800000000000000
+      internalID: -970338810516241644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_20
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 690
+        width: 157
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f044cfbcfa38210800000000000000
+      internalID: 1334103205277339539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_23
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 683
+        width: 143
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d9f96f81eef66c0800000000000000
+      internalID: -4147834940800655985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_25
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 696
+        width: 125
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa36b7086b6c189a0800000000000000
+      internalID: -6232481922162138198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_27
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 683
+        width: 182
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c942ce428e53710800000000000000
+      internalID: 1672498081916296274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_34
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 710
+        width: 104
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c090b84ef60dbd0800000000000000
+      internalID: -2607461156871664633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_36
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 690
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b84f02f6c84f620800000000000000
+      internalID: 2807022876680817524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_37
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 709
+        width: 74
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c4b2bd11f275620800000000000000
+      internalID: 2762728650153086018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_41
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 696
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1cdd6d8b077e820800000000000000
+      internalID: 2947448420318429669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_46
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 435
+        width: 157
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6fd489882aeff730800000000000000
+      internalID: 4035201250974031725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_54
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 430
+        width: 156
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ad6e431eba72d50800000000000000
+      internalID: 6712522753362549314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_57
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 408
+        width: 169
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737007fc25d42f2e0800000000000000
+      internalID: -2093525858710976713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_61
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 408
+        width: 157
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ac6d0edf510ace0800000000000000
+      internalID: -1396091704341771759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_67
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 434
+        width: 74
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ae1a8da578973c0800000000000000
+      internalID: -4361305939880318393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_68
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 421
+        width: 60
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef94f8c7fad819ed0800000000000000
+      internalID: -2408988540817946114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_70
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 415
+        width: 76
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7711a221b5958050800000000000000
+      internalID: 5802208282959484794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_71
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 424
+        width: 73
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 062001d19778bcfd0800000000000000
+      internalID: -2320612228730977696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_78
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 133
+        width: 144
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd46c5f1074ba5650800000000000000
+      internalID: 6222484228821247195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_84
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 127
+        width: 150
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70975c9ee790c7e20800000000000000
+      internalID: 3349562663549368583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_89
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 139
+        width: 156
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3705efa459f9f500800000000000000
+      internalID: 430649381514184508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_90
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 184
+        width: 73
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708c5f0a053d500a0800000000000000
+      internalID: -6915889309506222073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_93
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 171
+        width: 74
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da9704a9ff03ca30800000000000000
+      internalID: 4234245639531633363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_95
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 146
+        width: 99
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c33d650bb82ee40800000000000000
+      internalID: 5684259269182176268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_0
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 224
+        width: 156
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebb33f1603a0cf429982e5f736deeb9
+      internalID: -7445251177295232660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_1
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 224
+        width: 156
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af52a889d145dcd4ca195221b28e18ca
+      internalID: -1994067193690870337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_2
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 430
+        width: 161
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fbaf215d98208e4eaeaf7a5603802ea
+      internalID: -8848367019164464449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_3
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 430
+        width: 161
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9258013ab0f3ce2499b1c150839819c4
+      internalID: 6122139367658508819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_6
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 435
+        width: 163
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229f913379613e24b93c48bc1b244e06
+      internalID: -1968840719456152539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_8
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 435
+        width: 164
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 522d6de6f92788e4cac896fef0f409c0
+      internalID: 3980307627822178394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f8cb9602ac6abe040ae9f31b3f8183f1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ores_0: -7445251177295232660
+      ores_1: -1994067193690870337
+      ores_10: -6332166770112583456
+      ores_11: -2580662489930611227
+      ores_12: 7421968287707335744
+      ores_13: -6765049012558329592
+      ores_14: -970338810516241644
+      ores_15: -2107478717022909560
+      ores_16: -3805176982701891760
+      ores_17: -38575714190751638
+      ores_18: 1330355704710470723
+      ores_19: -1268321082890858513
+      ores_2: -8848367019164464449
+      ores_20: 1334103205277339539
+      ores_21: -6301853602558106456
+      ores_22: 8860756691980346919
+      ores_23: -4147834940800655985
+      ores_24: 7841242250691011818
+      ores_25: -6232481922162138198
+      ores_26: 6225532112804563855
+      ores_27: 1672498081916296274
+      ores_28: -556543680258815019
+      ores_29: 1581371391492706422
+      ores_3: 6122139367658508819
+      ores_30: -3589170843005148268
+      ores_31: 2070808497293192393
+      ores_32: -1000554687085380039
+      ores_33: -8595949608880710018
+      ores_34: -2607461156871664633
+      ores_35: 2951899650582777278
+      ores_36: 2807022876680817524
+      ores_37: 2762728650153086018
+      ores_38: -4634142286316101221
+      ores_39: 4218407718090411669
+      ores_4: 5877696100643089304
+      ores_40: -4763825655313650330
+      ores_41: 2947448420318429669
+      ores_42: -5814471326072471993
+      ores_43: 7908934802325649022
+      ores_44: -6889549021138832249
+      ores_45: 5901306219482726950
+      ores_46: 4035201250974031725
+      ores_47: -4374567688634653820
+      ores_48: 4006470368229822478
+      ores_49: 5282491864876231704
+      ores_5: -6752915232109121509
+      ores_50: 6465474023214386422
+      ores_51: -3325186316252134442
+      ores_52: -3734316489244285953
+      ores_53: -6865594393476018036
+      ores_54: 6712522753362549314
+      ores_55: 8116924317971611274
+      ores_56: -5559223439563825719
+      ores_57: -2093525858710976713
+      ores_58: -6299227631964929750
+      ores_59: -4674278074332916372
+      ores_6: -1968840719456152539
+      ores_60: -619287234973344591
+      ores_61: -1396091704341771759
+      ores_62: -4349844955497848115
+      ores_63: 2088710543357175861
+      ores_64: 6878332892914951353
+      ores_65: -2830914109728985667
+      ores_66: 1965741535312739584
+      ores_67: -4361305939880318393
+      ores_68: -2408988540817946114
+      ores_69: 8318775519717023210
+      ores_7: -4381812301800334281
+      ores_70: 5802208282959484794
+      ores_71: -2320612228730977696
+      ores_72: -2893718794004071034
+      ores_73: -3200240274440645677
+      ores_74: -4057980335096486294
+      ores_75: -8630818779495805688
+      ores_76: -5136024219321117141
+      ores_77: 78841895692422825
+      ores_78: 6222484228821247195
+      ores_79: 3513742419656661386
+      ores_8: 3980307627822178394
+      ores_80: 322867176049867280
+      ores_81: 6061846942903594139
+      ores_82: 4395916033537367843
+      ores_83: -1892943098203601484
+      ores_84: 3349562663549368583
+      ores_85: 4654132554635278301
+      ores_86: 5203918665690340507
+      ores_87: 3858667069098175372
+      ores_88: -1793232942762342601
+      ores_89: 430649381514184508
+      ores_9: 482485394193971003
+      ores_90: -6915889309506222073
+      ores_91: -3278931002243434722
+      ores_92: -1082760818191096814
+      ores_93: 4234245639531633363
+      ores_94: 7598631730014717127
+      ores_95: 5684259269182176268
+      ores_96: -4181733112189642323
+      ores_97: 1871819891639878847
+      ores_98: 9166509920879146868
+      ores_99: -7449036737109693233
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
