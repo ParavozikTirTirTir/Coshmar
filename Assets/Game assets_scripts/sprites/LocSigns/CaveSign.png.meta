@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CaveSign_0: -1615755527835449562
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
