@@ -42,7 +42,10 @@ public class Entity : MonoBehaviour
         aliveGO = transform.Find("Alive").gameObject;
         rb = aliveGO.GetComponent<Rigidbody2D>();
         anim = rb.GetComponent<Animator>();
-        atsm = aliveGO.GetComponent <AnimationToStatemachine>();
+        //aliveGO = GameObject.Find("Alive");
+        //rb = aliveGO.GetComponent<Rigidbody2D>();
+        //anim = aliveGO.GetComponent<Animator>();
+        atsm = aliveGO.GetComponent<AnimationToStatemachine>();
 
         stateMachine = new FiniteStateMachine();
     }

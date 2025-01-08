@@ -28,6 +28,7 @@ public class OpenCraft : MonoBehaviour
         PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
         MB = GameObject.Find("MagicBook").GetComponent<OpenMagicBook>();
         OI = GameObject.Find("InventoryCanvas").GetComponent<OpenInventory>();
+        HealBar = GameObject.Find("UI health");
     }
 
 

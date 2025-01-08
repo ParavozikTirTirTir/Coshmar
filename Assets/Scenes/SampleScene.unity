@@ -2514,6 +2514,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1315698800369476513, guid: bb5e5cacee5a516428cf6b6d576a6983, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2628423568723319429, guid: bb5e5cacee5a516428cf6b6d576a6983, type: 3}
       propertyPath: m_FillAmount
       value: 1
@@ -2522,6 +2526,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 19717063}
+    - target: {fileID: 3856010320560076771, guid: bb5e5cacee5a516428cf6b6d576a6983, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5404326781437902218, guid: bb5e5cacee5a516428cf6b6d576a6983, type: 3}
       propertyPath: m_Name
       value: UI health
