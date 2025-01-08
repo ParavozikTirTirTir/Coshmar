@@ -4,7 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+
 [System.Serializable]
+public class Object
+{
+    public string Name;
+    public int Amount;
+    public Sprite Sprite;
+    public int Attack;
+    public int Durability;
+
+    public Object(string name, int amount, Sprite sprite, int attack, int durability)
+    {
+        Name = name;
+        Amount = amount;
+        Sprite = sprite;
+        Attack = attack;
+        Durability = durability;
+    }
+}
 
 public class Inventory : MonoBehaviour
 {
@@ -16,7 +34,10 @@ public class Inventory : MonoBehaviour
 
     private MissionManager MM;
     public List<string> InventoryObjects = new List<string>();
-    public Texture2D CloseButton;
+
+    public Object[] ObjectsInInventory;
+
+    //public Texture2D CloseButton;
 
     void Start()
     {

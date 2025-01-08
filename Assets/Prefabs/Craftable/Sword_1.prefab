@@ -141,6 +141,7 @@ MonoBehaviour:
   Attack: 2
   Durability: 50
   EmptyIndexInInventory: 0
+  ObjectItem: {fileID: 8351463045322685129}
   recipes:
   - ComponentName: "\u0411\u0443\u043B\u044B\u0436\u043D\u0438\u043A"
     Amount: 2

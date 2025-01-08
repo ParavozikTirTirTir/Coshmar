@@ -42,9 +42,6 @@ public class Entity : MonoBehaviour
         aliveGO = transform.Find("Alive").gameObject;
         rb = aliveGO.GetComponent<Rigidbody2D>();
         anim = rb.GetComponent<Animator>();
-        //aliveGO = GameObject.Find("Alive");
-        //rb = aliveGO.GetComponent<Rigidbody2D>();
-        //anim = aliveGO.GetComponent<Animator>();
         atsm = aliveGO.GetComponent<AnimationToStatemachine>();
 
         stateMachine = new FiniteStateMachine();
@@ -54,7 +51,7 @@ public class Entity : MonoBehaviour
     {
         stateMachine.currentState.LogicUpdate();
 
-        anim.SetFloat("yVelocity", rb.velocity.y);
+        //anim.SetFloat("yVelocity", rb.velocity.y);
 
         if (Time.time >= lastDamageTime + entityData.stunRecoveryTime)
         {

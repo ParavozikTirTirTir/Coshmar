@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEditor;
 
 [System.Serializable]
 public class Recipe
@@ -26,6 +28,7 @@ public class ObjectWeapon : MonoBehaviour
     private Inventory Inv;
     private SpriteRenderer ThisObjectSprite;
     public int EmptyIndexInInventory;
+    public GameObject ObjectItem;
     public Recipe[] recipes;
 
     void Start()
@@ -33,6 +36,7 @@ public class ObjectWeapon : MonoBehaviour
         MM = GameObject.FindGameObjectWithTag("MissionMan").GetComponent<MissionManager>();
         Inv = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         ThisObjectSprite = gameObject.GetComponent<SpriteRenderer>();
+        ObjectItem = gameObject;
     }
 
     void OnTriggerStay2D(Collider2D obj) //«Наезд» на объект
@@ -71,6 +75,25 @@ public class ObjectWeapon : MonoBehaviour
                 Inv.Icon[EmptyIndexInInventory].sprite = ThisObjectSprite.sprite;
                 Inv.InventoryObjects.Insert(EmptyIndexInInventory, ObjectName);
                 Inv.InventoryObjects.Remove("-");
+            }
+
+            for (int i = 0; i < Inv.ObjectsInInventory.Length; i++)
+            {
+                if (Inv.ObjectsInInventory[i].Amount == 0)
+                {
+                    Inv.ObjectsInInventory[i].Name = ObjectName;
+                    Inv.ObjectsInInventory[i].Sprite = ThisObjectSprite.sprite;
+                    Inv.ObjectsInInventory[i].Attack = Attack;
+                    Inv.ObjectsInInventory[i].Durability = Durability;
+                    Inv.ObjectsInInventory[i].Amount = 1;
+                    break;
+                }
+
+                if (Inv.ObjectsInInventory[i].Name == ObjectName)
+                {
+                    Inv.ObjectsInInventory[i].Amount += 1;
+                    break;
+                }
             }
 
             MM.LastAction = "Получено [" + ObjectName + "]";
