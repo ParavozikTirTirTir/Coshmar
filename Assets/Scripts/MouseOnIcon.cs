@@ -16,10 +16,14 @@ public class MouseOnIcon : MonoBehaviour, IPointerDownHandler
     {
         if (IsCloseButtonVisible)
         {
+            Inv.ObjectsInInventory[ButtonIndex].Name = "";
+            Inv.ObjectsInInventory[ButtonIndex].Amount = 0;
+            Inv.ObjectsInInventory[ButtonIndex].Sprite = Inv.Sprites[4];
+            Inv.ObjectsInInventory[ButtonIndex].Attack = 0;
+            Inv.ObjectsInInventory[ButtonIndex].Durability = 0;
+
             Inv.Icon[ButtonIndex].sprite = Inv.Sprites[4];
-            MM.LastAction = "Выброшен предмет [" + Inv.InventoryObjects[ButtonIndex] + "]";
-            Inv.InventoryObjects[ButtonIndex] = "-";
-            Debug.Log("нажалась кнопка я хз");
+            MM.LastAction = "Выброшен предмет [" + Inv.ObjectsInInventory[ButtonIndex].Name + "]";
         }
     }
 
@@ -31,7 +35,6 @@ public class MouseOnIcon : MonoBehaviour, IPointerDownHandler
 
     void Update()
     {
-
         if (Inv.CloseButtons[ButtonIndex].sprite == Inv.Sprites[0]) //если кнопка невидимая
         {
             IsCloseButtonVisible = false;

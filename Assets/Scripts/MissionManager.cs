@@ -43,7 +43,7 @@ public class MissionManager : MonoBehaviour
         {
             GUI.Label(new Rect(27, 57, 1000, 30), "" + Money);
             GUI.Label(new Rect(5, 55, 25, 25), Coin);
-            GUI.Label(new Rect(5, Screen.height - 25, 1000, 25), LastAction);
+            //GUI.Label(new Rect(5, Screen.height - 25, 1000, 25), LastAction);
 
             foreach (string mission in MissionsInProgress)
             {

@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 2074191473686014941}
   - component: {fileID: 9209807762968262399}
   - component: {fileID: 4953420249731103970}
-  - component: {fileID: 8696206956343918928}
   - component: {fileID: 4314900899005557537}
+  - component: {fileID: 8823989435171748733}
   m_Layer: 0
-  m_Name: Broken
+  m_Name: Broken_1
   m_TagString: MissionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,22 +188,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.4803037, y: 0.49612427}
   m_Radius: 1.6712657
---- !u!114 &8696206956343918928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4016484159013596441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a83877223cde83d46a446c94c92db620, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: 0
-  ObjectName: "\u0410\u043B\u043C\u0430\u0437"
-  Stats: 
-  EmptyIndexInInventory: 0
 --- !u!70 &4314900899005557537
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -241,3 +225,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.09136342, y: 0.21473101}
   m_Size: {x: 6.085246, y: 7.1294966}
   m_Direction: 0
+--- !u!114 &8823989435171748733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016484159013596441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e656ed93a17d63b4daa615ccb3ee41e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 0
+  ObjectName: "\u0410\u043B\u043C\u0430\u0437"
+  Stats: 
+  Attack: 0
+  Durability: 0
+  ThisObjectSprite: {fileID: 0}
+  EmptyIndexInInventory: 0
+  ObjectItem: {fileID: 0}
+  recipes: []

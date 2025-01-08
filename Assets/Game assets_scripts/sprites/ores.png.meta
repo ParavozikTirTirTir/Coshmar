@@ -776,10 +776,10 @@ TextureImporter:
       name: ores_67
       rect:
         serializedVersion: 2
-        x: 299
-        y: 434
-        width: 74
-        height: 79
+        x: 284
+        y: 423
+        width: 104
+        height: 109
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

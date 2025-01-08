@@ -25,16 +25,17 @@ public class OpenInventory : MonoBehaviour
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
 
-        PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
-        PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
         MB = GameObject.Find("MagicBook").GetComponent<OpenMagicBook>();
         OC = GameObject.Find("Craft").GetComponent<OpenCraft>();
     }
 
     void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.I) && !PinD.InDialoge && !MB.OpenBookCheck && !OC.OpenCraftCheck)
+        PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
+        PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
+
+        if (Input.GetKeyDown(KeyCode.I) && !PinD.InDialoge && !MB.OpenBookCheck && !OC.OpenCraftCheck)
 		{
             DialogeState();
             OpenInventoryCheck = !OpenInventoryCheck;

@@ -26,22 +26,29 @@ public class ObjectWeapon : MonoBehaviour
     public int Attack;
     public int Durability;
     private Inventory Inv;
-    private SpriteRenderer ThisObjectSprite;
+    public SpriteRenderer ThisObjectSprite;
     public int EmptyIndexInInventory;
     public GameObject ObjectItem;
     public Recipe[] recipes;
+
+    private OpenInventory OI;
+    private OpenMagicBook MB;
+    private OpenCraft OC;
 
     void Start()
     {
         MM = GameObject.FindGameObjectWithTag("MissionMan").GetComponent<MissionManager>();
         Inv = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        MB = GameObject.Find("MagicBook").GetComponent<OpenMagicBook>();
+        OI = GameObject.Find("InventoryCanvas").GetComponent<OpenInventory>();
+        OC = GameObject.Find("Craft").GetComponent<OpenCraft>();
         ThisObjectSprite = gameObject.GetComponent<SpriteRenderer>();
         ObjectItem = gameObject;
     }
 
     void OnTriggerStay2D(Collider2D obj) //«Наезд» на объект
     {
-        if (obj.tag == "Player")
+        if (obj.tag == "Player" && !MB.OpenBookCheck && !OI.OpenInventoryCheck && !OC.OpenCraftCheck)
         {
             trigger = true;
         }
@@ -59,24 +66,6 @@ public class ObjectWeapon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && trigger == true) // если игрок рядом с объектом и нажал Е
         {
-            //MP.IsObjectCollected = true;
-            //Inv.Icon[Inv.i].sprite = ThisObjectSprite.sprite;
-            //Inv.InventoryObjects.Add(ObjectName);
-
-            if (Inv.InventoryObjects.Contains(ObjectName))
-            {
-                Inv.ItemCount[Inv.InventoryObjects.IndexOf(ObjectName)] += 1;
-            }
-
-            else
-            {
-                EmptyIndexInInventory = Inv.InventoryObjects.IndexOf("-");
-                Inv.ItemCount[EmptyIndexInInventory] += 1;
-                Inv.Icon[EmptyIndexInInventory].sprite = ThisObjectSprite.sprite;
-                Inv.InventoryObjects.Insert(EmptyIndexInInventory, ObjectName);
-                Inv.InventoryObjects.Remove("-");
-            }
-
             for (int i = 0; i < Inv.ObjectsInInventory.Length; i++)
             {
                 if (Inv.ObjectsInInventory[i].Amount == 0)
@@ -104,7 +93,7 @@ public class ObjectWeapon : MonoBehaviour
 
     void OnGUI() //кнопка собрать
     {
-        if (trigger) //игрок наступил на объект
+        if (trigger && !MB.OpenBookCheck && !OI.OpenInventoryCheck && !OC.OpenCraftCheck) //игрок наступил на объект
         {
             GUI.Box(new Rect(Screen.width / 2 + 20, Screen.height / 2 + 40, 90, 25), "[E] Собрать");
         }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1203269871380360337}
   - component: {fileID: 3738922463120585657}
   m_Layer: 0
-  m_Name: Sword_2
+  m_Name: Stick
   m_TagString: MissionObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 8351463045322685129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.6147, y: -3.3229, z: 0}
-  m_LocalScale: {x: 0.52795094, y: 0.523682, z: 1}
+  m_LocalPosition: {x: 24.503, y: -3.4346, z: 0}
+  m_LocalScale: {x: 0.7766, y: 0.7766, z: 0.7766}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: -90086433, guid: da8d9fd3804479644b49901c6ca7854a, type: 3}
+  m_Sprite: {fileID: 8956002981994491068, guid: 9f0a94e8777bf51429792a16c2ee827e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,8 +120,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.03289398, y: 0.06415055}
-  m_Size: {x: 2.5706873, y: 3.35062}
+  m_Offset: {x: 0.0066919327, y: 0.08685744}
+  m_Size: {x: 1.2869358, y: 1.9055927}
   m_Direction: 0
 --- !u!114 &3738922463120585657
 MonoBehaviour:
@@ -136,19 +136,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: 0
-  ObjectName: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u043C\u0435\u0447"
-  Stats: "\u0421\u0438\u043B\u0430 \u0430\u0442\u0430\u043A\u0438: 4"
-  Attack: 4
-  Durability: 70
+  ObjectName: "\u041F\u0430\u043B\u043A\u0430"
+  Stats: "\u0421\u0438\u043B\u0430 \u0430\u0442\u0430\u043A\u0438: 1"
+  Attack: 1
+  Durability: 10
   ThisObjectSprite: {fileID: 0}
   EmptyIndexInInventory: 0
   ObjectItem: {fileID: 8351463045322685129}
   recipes:
-  - ComponentName: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0441\u043B\u0438\u0442\u043E\u043A"
-    Amount: 2
-  - ComponentName: "\u041F\u0430\u043B\u043A\u0430"
-    Amount: 1
-  - ComponentName: "\u041C\u0435\u0434\u043D\u0430\u044F \u043F\u043B\u0430\u0441\u0442\u0438\u043D\u0430"
+  - ComponentName: "\u0411\u0440\u0435\u0432\u043D\u043E"
     Amount: 1
   - ComponentName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
-    Amount: 70
+    Amount: 5

@@ -120,8 +120,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.13540544, y: 0.40863854}
-  m_Size: {x: 3.7324717, y: 5.3486524}
+  m_Offset: {x: -0.0012752966, y: 0.06415055}
+  m_Size: {x: 2.1606343, y: 3.07503}
   m_Direction: 0
 --- !u!114 &3738922463120585657
 MonoBehaviour:
@@ -140,6 +140,7 @@ MonoBehaviour:
   Stats: "\u0421\u0438\u043B\u0430 \u0430\u0442\u0430\u043A\u0438: 2"
   Attack: 2
   Durability: 50
+  ThisObjectSprite: {fileID: 0}
   EmptyIndexInInventory: 0
   ObjectItem: {fileID: 8351463045322685129}
   recipes:

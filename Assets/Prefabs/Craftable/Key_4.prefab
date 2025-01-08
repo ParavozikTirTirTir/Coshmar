@@ -141,8 +141,9 @@ MonoBehaviour:
   Stats: 
   Attack: 0
   Durability: 0
+  ThisObjectSprite: {fileID: 0}
   EmptyIndexInInventory: 0
-  ObjectItem: {fileID: 0}
+  ObjectItem: {fileID: 8351463045322685129}
   recipes:
   - ComponentName: "\u0417\u043E\u043B\u043E\u0442\u043E\u0439 \u0441\u043B\u0438\u0442\u043E\u043A"
     Amount: 2

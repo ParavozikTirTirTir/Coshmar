@@ -13,9 +13,9 @@ public class OpenCraft : MonoBehaviour
 
     private PlayerController PC;
     private OpenInventory OI;
+    private OpenMagicBook MB;
     private PlayerCombatController PCC;
     private IsPlayerInDialoge PinD;
-    private OpenMagicBook MB;
     private bool State = true;
 
     void Start()
@@ -23,9 +23,6 @@ public class OpenCraft : MonoBehaviour
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
 
-        PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
-        PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
         MB = GameObject.Find("MagicBook").GetComponent<OpenMagicBook>();
         OI = GameObject.Find("InventoryCanvas").GetComponent<OpenInventory>();
         HealBar = GameObject.Find("UI health");
@@ -34,6 +31,10 @@ public class OpenCraft : MonoBehaviour
 
     void Update()
     {
+        PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
+        PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
+
         if (Input.GetKeyDown(KeyCode.C) && !PinD.InDialoge && !MB.OpenBookCheck && !OI.OpenInventoryCheck)
         {
             DialogeState();

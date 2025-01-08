@@ -37,13 +37,11 @@ public class Inventory : MonoBehaviour
 
     public Object[] ObjectsInInventory;
 
-    //public Texture2D CloseButton;
-
     void Start()
     {
         MM = GameObject.FindGameObjectWithTag("MissionMan").GetComponent<MissionManager>();
 
-        for (int i = 0; i < InventoryObjects.Count; i++)
+        for (int i = 0; i < ObjectsInInventory.Length; i++)
         {
             ItemCountFields[i].text = "";
         }
@@ -51,16 +49,17 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < InventoryObjects.Count; i++)
+        for (int i = 0; i < ObjectsInInventory.Length; i++)
         {
-            if (InventoryObjects[i] != "-")
+            if (ObjectsInInventory[i].Name != "")
             {
-                ItemCountFields[i].text = ItemCount[i].ToString();
+                ItemCountFields[i].text = ObjectsInInventory[i].Amount.ToString();
+                Icon[i].sprite = ObjectsInInventory[i].Sprite;
             }
 
             else
             {
-                ItemCount[i] = 0;
+                ObjectsInInventory[i].Amount = 0;
                 ItemCountFields[i].text = "";
             }
         }
@@ -68,14 +67,13 @@ public class Inventory : MonoBehaviour
 
     void OnGUI()
     {
-        for (int i = 0; i < InventoryObjects.Count; i++)
+        for (int i = 0; i < ObjectsInInventory.Length; i++)
         {
             CloseButtons[i].sprite = Sprites[0];
 
-            if (InventoryObjects[i] != "-")
+            if (ObjectsInInventory[i].Name != "")
             {
                 CloseButtons[i].sprite = Sprites[1];
-                
             }
         }
     }
