@@ -1521,6 +1521,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1657641164}
     m_Modifications:
+    - target: {fileID: 3080060855524487193, guid: f1a50e23a60f3ff4abf69ab4c73bc4bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 559232458}
+    - target: {fileID: 3080060855524487193, guid: f1a50e23a60f3ff4abf69ab4c73bc4bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonClick
+      objectReference: {fileID: 0}
     - target: {fileID: 8144634792216829672, guid: f1a50e23a60f3ff4abf69ab4c73bc4bb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4342,6 +4350,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541638313}
   m_CullTransparentMesh: 1
+--- !u!114 &559232458 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5924128275768140417, guid: 53d5fd9858940424bb5055a5e120c628, type: 3}
+  m_PrefabInstance: {fileID: 899199976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf7ef3be0a06854c90d8f7b76641c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &559232461 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7039055387085691760, guid: 53d5fd9858940424bb5055a5e120c628, type: 3}
+  m_PrefabInstance: {fileID: 899199976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &566071729
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,6 +4607,10 @@ PrefabInstance:
     - target: {fileID: 741123362406590758, guid: bb5e5cacee5a516428cf6b6d576a6983, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315698800369476513, guid: bb5e5cacee5a516428cf6b6d576a6983, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3856010320560076771, guid: bb5e5cacee5a516428cf6b6d576a6983, type: 3}
       propertyPath: m_Camera
@@ -5508,6 +5536,7 @@ MonoBehaviour:
   floorTilePath: Pixel Fantasy Caves/caves/mainlev_build_6
   startTilePath: Pixel Fantasy Caves/caves/mainlev_build_484
   tilemap: {fileID: 630754745}
+  playerSpawn: {fileID: 0}
   oreSpawn: {fileID: 0}
 --- !u!1 &631170664
 GameObject:
@@ -121331,9 +121360,17 @@ PrefabInstance:
       value: -1969.7
       objectReference: {fileID: 0}
     - target: {fileID: 5924128275768140417, guid: 53d5fd9858940424bb5055a5e120c628, type: 3}
+      propertyPath: CaveEntrance
+      value: 
+      objectReference: {fileID: 559232461}
+    - target: {fileID: 5924128275768140417, guid: 53d5fd9858940424bb5055a5e120c628, type: 3}
       propertyPath: LocSignSprite
       value: 
       objectReference: {fileID: -1615755527835449562, guid: f2c456b2b5306da4aa75d3cb5002c9e6, type: 3}
+    - target: {fileID: 5924128275768140417, guid: 53d5fd9858940424bb5055a5e120c628, type: 3}
+      propertyPath: IsCaveTeleport
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5924128275768140417, guid: 53d5fd9858940424bb5055a5e120c628, type: 3}
       propertyPath: ExitCanvasButton
       value: 
@@ -132407,7 +132444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
