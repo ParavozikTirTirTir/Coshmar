@@ -755,6 +755,7 @@ GameObject:
   - component: {fileID: 1628021655}
   - component: {fileID: 1628021656}
   - component: {fileID: 1628021657}
+  - component: {fileID: 1628021658}
   m_Layer: 0
   m_Name: MapGeneration
   m_TagString: Untagged
@@ -816,7 +817,7 @@ MonoBehaviour:
   mapWidth: 100
   mapHeight: 100
   borderSize: 10
-  noiseScale: 0.1
+  noiseScale: 0.5
   threshold: 0.5
   seed: 3
 --- !u!114 &1628021656
@@ -832,6 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpawn: {fileID: 0}
+  oreSpawn: {fileID: 0}
   tilemap: {fileID: 432380158}
   floorTilePath: Pixel Fantasy Caves/caves/mainlev_build_0
   startPosition: {x: 0, y: 0, z: 0}
@@ -839,9 +841,8 @@ MonoBehaviour:
   mapWidth: 300
   mapHeight: 300
   borderSize: 10
-  tunnelWidth: 1
-  chanceToContinue: 1
-  perlinNoiseScale: 0.5
+  tunnelWidth: 2
+  perlinNoiseScale: 0.9
   perlinNoiseThreshold: 0.4
 --- !u!114 &1628021657
 MonoBehaviour:
@@ -858,6 +859,21 @@ MonoBehaviour:
   targetTilemap: {fileID: 432380158}
   playerPrefab: {fileID: 7823883663554105656, guid: 9a75a6f70dcd1524d99fe6dc5e88ac79, type: 3}
   cameraPrefab: {fileID: 1289984395383294307, guid: 6e18511cc2977194395c9e6d393341ec, type: 3}
+--- !u!114 &1628021658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628021651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031570399902a3740abdbaa38975fb83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTilemap: {fileID: 432380158}
+  orePrefab: {fileID: 6797057521383474377, guid: c59bef0f0c146964da4bada7defbdc46, type: 3}
+  spawnProbability: 0.1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

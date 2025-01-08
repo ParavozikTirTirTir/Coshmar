@@ -17,7 +17,6 @@ public class TileMapTest4 : MonoBehaviour
     public int mapHeight;
     public int borderSize;
     public int tunnelWidth = 1;
-    public float chanceToContinue = 0.8f;
     public float perlinNoiseScale = 0.1f; // Новая переменная для масштаба Перлина
     public float perlinNoiseThreshold = 0.5f; // Новая переменная для порога Перлина
 

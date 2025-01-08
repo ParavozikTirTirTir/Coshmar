@@ -85,7 +85,6 @@ public class MiningObject : MonoBehaviour
         if (Time.time >= knockbackStart + knockbackDuration && knockback)
         {
             knockback = false;
-            rbAlive.velocity = new Vector2(0.0f, rbAlive.velocity.y);
         }
     }
 
