@@ -26,8 +26,10 @@ public class Worms : MonoBehaviour
     public Tilemap tilemap;
 
     [Header("Spawners")]
-    public PlayerSpawn playerSpawn;
+    public CaveTexture caveTexture;
+
     public OreSpawn oreSpawn;
+    public EnemiesSpawn enemiesSpawn;
 
     private TileBase floorTile;
     private TileBase startTile;
@@ -41,14 +43,17 @@ public class Worms : MonoBehaviour
         LoadTiles();
         GenerateMap();
 
-        if (playerSpawn != null)
-        {
-            playerSpawn.SpawnPrefabs(mapWidth);
-        }
+        caveTexture = GetComponent<CaveTexture> ();
+        enemiesSpawn = GetComponent<EnemiesSpawn>();
 
         if (oreSpawn != null)
         {
-            oreSpawn.SpawnOre(mapWidth);
+            oreSpawn.SpawnOre(mapOffset, mapWidth, mapHeight);
+        }
+
+        if (enemiesSpawn != null)
+        {
+            enemiesSpawn.SpawnEnemies(mapOffset, mapWidth, mapHeight);
         }
     }
 
@@ -86,7 +91,12 @@ public class Worms : MonoBehaviour
 
     void GenerateMap()
     {
-        FillMapWithFloor();
+
+        if (caveTexture != null)
+        {
+            caveTexture.ApplyTextures(tilemap, mapWidth, mapHeight, mapOffset);
+        }
+
         GeneratePathWithPerlin();
         ClearTunnelAlongPath();
         CreateStartPositionPlatform();  // Создаем платформу под стартовой позицией
@@ -94,16 +104,6 @@ public class Worms : MonoBehaviour
         Debug.Log("Карта сгенерирована с пещерой.");
     }
 
-    void FillMapWithFloor()
-    {
-        for (int x = 0; x < mapWidth; x++)
-        {
-            for (int y = 0; y < mapHeight; y++)
-            {
-                tilemap.SetTile(new Vector3Int(x, y, 0) + mapOffset, floorTile);
-            }
-        }
-    }
 
     void GeneratePathWithPerlin()
     {
@@ -168,10 +168,18 @@ public class Worms : MonoBehaviour
 
     void ColorStartPosition()
     {
-        for (int x = -1; x <= 1; x++)
+        for (int x = -2; x <= 2; x++)
         {
-            Vector3Int platformPos = actualStartPosition + new Vector3Int(x, -1, 0);
-            tilemap.SetTile(platformPos, startTile);
+            for (int y = 0; y < 3; y++)
+            {
+                Vector3Int platformPos = actualStartPosition + new Vector3Int(x, y, 0);
+                tilemap.SetTile(platformPos, null);
+            }
+            for (int y = -2; y < 0; y++)
+            {
+                Vector3Int platformPos = actualStartPosition + new Vector3Int(x, y, 0);
+                tilemap.SetTile(platformPos, startTile);
+            }
         }
     }
     void CreateStartPositionPlatform()

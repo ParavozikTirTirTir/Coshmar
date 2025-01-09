@@ -15,12 +15,36 @@ public class DeadState : State
         base.DoChecks();
     }
 
+    //public override void Enter()
+    //{
+    //    base.Enter();
+
+    //    GameObject.Instantiate(stateData.deathBloodParticle, entity.aliveGO.transform.position, stateData.deathBloodParticle.transform.rotation);
+    //    GameObject.Instantiate(stateData.deathChunkParticle, entity.aliveGO.transform.position, stateData.deathChunkParticle.transform.rotation);
+
+    //    entity.gameObject.SetActive(false);
+    //}
+
     public override void Enter()
     {
         base.Enter();
 
-        GameObject.Instantiate(stateData.deathBloodParticle, entity.aliveGO.transform.position, stateData.deathBloodParticle.transform.rotation);
-        GameObject.Instantiate(stateData.deathChunkParticle, entity.aliveGO.transform.position, stateData.deathChunkParticle.transform.rotation);
+        // 1. Получаем SpriteRenderer.
+        SpriteRenderer spriteRenderer = entity.aliveGO.GetComponent<SpriteRenderer>();
+        Vector3 spawnPosition = entity.aliveGO.transform.position;
+        if (spriteRenderer != null)
+        {
+            // 2. Получаем центр спрайта.
+            spawnPosition = spriteRenderer.bounds.center;
+        }
+        else
+        {
+            Debug.LogWarning("SpriteRenderer не найден у объекта " + entity.aliveGO.name);
+        }
+        // 3. Создаем частицы в центре спрайта.
+        GameObject.Instantiate(stateData.deathBloodParticle, spawnPosition, stateData.deathBloodParticle.transform.rotation);
+        GameObject.Instantiate(stateData.deathChunkParticle, spawnPosition, stateData.deathChunkParticle.transform.rotation);
+
 
         entity.gameObject.SetActive(false);
     }
