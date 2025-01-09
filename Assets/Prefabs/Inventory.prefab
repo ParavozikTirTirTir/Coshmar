@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6416735297363340286}
   - component: {fileID: 8032893456388563279}
   - component: {fileID: 298406278204576506}
+  - component: {fileID: 6606972440198263059}
   m_Layer: 3
   m_Name: Inventory
   m_TagString: Inventory
@@ -156,4 +157,24 @@ MonoBehaviour:
   - '-'
   - '-'
   - '-'
-  CloseButton: {fileID: 2800000, guid: 6d6930fca16135148bcbd187d947cc48, type: 3}
+  ObjectsInInventory: []
+--- !u!114 &6606972440198263059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777112044601543791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b0d51c4488c8349a6eb3f08df6a2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectedSword: {fileID: 0}
+  SelectedMolot: {fileID: 0}
+  SwordPlace: []
+  MolotPlace: []
+  ItemCountFields: []
+  Icon: []
+  SwordsInInventory: []
+  MolotsInInventory: []

@@ -65,6 +65,13 @@ public class Craft : MonoBehaviour
                 if (item != null)
                 {
                     item.Amount -= recipe.Amount; // уменьшение количество компонентов в инвентаре
+                    if (item.Amount == 0)
+                    {
+                        item.Name = "";
+                        item.Sprite = Inv.Sprites[4];
+                        item.Attack = 0;
+                        item.Durability = 0;
+                    }
                 }
 
                 var itemInInventory = System.Array.Find(Inv.ObjectsInInventory, obj => obj.Name == recipe.ComponentName);

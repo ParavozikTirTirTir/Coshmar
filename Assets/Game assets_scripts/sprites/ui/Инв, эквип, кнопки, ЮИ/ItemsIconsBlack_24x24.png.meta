@@ -1,0 +1,563 @@
+fileFormatVersion: 2
+guid: ea42bf2f77c5c6e46bebdd262352787c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6320910769888636358
+    second: ItemsIconsBlack_24x24_0
+  - first:
+      213: 2454266627766285452
+    second: ItemsIconsBlack_24x24_1
+  - first:
+      213: 3449720753897273771
+    second: ItemsIconsBlack_24x24_2
+  - first:
+      213: 5208678034823799252
+    second: ItemsIconsBlack_24x24_3
+  - first:
+      213: 4385640905220514238
+    second: ItemsIconsBlack_24x24_4
+  - first:
+      213: -3758289385354880583
+    second: ItemsIconsBlack_24x24_5
+  - first:
+      213: 4309176450490159264
+    second: ItemsIconsBlack_24x24_6
+  - first:
+      213: 1646062649200757230
+    second: ItemsIconsBlack_24x24_7
+  - first:
+      213: 6671402793843919647
+    second: ItemsIconsBlack_24x24_8
+  - first:
+      213: -8843277257476908158
+    second: ItemsIconsBlack_24x24_9
+  - first:
+      213: -8853050730131940277
+    second: ItemsIconsBlack_24x24_10
+  - first:
+      213: -7980137660207692521
+    second: ItemsIconsBlack_24x24_11
+  - first:
+      213: -2819673759622685942
+    second: ItemsIconsBlack_24x24_12
+  - first:
+      213: 7082211064519212901
+    second: ItemsIconsBlack_24x24_13
+  - first:
+      213: 6947388107994092144
+    second: ItemsIconsBlack_24x24_14
+  - first:
+      213: -5401189048283640675
+    second: ItemsIconsBlack_24x24_15
+  - first:
+      213: 6477042454998873922
+    second: ItemsIconsBlack_24x24_16
+  - first:
+      213: -5041175232864045439
+    second: ItemsIconsBlack_24x24_17
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 131
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd27280bd268b750800000000000000
+      internalID: 6320910769888636358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c84fa14ae7e4f0220800000000000000
+      internalID: 2454266627766285452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba9f65e8fbedfdf20800000000000000
+      internalID: 3449720753897273771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 130
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d16d0f6311f84840800000000000000
+      internalID: 5208678034823799252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1671cca2decdc30800000000000000
+      internalID: 4385640905220514238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 101
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b91dce57bfd7dbc0800000000000000
+      internalID: -3758289385354880583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_6
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 99
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a0d1f596254dcb30800000000000000
+      internalID: 4309176450490159264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee946ab124df7d610800000000000000
+      internalID: 1646062649200757230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b8d909e75959c50800000000000000
+      internalID: 6671402793843919647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b5cc1203e564580800000000000000
+      internalID: -8843277257476908158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4c19f33445a32580800000000000000
+      internalID: -8853050730131940277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7158a90241bd04190800000000000000
+      internalID: -7980137660207692521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b1337a7a18ed8d0800000000000000
+      internalID: -2819673759622685942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f3205a071194260800000000000000
+      internalID: 7082211064519212901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 072d2c5eca41a6060800000000000000
+      internalID: 6947388107994092144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9cc2546d2f1b05b0800000000000000
+      internalID: -5401189048283640675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 247f455cbc313e950800000000000000
+      internalID: 6477042454998873922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ItemsIconsBlack_24x24_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18634a2c5d52a0ab0800000000000000
+      internalID: -5041175232864045439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 378038cf438faf44984f6e8cb7a7f878
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ItemsIconsBlack_24x24_0: 6320910769888636358
+      ItemsIconsBlack_24x24_1: 2454266627766285452
+      ItemsIconsBlack_24x24_10: -8853050730131940277
+      ItemsIconsBlack_24x24_11: -7980137660207692521
+      ItemsIconsBlack_24x24_12: -2819673759622685942
+      ItemsIconsBlack_24x24_13: 7082211064519212901
+      ItemsIconsBlack_24x24_14: 6947388107994092144
+      ItemsIconsBlack_24x24_15: -5401189048283640675
+      ItemsIconsBlack_24x24_16: 6477042454998873922
+      ItemsIconsBlack_24x24_17: -5041175232864045439
+      ItemsIconsBlack_24x24_18: 1139993795
+      ItemsIconsBlack_24x24_2: 3449720753897273771
+      ItemsIconsBlack_24x24_3: 5208678034823799252
+      ItemsIconsBlack_24x24_4: 4385640905220514238
+      ItemsIconsBlack_24x24_5: -3758289385354880583
+      ItemsIconsBlack_24x24_6: 4309176450490159264
+      ItemsIconsBlack_24x24_7: 1646062649200757230
+      ItemsIconsBlack_24x24_8: 6671402793843919647
+      ItemsIconsBlack_24x24_9: -8843277257476908158
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

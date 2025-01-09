@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8bb5b78ee78254c42abbf358781f9702
+guid: b79f19991c7f73642b7f226090e1519d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5876724795307390068
-    second: Zakladka_0
+      213: -8712880223558408681
+    second: ValueBlue_120x8_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zakladka_0
+      name: ValueBlue_120x8_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 16
+        width: 120
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8b09f45feda17ea0800000000000000
-      internalID: -5876724795307390068
+      spriteID: 71666487991a51780800000000000000
+      internalID: -8712880223558408681
       vertices: []
       indices: 
       edges: []
@@ -129,7 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Zakladka_0: -5876724795307390068
+      ValueBlue_120x8_0: -8712880223558408681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

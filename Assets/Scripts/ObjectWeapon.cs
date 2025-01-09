@@ -21,6 +21,7 @@ public class ObjectWeapon : MonoBehaviour
 {
     private MissionManager MM;
     public bool trigger = false;
+    public string Type;
     public string ObjectName;
     public string Stats;
     public int Attack;

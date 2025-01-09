@@ -44,6 +44,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < ObjectsInInventory.Length; i++)
         {
             ItemCountFields[i].text = "";
+            Icon[i].sprite = Sprites[4];
         }
     }
 
@@ -60,6 +61,10 @@ public class Inventory : MonoBehaviour
             else
             {
                 ObjectsInInventory[i].Amount = 0;
+                ObjectsInInventory[i].Attack = 0;
+                ObjectsInInventory[i].Durability = 0;
+
+                Icon[i].sprite = ObjectsInInventory[i].Sprite;
                 ItemCountFields[i].text = "";
             }
         }

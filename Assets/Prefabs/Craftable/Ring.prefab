@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: 0
+  Type: Ring
   ObjectName: "\u0417\u043E\u043B\u043E\u0442\u043E\u0435 \u043A\u043E\u043B\u044C\u0446\u043E"
   Stats: 
   Attack: 0

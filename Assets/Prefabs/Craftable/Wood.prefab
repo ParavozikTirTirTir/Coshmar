@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: 0
+  Type: Material
   ObjectName: "\u0411\u0440\u0435\u0432\u043D\u043E"
   Stats: 
   Attack: 0
