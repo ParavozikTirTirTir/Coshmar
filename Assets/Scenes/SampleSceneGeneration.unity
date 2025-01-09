@@ -5531,8 +5531,8 @@ MonoBehaviour:
   startPosition: {x: 100, y: 100, z: 0}
   walkLength: 40000
   tunnelWidth: 2
-  perlinNoiseScale: 0.85
-  perlinNoiseThreshold: 0.4
+  perlinNoiseScale: 0.9
+  perlinNoiseThreshold: 0.43
   floorTilePath: Pixel Fantasy Caves/caves/mainlev_build_6
   startTilePath: Pixel Fantasy Caves/caves/mainlev_build_484
   tilemap: {fileID: 630754745}

@@ -6,8 +6,8 @@ using UnityEngine.Tilemaps;
 //Черви Перлина
 public class TileMapTest4 : MonoBehaviour
 {
-    public PlayerSpawn playerSpawn;
-    public OreSpawn oreSpawn;
+    //public PlayerSpawn playerSpawn;
+    //public OreSpawn oreSpawn;
 
     public Tilemap tilemap;
     public string floorTilePath;
@@ -19,6 +19,7 @@ public class TileMapTest4 : MonoBehaviour
     public int tunnelWidth = 1;
     public float perlinNoiseScale = 0.1f; // Новая переменная для масштаба Перлина
     public float perlinNoiseThreshold = 0.5f; // Новая переменная для порога Перлина
+    //алгоритм совмещает элементы случайного блуждания и шума Перлина
 
     private TileBase floorTile;
     private List<Vector3Int> path = new List<Vector3Int>();
@@ -28,20 +29,20 @@ public class TileMapTest4 : MonoBehaviour
         startPosition = new Vector3Int(mapWidth / 2, mapHeight / 2, 0);
         LoadTile();
         GenerateMap();
-        playerSpawn = GetComponent<PlayerSpawn>();
-        oreSpawn = GetComponent<OreSpawn>();
+        //playerSpawn = GetComponent<PlayerSpawn>();
+        //oreSpawn = GetComponent<OreSpawn>();
 
-        if (playerSpawn != null)
-        {
+        //if (playerSpawn != null)
+        //{
 
-            playerSpawn.SpawnPrefabs(mapWidth);
-        }
+        //    playerSpawn.SpawnPrefabs(mapWidth);
+        //}
 
-        if (oreSpawn != null)
-        {
+        //if (oreSpawn != null)
+        //{
 
-            oreSpawn.SpawnOre(mapWidth);
-        }
+        //    oreSpawn.SpawnOre(mapWidth);
+        //}
 
         void LoadTile()
         {
@@ -74,7 +75,7 @@ public class TileMapTest4 : MonoBehaviour
 
             Debug.Log("Карта сгенерирована с пещерой.");
         }
-        void GeneratePathWithPerlin()
+        void GeneratePathWithPerlin() // добавление пути в список
         {
             path.Clear();
             Vector3Int currentPosition = startPosition;
@@ -88,25 +89,26 @@ public class TileMapTest4 : MonoBehaviour
             }
         }
 
-        Vector3Int GetNextPositionWithPerlin(Vector3Int currentPos)
+        Vector3Int GetNextPositionWithPerlin(Vector3Int currentPos) // генерируем следующую позицию пути
         {
             // Используем Perlin Noise для выбора направления
             int newX = currentPos.x;
             int newY = currentPos.y;
 
-            float noiseValue = Mathf.PerlinNoise(currentPos.x * perlinNoiseScale, currentPos.y * perlinNoiseScale);
+            float noiseValue = Mathf.PerlinNoise(currentPos.x * perlinNoiseScale, currentPos.y * perlinNoiseScale); // получаем значение тайла, с помощью шума Перлина
+            // Учитываем мастшаб шума 
 
-            if (noiseValue > perlinNoiseThreshold)
-            {
-                if (Random.value < 0.5f)
+            if (noiseValue > perlinNoiseThreshold) // учитываем порог
+            {// больше порога движение по оси X
+                if (Random.value < 0.5f) // выбираем направление
                     newX += 1;
                 else
                     newX -= 1;
 
             }
             else
-            {
-                if (Random.value < 0.5f)
+            {// меньше порога движение по оси Y
+                if (Random.value < 0.5f) // выбираем направление
                     newY += 1;
                 else
                     newY -= 1;

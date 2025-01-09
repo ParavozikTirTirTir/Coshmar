@@ -9,7 +9,6 @@ public class TileMapTest3 : MonoBehaviour
 {
     public Tilemap tilemap;
     public string floorTilePath;
-    public Vector3Int startPosition;
     public int mapWidth = 50;
     public int mapHeight = 50;
     public int borderSize = 10;
@@ -20,7 +19,6 @@ public class TileMapTest3 : MonoBehaviour
 
     void Start()
     {
-        startPosition = new Vector3Int(mapWidth / 2, mapHeight / 2, 0);
         LoadFloorTile();
         GenerateMap();
     }
@@ -33,6 +31,7 @@ public class TileMapTest3 : MonoBehaviour
             Debug.LogError("Тайл пола не найден.");
         }
     }
+
     void GenerateMap()
     {
         // Инициализируем все тайлы полом
@@ -51,13 +50,13 @@ public class TileMapTest3 : MonoBehaviour
         {
             for (int y = 0; y < mapHeight; y++)
             {
-                float perlinValue = Mathf.PerlinNoise((x + Random.value) * noiseScale, (y + Random.value) * noiseScale);
+                // Сначала масштабируем, потом добавляем случайный сдвиг
+                float perlinValue = Mathf.PerlinNoise((x * noiseScale) + Random.value, (y * noiseScale) + Random.value);
 
-
-                // Применяем ограничения границы
+                // Проверяем границы
                 if (x < borderSize || x >= mapWidth - borderSize || y < borderSize || y >= mapHeight - borderSize)
                 {
-                    // Оставляем тайл пола по границе
+                    // Оставляем тайл пола, ничего не делаем
                 }
                 else if (perlinValue < threshold)
                 {
