@@ -76,6 +76,10 @@ public class Teleport : MonoBehaviour
     public void OnButtonClick()
     {
         ExitCanvasButton.enabled = false;
-        Obj.transform.position = CaveEntrance.transform.position;
+
+        if (IsCaveTeleport)
+        {
+            Obj.transform.position = CaveEntrance.transform.position;
+        }
     }
 }

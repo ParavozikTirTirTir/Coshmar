@@ -20,11 +20,6 @@ public class Craft : MonoBehaviour
         RecipeText = GameObject.Find("RecipeText").GetComponent<TMP_Text>();
     }
 
-    void Update()
-    {
-
-    }
-
     public void CraftButtonClick()
     {
         string recipesInfo = "";
@@ -45,9 +40,11 @@ public class Craft : MonoBehaviour
                 if (Inv.ObjectsInInventory[i].Amount == 0)
                 {
                     Inv.ObjectsInInventory[i].Name = ItemForCraft.GetComponent<ObjectWeapon>().ObjectName;
+                    Inv.ObjectsInInventory[i].Type = ItemForCraft.GetComponent<ObjectWeapon>().Type;
                     Inv.ObjectsInInventory[i].Sprite = ItemForCraft.GetComponent<SpriteRenderer>().sprite;
                     Inv.ObjectsInInventory[i].Attack = ItemForCraft.GetComponent<ObjectWeapon>().Attack;
                     Inv.ObjectsInInventory[i].Durability = ItemForCraft.GetComponent<ObjectWeapon>().Durability;
+                    Inv.ObjectsInInventory[i].EnergyReduction = ItemForCraft.GetComponent<ObjectWeapon>().EnergyReduction;
                     Inv.ObjectsInInventory[i].Amount = 1;
                     break;
                 }
@@ -68,9 +65,11 @@ public class Craft : MonoBehaviour
                     if (item.Amount == 0)
                     {
                         item.Name = "";
+                        item.Type = "";
                         item.Sprite = Inv.Sprites[4];
                         item.Attack = 0;
                         item.Durability = 0;
+                        item.EnergyReduction = 0;
                     }
                 }
 

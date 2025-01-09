@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9204523088106447159}
   - component: {fileID: 1203269871380360337}
   - component: {fileID: 3738922463120585657}
-  - component: {fileID: 5373624949846565019}
   m_Layer: 0
   m_Name: Molot_1
   m_TagString: MissionObject
@@ -143,6 +142,7 @@ MonoBehaviour:
     \u044D\u043D\u0435\u0440\u0433\u0438\u0438: 0.95"
   Attack: 1
   Durability: 100
+  EnergyReduction: 0.95
   ThisObjectSprite: {fileID: 0}
   EmptyIndexInInventory: 0
   ObjectItem: {fileID: 8351463045322685129}
@@ -153,16 +153,3 @@ MonoBehaviour:
     Amount: 1
   - ComponentName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
     Amount: 20
---- !u!114 &5373624949846565019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8351463045322685129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2d8cb140783a0a4b969848aaf57996c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnergyReduction: 0.95

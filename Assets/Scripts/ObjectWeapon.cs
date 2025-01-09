@@ -26,6 +26,8 @@ public class ObjectWeapon : MonoBehaviour
     public string Stats;
     public int Attack;
     public int Durability;
+    public double EnergyReduction;
+
     private Inventory Inv;
     public SpriteRenderer ThisObjectSprite;
     public int EmptyIndexInInventory;
@@ -72,9 +74,11 @@ public class ObjectWeapon : MonoBehaviour
                 if (Inv.ObjectsInInventory[i].Amount == 0)
                 {
                     Inv.ObjectsInInventory[i].Name = ObjectName;
+                    Inv.ObjectsInInventory[i].Type = Type;
                     Inv.ObjectsInInventory[i].Sprite = ThisObjectSprite.sprite;
                     Inv.ObjectsInInventory[i].Attack = Attack;
                     Inv.ObjectsInInventory[i].Durability = Durability;
+                    Inv.ObjectsInInventory[i].EnergyReduction = EnergyReduction;
                     Inv.ObjectsInInventory[i].Amount = 1;
                     break;
                 }

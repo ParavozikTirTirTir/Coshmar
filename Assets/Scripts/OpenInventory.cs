@@ -17,6 +17,7 @@ public class OpenInventory : MonoBehaviour
     private IsPlayerInDialoge PinD;
     private OpenMagicBook MB;
     private OpenCraft OC;
+    private OpenEquipment OE;
 
     private bool State = true;
 
@@ -27,6 +28,7 @@ public class OpenInventory : MonoBehaviour
 
         MB = GameObject.Find("MagicBook").GetComponent<OpenMagicBook>();
         OC = GameObject.Find("Craft").GetComponent<OpenCraft>();
+        OE = GameObject.Find("Equipment").GetComponent<OpenEquipment>();
     }
 
     void Update()
@@ -35,7 +37,7 @@ public class OpenInventory : MonoBehaviour
         PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
         PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
 
-        if (Input.GetKeyDown(KeyCode.I) && !PinD.InDialoge && !MB.OpenBookCheck && !OC.OpenCraftCheck)
+        if (Input.GetKeyDown(KeyCode.I) && !PinD.InDialoge && !MB.OpenBookCheck && !OC.OpenCraftCheck && !OE.OpenEquipmentCheck)
 		{
             DialogeState();
             OpenInventoryCheck = !OpenInventoryCheck;
@@ -44,7 +46,7 @@ public class OpenInventory : MonoBehaviour
             canvas.enabled = !canvas.enabled;
         }
 
-        if (!OpenInventoryCheck && !MB.OpenBookCheck && !OC.OpenCraftCheck)
+        if (!OpenInventoryCheck && !MB.OpenBookCheck && !OC.OpenCraftCheck && !OE.OpenEquipmentCheck)
         {  
              DialogeExit();         
         }

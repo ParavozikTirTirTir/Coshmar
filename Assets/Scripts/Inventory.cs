@@ -6,21 +6,26 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
+
 public class Object
 {
     public string Name;
+    public string Type;
     public int Amount;
     public Sprite Sprite;
     public int Attack;
     public int Durability;
+    public double EnergyReduction;
 
-    public Object(string name, int amount, Sprite sprite, int attack, int durability)
+    public Object(string name, string type, int amount, Sprite sprite, int attack, int durability, double energyReduction)
     {
         Name = name;
+        Type = type;
         Amount = amount;
         Sprite = sprite;
         Attack = attack;
         Durability = durability;
+        EnergyReduction = energyReduction;
     }
 }
 
@@ -52,7 +57,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < ObjectsInInventory.Length; i++)
         {
-            if (ObjectsInInventory[i].Name != "")
+            if (ObjectsInInventory[i].Name != "") // если в инвентаре что-то есть
             {
                 ItemCountFields[i].text = ObjectsInInventory[i].Amount.ToString();
                 Icon[i].sprite = ObjectsInInventory[i].Sprite;
@@ -64,7 +69,7 @@ public class Inventory : MonoBehaviour
                 ObjectsInInventory[i].Attack = 0;
                 ObjectsInInventory[i].Durability = 0;
 
-                Icon[i].sprite = ObjectsInInventory[i].Sprite;
+                //Icon[i].sprite = ObjectsInInventory[i].Sprite;
                 ItemCountFields[i].text = "";
             }
         }

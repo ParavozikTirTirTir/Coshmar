@@ -17,10 +17,12 @@ public class MouseOnIcon : MonoBehaviour, IPointerDownHandler
         if (IsCloseButtonVisible)
         {
             Inv.ObjectsInInventory[ButtonIndex].Name = "";
+            Inv.ObjectsInInventory[ButtonIndex].Type = "";
             Inv.ObjectsInInventory[ButtonIndex].Amount = 0;
             Inv.ObjectsInInventory[ButtonIndex].Sprite = Inv.Sprites[4];
             Inv.ObjectsInInventory[ButtonIndex].Attack = 0;
             Inv.ObjectsInInventory[ButtonIndex].Durability = 0;
+            Inv.ObjectsInInventory[ButtonIndex].EnergyReduction = 0;
 
             Inv.Icon[ButtonIndex].sprite = Inv.Sprites[4];
             MM.LastAction = "Выброшен предмет [" + Inv.ObjectsInInventory[ButtonIndex].Name + "]";
