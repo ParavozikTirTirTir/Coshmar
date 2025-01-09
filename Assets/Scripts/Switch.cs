@@ -12,6 +12,6 @@ public class Switch : MonoBehaviour
 
     public void SceneLoad()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

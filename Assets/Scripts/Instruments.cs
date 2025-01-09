@@ -31,10 +31,10 @@ public class Instrument
 public class Instruments : MonoBehaviour
 {
     public Sprite EmptySlotSprite;
-    public GameObject SelectedSword;
-    public GameObject SelectedMolot;
-    public GameObject SelectedChest;
-    public GameObject SelectedRing;
+    public Object SelectedSword;
+    public Object SelectedMolot;
+    public Object SelectedChest;
+    public Object SelectedRing;
 
     public Image SwordPlace;
     public Image MolotPlace;
@@ -55,10 +55,20 @@ public class Instruments : MonoBehaviour
     public Object[] ChestsInInventory;
     public Object[] RingsInInventory;
 
+    private Sprite SwordPlaceSprite;
+    private Sprite MolotPlaceSprite;
+    private Sprite ChestPlaceSprite;
+    private Sprite RingPlaceSprite;
+
     void Start()
     {
         MM = GameObject.FindGameObjectWithTag("MissionMan").GetComponent<MissionManager>();
         Inv = GetComponent<Inventory>();
+
+        SwordPlaceSprite = SwordPlace.sprite;
+        MolotPlaceSprite = MolotPlace.sprite;
+        ChestPlaceSprite = ChestPlace.sprite;
+        RingPlaceSprite = RingPlace.sprite;
 
         //for (int i = 0; i < InstrumentsInInventory.Length; i++)
         //{
@@ -68,6 +78,43 @@ public class Instruments : MonoBehaviour
 
     void Update()
     {
+        if (SelectedSword.Name != "")
+        {
+            SwordPlace.sprite = SelectedSword.Sprite;
+        }
+        else
+        {
+            SwordPlace.sprite = SwordPlaceSprite;
+        }
+
+        if (SelectedMolot.Name != "")
+        {
+            MolotPlace.sprite = SelectedMolot.Sprite;
+        }
+        else
+        {
+            MolotPlace.sprite = MolotPlaceSprite;
+        }
+
+        if (SelectedChest.Name != "")
+        {
+            ChestPlace.sprite = SelectedChest.Sprite;
+        }
+        else
+        {
+            ChestPlace.sprite = ChestPlaceSprite;
+        }
+
+        if (SelectedRing.Name != "")
+        {
+            RingPlace.sprite = SelectedRing.Sprite;
+        }
+        else
+        {
+            RingPlace.sprite = RingPlaceSprite;
+        }
+
+
         var swords = Inv.ObjectsInInventory.Where(obj => obj.Type == "Sword").ToArray();
         SwordsInInventory = swords;
         for (int i = 0; i < IconSwords.Length; i++)

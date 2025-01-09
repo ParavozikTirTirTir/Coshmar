@@ -69,7 +69,7 @@ public class Inventory : MonoBehaviour
                 ObjectsInInventory[i].Attack = 0;
                 ObjectsInInventory[i].Durability = 0;
 
-                //Icon[i].sprite = ObjectsInInventory[i].Sprite;
+                Icon[i].sprite = Sprites[4];
                 ItemCountFields[i].text = "";
             }
         }

@@ -23,6 +23,7 @@ public class Teleport : MonoBehaviour
     private MissionManager MM;
     private LocationSign LS;
     private OpenInventory OI;
+    private Button ExitButtonInteractable;
 
     void OnTriggerStay2D(Collider2D collision)
     {
@@ -41,6 +42,9 @@ public class Teleport : MonoBehaviour
         OI = GameObject.Find("InventoryCanvas").GetComponent<OpenInventory>();
         ExitCanvasButton = GameObject.Find("ExitCanvasButton").GetComponent<Canvas>();
         ExitCanvasButton.enabled = false;
+
+        ExitButtonInteractable = GameObject.Find("ExitCaveButton").GetComponent<Button>();
+        ExitButtonInteractable.interactable = false;
     }
 
     void Update()
@@ -56,6 +60,7 @@ public class Teleport : MonoBehaviour
             if (IsCaveTeleport && !OI.OpenInventoryCheck)
             {
                 ExitCanvasButton.enabled = true;
+                ExitButtonInteractable.interactable = true;
             }
         }
 
@@ -76,9 +81,11 @@ public class Teleport : MonoBehaviour
     public void OnButtonClick()
     {
         ExitCanvasButton.enabled = false;
+        ExitButtonInteractable.interactable = false;
 
         if (IsCaveTeleport)
         {
+            Obj = GameObject.FindGameObjectWithTag("Player");
             Obj.transform.position = CaveEntrance.transform.position;
         }
     }
