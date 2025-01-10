@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8294026248581752770, guid: f4956f0f74ac87e41b1bf5a722b98f34, type: 3}
+  m_Sprite: {fileID: 4796889811297207966, guid: 4f0aa0615836f6446852cd162b33c7ce, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RecipeText: {fileID: 0}
+  SelectedName: {fileID: 0}
   Object: {fileID: 0}
-  PlaceForObject: {fileID: 0}
   SlotSprite: {fileID: 9191611732250665526}
   SelectedSlotSprite: {fileID: 0}
   RecipeIndex: 0
@@ -186,8 +186,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0563, y: 0.1204}
-  m_SizeDelta: {x: 51.9435, y: 52.072}
+  m_AnchoredPosition: {x: 0.0153, y: -0.0158}
+  m_SizeDelta: {x: 59.5422, y: 59.5514}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8164158441414158933
 CanvasRenderer:
