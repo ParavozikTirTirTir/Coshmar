@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1281156153970305127}
   - component: {fileID: 6849149550914184360}
   - component: {fileID: 3783520761179072292}
-  - component: {fileID: 7067257209841153911}
+  - component: {fileID: 469336351215121159}
   m_Layer: 0
   m_Name: InvMolots
-  m_TagString: Untagged
+  m_TagString: InvMolot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,9 +122,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7067257209841153911}
-        m_TargetAssemblyTypeName: SelectMolot, Assembly-CSharp
-        m_MethodName: SelectEquipment
+      - m_Target: {fileID: 469336351215121159}
+        m_TargetAssemblyTypeName: SelectEquipment, Assembly-CSharp
+        m_MethodName: SelectEquipmentClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7067257209841153911
+--- !u!114 &469336351215121159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4959591967943442800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38c0c968640ca5f4cbecd3f98614d7ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c823d82119fa7c4bae5855fed2f657d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InstrumentType: 
   images: []
   equipSprite: {fileID: 0}
   EquipmentInSlot:

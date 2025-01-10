@@ -5,47 +5,99 @@ using UnityEngine.UI;
 
 public class SelectEquipment : MonoBehaviour
 {
+    public string InstrumentType; //InvSword, InvMolot, InvChest, InvRing
+
     public Image[] images;
-    public Sprite swordSprite;
-    public Object SwordInSlot;
+    public Sprite equipSprite;
+    public Object EquipmentInSlot;
 
     public bool IsSelected;
     public Sprite SelectedSlot;
     public Sprite BasicSlot;
     public Instruments Inst;
 
-    private Object sword;
+    private Object equip;
+    public Sprite pngSprite;
+    private Object NoEquipInSlot;
+
+    private Object SelectedEquip;
 
     void Start()
     {
+        InstrumentType = gameObject.tag;
+
         Inst = GameObject.Find("Inventory").GetComponent<Instruments>();
-        SwordInSlot.Name = "Hand";
+
+        images = GetComponentsInChildren<Image>();
+        pngSprite = images[1].sprite;
+
+        NoEquipInSlot = EquipmentInSlot;
     }
 
     void Update()
     {
         images = GetComponentsInChildren<Image>();
+        equipSprite = images[1].sprite;
 
-        swordSprite = images[1].sprite;
-        sword = System.Array.Find(Inst.SwordsInInventory, obj => obj.Sprite == swordSprite);
-        if (sword != null)
+        switch (InstrumentType)
         {
-            SwordInSlot = sword;
+            case "InvSword":
+                equip = System.Array.Find(Inst.SwordsInInventory, obj => obj.Sprite == equipSprite);
+                SelectedEquip = Inst.SelectedSword;
+                break;
+            case "InvMolot":
+                equip = System.Array.Find(Inst.MolotsInInventory, obj => obj.Sprite == equipSprite);
+                SelectedEquip = Inst.SelectedMolot;
+                break;
+            case "InvChest":
+                equip = System.Array.Find(Inst.ChestsInInventory, obj => obj.Sprite == equipSprite);
+                SelectedEquip = Inst.SelectedChest;
+                break;
+            case "InvRing":
+                equip = System.Array.Find(Inst.RingsInInventory, obj => obj.Sprite == equipSprite);
+                SelectedEquip = Inst.SelectedRing;
+                break;
         }
 
-        if (Inst.SelectedSword != SwordInSlot)
+        if (equip != null)
+        {
+            EquipmentInSlot = equip;
+        }
+
+        if (SelectedEquip != EquipmentInSlot || equip == null)
         {
             gameObject.GetComponent<Image>().sprite = BasicSlot;
+            IsSelected = false;
             gameObject.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
             GetComponentsInChildren<RectTransform>()[1].localScale = new Vector3(1f, 1f, 1f);
         }
+
+        if (equipSprite == pngSprite)
+        {
+            EquipmentInSlot = NoEquipInSlot;
+        }
     }
 
-    public void SelectSword()
+    public void SelectEquipmentClick()
     {
-        if (SwordInSlot.Name != "Hand")
+        if (EquipmentInSlot.Name != "")
         {
-            Inst.SelectedSword = sword;
+            switch (InstrumentType)
+            {
+                case "InvSword":
+                    Inst.SelectedSword = equip;
+                    break;
+                case "InvMolot":
+                    Inst.SelectedMolot = equip;
+                    break;
+                case "InvChest":
+                    Inst.SelectedChest = equip;
+                    break;
+                case "InvRing":
+                    Inst.SelectedRing = equip;
+                    break;
+            }
+
             IsSelected = true;
 
             gameObject.GetComponent<Image>().sprite = SelectedSlot;

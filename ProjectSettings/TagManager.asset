@@ -22,6 +22,10 @@ TagManager:
   - DialogueScript
   - Craft
   - EbaniyYvelocity
+  - InvMolot
+  - InvRing
+  - InvChest
+  - InvSword
   layers:
   - Default
   - TransparentFX

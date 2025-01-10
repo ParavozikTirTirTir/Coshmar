@@ -19,15 +19,21 @@ public class OpenEquipment : MonoBehaviour
         InvChestsWindow = GameObject.Find("InvChestsWindow");
         InvRingsWindow = GameObject.Find("InvRingsWindow");
 
-        InvSwordsWindow.SetActive(true);
-        InvMolotsWindow.SetActive(false);
-        InvChestsWindow.SetActive(false);
-        InvRingsWindow.SetActive(false);
-
         Equipment = GetComponent<Canvas>();
         Equipment.enabled = false;
 
         OI = GameObject.FindGameObjectWithTag("InvCanvas").GetComponent<OpenInventory>();
+    }
+
+    void Update()
+    {
+        if (OpenEquipmentCheck == false)
+        {
+            InvSwordsWindow.SetActive(true);
+            InvMolotsWindow.SetActive(true);
+            InvChestsWindow.SetActive(true);
+            InvRingsWindow.SetActive(true);
+        }
     }
 
     public void EquipOpenButtonClick()
@@ -35,6 +41,11 @@ public class OpenEquipment : MonoBehaviour
         Equipment.enabled = true;
         OI.canvas.enabled = false;
         OpenEquipmentCheck = true;
+
+        InvSwordsWindow.SetActive(true);
+        InvMolotsWindow.SetActive(false);
+        InvChestsWindow.SetActive(false);
+        InvRingsWindow.SetActive(false);
     }
 
     public void EquipExitButtonClick()

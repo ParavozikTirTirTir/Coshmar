@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4133836756231370689}
   m_Layer: 0
   m_Name: InvSwords
-  m_TagString: Untagged
+  m_TagString: InvSword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4133836756231370689}
         m_TargetAssemblyTypeName: SelectEquipment, Assembly-CSharp
-        m_MethodName: SelectSword
+        m_MethodName: SelectEquipmentClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -146,9 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c823d82119fa7c4bae5855fed2f657d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InstrumentType: 
   images: []
-  swordSprite: {fileID: 0}
-  SwordInSlot:
+  equipSprite: {fileID: 0}
+  EquipmentInSlot:
     Name: 
     Type: 
     Amount: 0
@@ -156,6 +157,9 @@ MonoBehaviour:
     Attack: 0
     Durability: 0
     EnergyReduction: 0
+  IsSelected: 0
+  SelectedSlot: {fileID: 3736619520553653961, guid: 4c37c91459aabae4e82a32ba06c5296d, type: 3}
+  BasicSlot: {fileID: 4796889811297207966, guid: 4f0aa0615836f6446852cd162b33c7ce, type: 3}
   Inst: {fileID: 0}
 --- !u!1 &6907785853220826816
 GameObject:
