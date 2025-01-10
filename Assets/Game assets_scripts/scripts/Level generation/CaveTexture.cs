@@ -191,6 +191,10 @@ public class CaveTexture : MonoBehaviour
         return IsTileType(tile, stoneTiles);
     }
 
+    public bool IsGroundTile(TileBase tile)
+    {
+        return IsTileType(tile, dirtTiles);
+    }
     public bool IsGrassTile(TileBase tile)
     {
         return IsTileType(tile, grassTiles);

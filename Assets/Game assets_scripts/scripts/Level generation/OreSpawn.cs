@@ -18,6 +18,11 @@ public class OreSpawn : MonoBehaviour
 
     [SerializeField] private CaveTexture caveTexture; // Ссылка на скрипт CaveTexture
 
+    [SerializeField] private string parentObjectName = "DecorationsParent";//
+
+    private Transform _decorationsParent;//
+
+
 
     void Awake()
     {
@@ -49,6 +54,15 @@ public class OreSpawn : MonoBehaviour
                 enabled = false;
                 return;
             }
+        }
+
+        // Ищем или создаем объект родителя
+        _decorationsParent = transform.Find(parentObjectName);//
+        if (_decorationsParent == null)
+        {
+            GameObject parentGO = new GameObject(parentObjectName);
+            _decorationsParent = parentGO.transform;
+            _decorationsParent.SetParent(transform);
         }
 
     }
@@ -92,7 +106,8 @@ public class OreSpawn : MonoBehaviour
             {
                 Vector3Int orePosition = position + new Vector3Int(0, 1, 0);
                 Vector3 worldOrePosition = targetTilemap.GetCellCenterWorld(orePosition);
-                Instantiate(oreType.prefab, worldOrePosition, Quaternion.identity);
+                GameObject ore = Instantiate(oreType.prefab, worldOrePosition, Quaternion.identity);
+                ore.transform.SetParent(_decorationsParent);
                 return; // Выходим после создания
             }
         }

@@ -268,6 +268,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: tilesetgor 1_8
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 153
+        width: 15
+        height: 7
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae4c28dd34f9c34a83e3c1f782eddc5
+      internalID: 495125087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetgor 1_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 148
+        width: 15
+        height: 12
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87cea2ba7d0297946817c15977485323
+      internalID: -1828904906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetgor 1_10
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 115
+        width: 15
+        height: 29
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df6b8118cee6d744a399ed4017afac6
+      internalID: -902649642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetgor 1_11
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 98
+        width: 16
+        height: 46
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c5190cf967c4a4a91edf773cc53837
+      internalID: 942293098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetgor 1_12
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 64
+        width: 37
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c668f5fc3d49484aa33b48b665eb888
+      internalID: 260458182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetgor 1_13
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 32
+        width: 50
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c62731d85e0dc4992b20b4914a8103
+      internalID: 615597775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -281,12 +407,18 @@ TextureImporter:
     nameFileIdTable:
       tilesetgor 1_0: 690147542
       tilesetgor 1_1: 432304061
+      tilesetgor 1_10: -1828904906
+      tilesetgor 1_11: -902649642
+      tilesetgor 1_12: 942293098
+      tilesetgor 1_13: 260458182
       tilesetgor 1_2: 1145171879
       tilesetgor 1_3: -229880694
       tilesetgor 1_4: 548919367
       tilesetgor 1_5: -774898125
       tilesetgor 1_6: -1884783295
       tilesetgor 1_7: -1827231079
+      tilesetgor 1_8: -932333548
+      tilesetgor 1_9: 495125087
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

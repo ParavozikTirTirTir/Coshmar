@@ -31,13 +31,13 @@ public class Worms : MonoBehaviour
     public OreSpawn oreSpawn;
     public EnemiesSpawn enemiesSpawn;
     public GrassDecoration grassDecoration;
+    public GroundDecoration groundDecoration;
 
     private TileBase floorTile;
     private TileBase startTile;
     private List<Vector3Int> path = new List<Vector3Int>();
     private Vector3Int actualStartPosition;
-    private int platformWidth = 3; // Ўирина платформы
-
+    
     void Start()
     {
         InitializeStartPosition();
@@ -47,10 +47,16 @@ public class Worms : MonoBehaviour
         caveTexture = GetComponent<CaveTexture> ();
         enemiesSpawn = GetComponent<EnemiesSpawn>();
         grassDecoration = GetComponent<GrassDecoration>();
+        groundDecoration = GetComponent<GroundDecoration>();
 
         if (grassDecoration != null)
         {
             grassDecoration.SpawnDecorations(mapOffset, mapWidth, mapHeight);
+        }
+
+        if (groundDecoration != null)
+        {
+            groundDecoration.SpawnDecorations(mapOffset, mapWidth, mapHeight);
         }
 
         if (oreSpawn != null)

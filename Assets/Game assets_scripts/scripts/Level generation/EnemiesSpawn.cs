@@ -17,6 +17,9 @@ public class EnemiesSpawn : MonoBehaviour
     [SerializeField] private List<EnemyType> enemyTypes;
     [SerializeField][Range(0f, 1f)] private float overallSpawnProbability = 0.1f; // Общая вероятность появления врага
     [SerializeField] private int clearanceSize = 3; // Размер области для проверки
+    [SerializeField] private string parentObjectName = "DecorationsParent";//
+
+    private Transform _decorationsParent;//
 
 
     void Awake()
@@ -41,6 +44,14 @@ public class EnemiesSpawn : MonoBehaviour
                 enabled = false;
                 return;
             }
+        }
+        // Ищем или создаем объект родителя
+        _decorationsParent = transform.Find(parentObjectName);//
+        if (_decorationsParent == null)
+        {
+            GameObject parentGO = new GameObject(parentObjectName);
+            _decorationsParent = parentGO.transform;
+            _decorationsParent.SetParent(transform);
         }
 
     }
@@ -81,7 +92,11 @@ public class EnemiesSpawn : MonoBehaviour
             if (randomEnemyValue < cumulativeProbability)
             {
                 Vector3 worldPosition = targetTilemap.GetCellCenterWorld(position);
-                Instantiate(enemyType.prefab, worldPosition, Quaternion.identity);
+                GameObject enemy = Instantiate(enemyType.prefab, worldPosition, Quaternion.identity);
+
+                //Устанавливаем родителя
+                enemy.transform.SetParent(_decorationsParent);//
+
                 return; // Выходим после создания
             }
         }
