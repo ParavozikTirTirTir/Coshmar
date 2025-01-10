@@ -30,6 +30,7 @@ public class Worms : MonoBehaviour
 
     public OreSpawn oreSpawn;
     public EnemiesSpawn enemiesSpawn;
+    public GrassDecoration grassDecoration;
 
     private TileBase floorTile;
     private TileBase startTile;
@@ -45,6 +46,12 @@ public class Worms : MonoBehaviour
 
         caveTexture = GetComponent<CaveTexture> ();
         enemiesSpawn = GetComponent<EnemiesSpawn>();
+        grassDecoration = GetComponent<GrassDecoration>();
+
+        if (grassDecoration != null)
+        {
+            grassDecoration.SpawnDecorations(mapOffset, mapWidth, mapHeight);
+        }
 
         if (oreSpawn != null)
         {

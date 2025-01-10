@@ -16,6 +16,8 @@ public class OreSpawn : MonoBehaviour
     [SerializeField] private List<OreType> oreTypes;
     [SerializeField][Range(0f, 1f)] private float overallSpawnProbability = 0.1f; // Общая вероятность появления руды
 
+    [SerializeField] private CaveTexture caveTexture; // Ссылка на скрипт CaveTexture
+
 
     void Awake()
     {
@@ -31,6 +33,14 @@ public class OreSpawn : MonoBehaviour
             enabled = false;
             return;
         }
+
+        if (caveTexture == null)
+        {
+            Debug.LogError("CaveTexture не установлен!");
+            enabled = false;
+            return;
+        }
+
         foreach (OreType oreType in oreTypes)
         {
             if (oreType.prefab == null)
@@ -56,10 +66,13 @@ public class OreSpawn : MonoBehaviour
             for (int y = startPosition.y; y < startPosition.y + mapHeight - 1; y++)
             {
                 Vector3Int currentPosition = new Vector3Int(x, y, 0);
-                if (targetTilemap.GetTile(currentPosition) != null && IsHorizontalSurface(currentPosition))
+                TileBase currentTile = targetTilemap.GetTile(currentPosition);
+
+                // Проверяем, является ли тайл камнем и есть ли над ним горизонтальная поверхность
+                if (currentTile != null && caveTexture.IsStoneTile(currentTile) && IsHorizontalSurface(currentPosition))
                 {
                     float randomValue = Random.value;
-                    if (randomValue < overallSpawnProbability) // Общая вероятность
+                    if (randomValue < overallSpawnProbability)
                     {
                         SpawnSpecificOre(currentPosition);
                     }
