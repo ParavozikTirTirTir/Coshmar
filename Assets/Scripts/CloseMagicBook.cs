@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;// Required when using Event data.
 using UnityEngine.UIElements;
 using System;
 
-public class CloseMagicBook : MonoBehaviour, IPointerDownHandler
+public class CloseMagicBook : MonoBehaviour
 {
     public Canvas MagicBook;
     private OpenInventory OI;
@@ -17,7 +17,7 @@ public class CloseMagicBook : MonoBehaviour, IPointerDownHandler
         MB = GameObject.Find("MagicBook").GetComponent<OpenMagicBook>();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnExitClick()
     {
         MagicBook.enabled = false;
         MB.OpenBookCheck = false;

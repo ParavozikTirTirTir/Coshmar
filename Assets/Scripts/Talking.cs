@@ -8,13 +8,11 @@ public class Talking : MonoBehaviour
 
     public int intimacy;
     public Sprite[] Emotions;
-    public List<string> Phrases = new List<string>();
     public string CharName;
 
     private Canvas DialogueWindow;
     private IsPlayerInDialoge PinD;
 
-    // Start is called before the first frame update
     void Start()
     {
         DialogueWindow = GetComponent<Canvas>();
@@ -22,7 +20,6 @@ public class Talking : MonoBehaviour
         PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (PinD.InDialoge)

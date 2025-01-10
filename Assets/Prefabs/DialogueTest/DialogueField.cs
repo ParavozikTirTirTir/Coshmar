@@ -5,18 +5,34 @@ using UnityEngine;
 
 public class DialogueField : MonoBehaviour
 {
-    public TMP_Text dialogueText;
-    public List<string> dialogues;
-
     public float writingSpeed;
-    private int index;
+
+    public TMP_Text dialogueText;
+    public string[] dialogues;
+
+    public int index;
     private int charIndex;
     private bool started;
-    private bool waitForNext;
+    public bool waitForNext;
+
+    private TMP_Text Answer1;
+    private TMP_Text Answer2;
+    public string[] Answers;
+
+    public bool IsDialogueEnded;
+    public bool ButtonPressed;
+    public bool IsDialogueExit;
+
+    public string[] PhraseEnd1;
+    public string[] PhraseEnd2;
+
+    public GameObject NpsWhoInDialogue;
 
     private void Awake()
     {
         dialogueText.text = string.Empty;
+        Answer1 = GameObject.Find("Answer1").GetComponent<TMP_Text>();
+        Answer2 = GameObject.Find("Answer2").GetComponent<TMP_Text>();
     }
 
     public void StartDialogue()
@@ -45,50 +61,95 @@ public class DialogueField : MonoBehaviour
 
     IEnumerator Writing() // правила перебора коллекции строк диалога
     {
-        //функци€, котора€ позвол€ет задерживать написание символов
         yield return new WaitForSeconds(writingSpeed);
 
-        //список строк диалога
         string currentDialogue = dialogues[index];
-        //пишем тексто по одной букве
+
         AudioManager2.instance.PlaySFX("char");
         dialogueText.text += currentDialogue[charIndex];
-        //измен€ем индекс буквы
+
         charIndex++;
-        //ѕроверка на конец предложени€
+
         if (charIndex < currentDialogue.Length)
         {
-            //сколько ждЄм до написани€ символа 
             yield return new WaitForSeconds(writingSpeed);
-            //продолжаем писать  //это функци€, котора€ может приостановить выполнение и вернуть управление Unity, а затем продолжить работу с того места, на котором остановилась, в следующем кадре.
             StartCoroutine(Writing());
         }
         else
         {
-            //переходим на следующую строку
             waitForNext = true;
         }
     }
 
     private void Update()
     {
-
         if (!started)
             return;
 
-        if (waitForNext && Input.GetKeyDown(KeyCode.E))
+        //if (waitForNext && index + 1 == dialogues.Length && !IsDialogueEnded)
+        //{
+        //    waitForNext = false;
+        //    index++;
+
+        //    GetDialogue(index);
+        //    EndDialogue();
+        //    IsDialogueEnded = true;
+        //    Answer1.text = Answers[0];
+        //    Answer2.text = Answers[1];
+        //}
+
+        if (waitForNext && Input.GetKeyDown(KeyCode.E) && !IsDialogueEnded)
         {
             waitForNext = false;
             index++;
 
-            if (index < dialogues.Count)
+            if (index < dialogues.Length)
             {
                 GetDialogue(index);
             }
             else
             {
                 EndDialogue();
+                IsDialogueEnded = true;
+                Answer1.text = Answers[0];
+                Answer2.text = Answers[1];
             }
         }
+
+        if (waitForNext && Input.GetKeyDown(KeyCode.E) && IsDialogueEnded && ButtonPressed)
+        {
+            waitForNext = false;
+            index++;
+
+            if (index < dialogues.Length)
+            {
+                GetDialogue(index);
+            }
+            else
+            {
+                EndDialogue();
+                IsDialogueExit = true;
+            }
+        }
+    }
+
+    public void ClickAnswer1()
+    {
+        index = 0;
+        dialogues = PhraseEnd1;
+        ButtonPressed = true;
+        StartDialogue();
+        GetDialogue(index);
+        NpsWhoInDialogue.GetComponent<Romance>().intimacy += 10;
+    }
+
+    public void ClickAnswer2()
+    {
+        index = 0;
+        dialogues = PhraseEnd2;
+        ButtonPressed = true;
+        StartDialogue();
+        GetDialogue(index);
+        NpsWhoInDialogue.GetComponent<Romance>().intimacy -= 10;
     }
 }

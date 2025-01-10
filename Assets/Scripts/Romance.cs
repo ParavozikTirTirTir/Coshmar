@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 [System.Serializable]
 
 public class Romance : MonoBehaviour
@@ -10,11 +11,14 @@ public class Romance : MonoBehaviour
     public bool trigger = false;
     public bool vis;
     public int intimacy;
-    public Texture2D[] Emotions;
-    public List<string> Phrases = new List<string>();
+    public Sprite[] Emotions;
+    public string[] Phrases;
+    public string[] PhraseEnd1;
+    public string[] PhraseEnd2;
+    public string[] Answers;
     public string CharName;
 
-    public string CharacterInformation; //Информация о миссии, которая выводится при нажатии на миссию в левом верхнем углу
+    public string CharacterInformation;
 
     private MissionManager MM;
     private Inventory Inv;
@@ -22,14 +26,25 @@ public class Romance : MonoBehaviour
     private PlayerCombatController PCC;
     private IsPlayerInDialoge PinD;
 
+    private DialogueField DF;
+    private Image IconNpcDialogue;
+    private TMP_Text CharNameText;
+
+    private GameObject AnswerOption1;
+    private GameObject AnswerOption2;
+
+
     void Start()
     {
         Inv = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         MM = GameObject.FindGameObjectWithTag("MissionMan").GetComponent<MissionManager>();
-        PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
-        PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
         intimacy = 0;
+        DF = GameObject.Find("DialogueFieldObj").GetComponent<DialogueField>();
+        IconNpcDialogue = GameObject.Find("IconNpcDialogue").GetComponent<Image>();
+        CharNameText = GameObject.Find("CharName").GetComponent<TMP_Text>();
+
+        AnswerOption1 = GameObject.Find("ButtonAnswer1");
+        AnswerOption2 = GameObject.Find("ButtonAnswer2");
     }
 
     void OnTriggerStay2D(Collider2D obj) //игрок рядом с НПС
@@ -50,12 +65,48 @@ public class Romance : MonoBehaviour
 
     void Update()
     {
-        GameObject MissionTagScanner = GameObject.FindGameObjectWithTag("Player"); // персонаж у которого берем квест будет взаимодействовать только с тем объектом у которого тэг Player;
+        PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
+        PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
 
-        if (Input.GetKeyDown(KeyCode.E) && trigger == true) // При нажатии на клавишу Е и если игрок рядом с НПС
+        if (Input.GetKeyDown(KeyCode.E) && trigger == true && !vis) // При нажатии на клавишу Е и если игрок рядом с НПС
         {
+            AnswerOption1.SetActive(false);
+            AnswerOption2.SetActive(false);
+            DialogeState();
             vis = true;
             PinD.InDialoge = true;
+
+            DF.dialogues = Phrases;
+            IconNpcDialogue.sprite = Emotions[0];
+            CharNameText.text = CharName;
+
+            DF.PhraseEnd1 = PhraseEnd1;
+            DF.PhraseEnd2 = PhraseEnd2;
+            DF.NpsWhoInDialogue = gameObject;
+            DF.Answers = Answers;
+        }
+
+        if (vis && DF.IsDialogueEnded)
+        {
+            AnswerOption1.SetActive(true);
+            AnswerOption2.SetActive(true);
+
+            if (DF.ButtonPressed)
+            {
+                AnswerOption1.SetActive(false);
+                AnswerOption2.SetActive(false);
+                if (DF.IsDialogueExit)
+                {
+                    DialogeExit();
+                    vis = false;
+                    PinD.InDialoge = false;
+
+                    DF.IsDialogueExit = false;
+                    DF.IsDialogueEnded = false;
+                    DF.ButtonPressed = false;
+                }
+            }
         }
     }
 
@@ -77,92 +128,9 @@ public class Romance : MonoBehaviour
 
     void OnGUI()
     {
-            if (trigger && vis == false)
-            {
-                GUI.Box(new Rect(Screen.width / 2 + 20, Screen.height / 2 + 40, 110, 25), "[Е] Поговорить");
-            }
-        
-        if (vis)
+        if (trigger && vis == false)
         {
-            MM.LastAction = "";
-            DialogeState();
-            GUI.Box(new Rect( //лицо ГГ ПЛЭЙЕРА
-                    Screen.width - Screen.height / 4 - 15,
-                    Screen.height * 3 / 4 - 15,
-                    Screen.height / 4,
-                    Screen.height / 4),
-                    MM.PlayerIcon);
-
-
-            GUI.Box(new Rect( //шкала отношений
-                    15,
-                    Screen.height / 4 + Screen.height / 10,
-                    Screen.height / 4 + Screen.height / 8, //ширина
-                    Screen.height / 8), //высота
-                    "");
-
-            GUI.Box(new Rect( //лицо перса нпс
-                    15, 
-                    Screen.height * 2 / 4 - 15, 
-                    Screen.height * 2 / 4, 
-                    Screen.height * 2 / 4), 
-                    Emotions[0]);
-                GUI.Box(new Rect( //плашка с именем нпс
-                    30 + Screen.height * 2 / 4,
-                    Screen.height * 3 / 4 - 15,
-                    Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width/3),
-                    Screen.height / 4),
-                    CharName);
-                GUI.Label(new Rect( // слова перса
-                    40 + Screen.height/2, 
-                    Screen.height * 3 / 4 + 5,
-                    Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 3) - 10, 
-                    250),
-                    Phrases[0]);
-                GUI.Label(new Rect( //близость
-                    Screen.width - 100, 
-                    Screen.height - 40, 
-                    290, 
-                    250), 
-                    "Близость:" + intimacy);
-                
-                if (GUI.Button(new Rect( // ответ 1
-                    Screen.width * 2 / 3,
-                    Screen.height * 3 / 4 - 15,
-                    Screen.width - 75 - Screen.height / 4 - (Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 3)) - Screen.height/2,
-                    Screen.height/4/4),
-                    "Прости, что побеспокоил")) 
-                {
-                    intimacy += 10;
-                    vis = false;
-                    PinD.InDialoge = false;
-                    DialogeExit();
-                }
-
-                if (GUI.Button(new Rect( // ответ 2
-                    Screen.width * 2 / 3,
-                    Screen.height * 3 / 4 - 15 + Screen.width / 4 / 20 + Screen.height / 4 / 4,
-                    Screen.width - 75 - Screen.height / 4 - (Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 3)) - Screen.height / 2,
-                    Screen.height / 4 / 4), 
-                    "Уже ухожу"))
-                {
-                    vis = false;
-                    PinD.InDialoge = false;
-                    DialogeExit();
-                }
-
-                if (GUI.Button(new Rect( // ответ 3
-                    Screen.width * 2 / 3,
-                    Screen.height * 3 / 4 - 15 + 2*Screen.width / 4 / 20 + 2*Screen.height / 4 / 4,
-                    Screen.width - 75 - Screen.height / 4 - (Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 3)) - Screen.height / 2,
-                    Screen.height / 4 / 4),
-                    "Не твое дело"))
-                {
-                    intimacy -= 10;
-                    vis = false;
-                    PinD.InDialoge = false;
-                    DialogeExit();
-                }
+            GUI.Box(new Rect(Screen.width / 2 + 20, Screen.height / 2 + 40, 110, 25), "[Е] Поговорить");
         }
     }
 }

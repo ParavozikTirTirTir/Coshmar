@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class Spell : MonoBehaviour, IPointerDownHandler
+public class Spell : MonoBehaviour
 {
     public string DEVSpellName;
     public string SpellName;
@@ -36,7 +36,7 @@ public class Spell : MonoBehaviour, IPointerDownHandler
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void SelectSpell()
     {
         SpellNameText.text = SpellName;
         SpellDescriptionText.text = SpellDescription;
