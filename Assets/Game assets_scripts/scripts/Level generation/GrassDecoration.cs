@@ -25,12 +25,22 @@ public class GrassDecoration : MonoBehaviour
     [SerializeField][Range(0f, 1f)] private float overallSpawnProbabilityLarge = 0.1f;
 
     [SerializeField] private CaveTexture caveTexture;
+
     [SerializeField] private string parentObjectName = "DecorationsParent";//
 
     private Transform _decorationsParent;//
 
     void Awake()
     {
+        // Ищем или создаем объект родителя
+        _decorationsParent = transform.Find(parentObjectName);//
+        if (_decorationsParent == null)
+        {
+            GameObject parentGO = new GameObject(parentObjectName);
+            _decorationsParent = parentGO.transform;
+            _decorationsParent.SetParent(transform);
+        }
+
         if (targetTilemap == null)
         {
             Debug.LogError("Tilemap не установлен!");
@@ -92,15 +102,7 @@ public class GrassDecoration : MonoBehaviour
             return;
         }
 
-        // Ищем или создаем объект родителя
-        _decorationsParent = transform.Find(parentObjectName);//
-        if (_decorationsParent == null)
-        {
-            GameObject parentGO = new GameObject(parentObjectName);
-            _decorationsParent = parentGO.transform;
-            _decorationsParent.SetParent(transform);
-        }
-
+ 
     }
 
     public void SpawnDecorations(Vector3Int startPosition, int mapWidth, int mapHeight)

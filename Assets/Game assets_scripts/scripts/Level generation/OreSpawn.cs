@@ -107,6 +107,16 @@ public class OreSpawn : MonoBehaviour
                 Vector3Int orePosition = position + new Vector3Int(0, 1, 0);
                 Vector3 worldOrePosition = targetTilemap.GetCellCenterWorld(orePosition);
                 GameObject ore = Instantiate(oreType.prefab, worldOrePosition, Quaternion.identity);
+
+                //Случайно отражаем по X
+                float randomFlip = Random.value;
+                if (randomFlip < 0.7f) // 50% вероятность отражения
+                {
+                    Vector3 localScale = ore.transform.localScale;
+                    localScale.x *= -1f; // Отражаем по оси X
+                    ore.transform.localScale = localScale;
+                }
+
                 ore.transform.SetParent(_decorationsParent);
                 return; // Выходим после создания
             }
