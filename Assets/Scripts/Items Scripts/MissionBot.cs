@@ -85,154 +85,154 @@ public class MissionBot : MonoBehaviour
         PCC.combatEnabled = true;
     }
 
-    void OnGUI()
-    {
-        if (vis)
-        {
-            DialogeState();
+    //void OnGUI()
+    //{
+    //    if (vis)
+    //    {
+    //        DialogeState();
 
-            GUI.Box(new Rect( //лицо перса
-                    15,
-                    Screen.height * 2 / 4 - 15,
-                    Screen.height * 2 / 4,
-                    Screen.height * 2 / 4),
-                    Emotions[0]);
+    //        GUI.Box(new Rect( //лицо перса
+    //                15,
+    //                Screen.height * 2 / 4 - 15,
+    //                Screen.height * 2 / 4,
+    //                Screen.height * 2 / 4),
+    //                Emotions[0]);
 
-            if (!MM.MissionsInProgress.Contains(MissionName) && !MissionDone) //если квест еще не вз€т и не выполнен;
-            {
-                GUI.Box(new Rect( //плашка с именем
-                    30 + Screen.height * 2 / 4,
-                    Screen.height * 3 / 4 - 15,
-                    Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 4),
-                    Screen.height / 4),
-                    NpcName); //на экране отображаетс€ окно с названием  веста;
-                GUI.Label(new Rect( // слова перса
-                    40 + Screen.height * 2 / 4,
-                    Screen.height * 3 / 4 + 20,
-                    Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 4) - 10,
-                    250),
-                    MissionDialoge); //текстом описывает квест;
-                if (GUI.Button(new Rect( // ответ 1
-                    Screen.width * 3 / 4,
-                    Screen.height * 3 / 4 - 15,
-                    200,
-                    Screen.height / 4 / 4),
-                    "ѕрин€ть задание")) // при нажатии на кнопку Ok;
-                {
-                    MM.MissionsInProgress.Add(MissionName);
-                    MM.MissionsPriority.Add(MissionPriority);
-                    MM.MissionsInformation.Add(MissionInformation);
-                    MM.MissionsObjectName.Add(MissionObjectName);
-                    vis = false; // все диалоговые окна закрываютс€;
-                    PinD.InDialoge = false;
+    //        if (!MM.MissionsInProgress.Contains(MissionName) && !MissionDone) //если квест еще не вз€т и не выполнен;
+    //        {
+    //            GUI.Box(new Rect( //плашка с именем
+    //                30 + Screen.height * 2 / 4,
+    //                Screen.height * 3 / 4 - 15,
+    //                Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 4),
+    //                Screen.height / 4),
+    //                NpcName); //на экране отображаетс€ окно с названием  веста;
+    //            GUI.Label(new Rect( // слова перса
+    //                40 + Screen.height * 2 / 4,
+    //                Screen.height * 3 / 4 + 20,
+    //                Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 4) - 10,
+    //                250),
+    //                MissionDialoge); //текстом описывает квест;
+    //            if (GUI.Button(new Rect( // ответ 1
+    //                Screen.width * 3 / 4,
+    //                Screen.height * 3 / 4 - 15,
+    //                200,
+    //                Screen.height / 4 / 4),
+    //                "ѕрин€ть задание")) // при нажатии на кнопку Ok;
+    //            {
+    //                MM.MissionsInProgress.Add(MissionName);
+    //                MM.MissionsPriority.Add(MissionPriority);
+    //                MM.MissionsInformation.Add(MissionInformation);
+    //                MM.MissionsObjectName.Add(MissionObjectName);
+    //                vis = false; // все диалоговые окна закрываютс€;
+    //                PinD.InDialoge = false;
 
-                    MM.LastAction = "ѕрин€т квест [" + MissionName + "]";
-                    DialogeExit();
-                }
+    //                MM.LastAction = "ѕрин€т квест [" + MissionName + "]";
+    //                DialogeExit();
+    //            }
 
-                if (GUI.Button(new Rect( // ответ 2
-                    Screen.width * 3 / 4,
-                    Screen.height * 3 / 4 - 15 + Screen.width / 4 / 20 + Screen.height / 4 / 4,
-                    200,
-                    Screen.height / 4 / 4),
-                    "Ќе сейчас"))
-                {
-                    vis = false;
-                    PinD.InDialoge = false;
-                    DialogeExit();
-                }
-            }
+    //            if (GUI.Button(new Rect( // ответ 2
+    //                Screen.width * 3 / 4,
+    //                Screen.height * 3 / 4 - 15 + Screen.width / 4 / 20 + Screen.height / 4 / 4,
+    //                200,
+    //                Screen.height / 4 / 4),
+    //                "Ќе сейчас"))
+    //            {
+    //                vis = false;
+    //                PinD.InDialoge = false;
+    //                DialogeExit();
+    //            }
+    //        }
 
-            if (MM.MissionsInProgress.Contains(MissionName) && !MissionDone) // если квест уже вз€т, но не завершен;
-            {
-                GUI.Box(new Rect( //плашка с именем
-                    30 + Screen.height * 2 / 4,
-                    Screen.height * 3 / 4 - 15,
-                    Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 4),
-                    Screen.height / 4),
-                    NpcName);
-                GUI.Label(new Rect( // слова перса
-                    40 + Screen.height * 2 / 4,
-                    Screen.height * 3 / 4 + 20,
-                    Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 4) - 10,
-                    250),
-                    MissionDialogeDone); //то описание квеста мен€етс€ на другой текст;
-                if (Inv.InventoryObjects.Contains(MissionObjectName))
-                {
-                    if (GUI.Button(new Rect( // ответ 1
-                    Screen.width * 3 / 4,
-                    Screen.height * 3 / 4 - 15,
-                    200,
-                    Screen.height / 4 / 4),
-                    "ќтдать предмет")) // то по€витс€ кнопка да, при нажатии на которую;
-                    {
-                        ObjectIndexInInventory = Inv.InventoryObjects.IndexOf(MissionObjectName);
-                        if (Inv.ItemCount[ObjectIndexInInventory] > 1)
-                        {
-                            Inv.ItemCount[ObjectIndexInInventory] -= 1;
-                        }
+    //        if (MM.MissionsInProgress.Contains(MissionName) && !MissionDone) // если квест уже вз€т, но не завершен;
+    //        {
+    //            GUI.Box(new Rect( //плашка с именем
+    //                30 + Screen.height * 2 / 4,
+    //                Screen.height * 3 / 4 - 15,
+    //                Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 4),
+    //                Screen.height / 4),
+    //                NpcName);
+    //            GUI.Label(new Rect( // слова перса
+    //                40 + Screen.height * 2 / 4,
+    //                Screen.height * 3 / 4 + 20,
+    //                Screen.width - (30 + Screen.height * 2 / 4) - 15 - (Screen.width / 4) - 10,
+    //                250),
+    //                MissionDialogeDone); //то описание квеста мен€етс€ на другой текст;
+    //            if (Inv.InventoryObjects.Contains(MissionObjectName))
+    //            {
+    //                if (GUI.Button(new Rect( // ответ 1
+    //                Screen.width * 3 / 4,
+    //                Screen.height * 3 / 4 - 15,
+    //                200,
+    //                Screen.height / 4 / 4),
+    //                "ќтдать предмет")) // то по€витс€ кнопка да, при нажатии на которую;
+    //                {
+    //                    ObjectIndexInInventory = Inv.InventoryObjects.IndexOf(MissionObjectName);
+    //                    if (Inv.ItemCount[ObjectIndexInInventory] > 1)
+    //                    {
+    //                        Inv.ItemCount[ObjectIndexInInventory] -= 1;
+    //                    }
 
-                        if (Inv.ItemCount[ObjectIndexInInventory] == 1)
-                        {
-                            Inv.ItemCount[ObjectIndexInInventory] -= 1;
-                            Inv.Icon[ObjectIndexInInventory].sprite = Inv.Sprites[4];
-                            Inv.InventoryObjects.Insert(ObjectIndexInInventory, "-");
-                        }
-                        //Inv.Icon[ObjectIndexInInventory].sprite = Inv.Sprites[4];
-                        //Inv.InventoryObjects.Insert(ObjectIndexInInventory, "-");
-                        //Inv.InventoryObjects.Remove(MissionObjectName);
+    //                    if (Inv.ItemCount[ObjectIndexInInventory] == 1)
+    //                    {
+    //                        Inv.ItemCount[ObjectIndexInInventory] -= 1;
+    //                        Inv.Icon[ObjectIndexInInventory].sprite = Inv.Sprites[4];
+    //                        Inv.InventoryObjects.Insert(ObjectIndexInInventory, "-");
+    //                    }
+    //                    //Inv.Icon[ObjectIndexInInventory].sprite = Inv.Sprites[4];
+    //                    //Inv.InventoryObjects.Insert(ObjectIndexInInventory, "-");
+    //                    //Inv.InventoryObjects.Remove(MissionObjectName);
 
-                        MM.LastAction = "«акончен квест [" + MissionName + "]";
-                        MM.MissionsInProgress.Remove(MissionName); // убираем квест из списка активных
-                        MM.MissionsPriority.Remove(MissionPriority);
-                        MM.MissionsInformation.Remove(MissionInformation);
-                        MM.MissionsObjectName.Remove(MissionObjectName);
+    //                    MM.LastAction = "«акончен квест [" + MissionName + "]";
+    //                    MM.MissionsInProgress.Remove(MissionName); // убираем квест из списка активных
+    //                    MM.MissionsPriority.Remove(MissionPriority);
+    //                    MM.MissionsInformation.Remove(MissionInformation);
+    //                    MM.MissionsObjectName.Remove(MissionObjectName);
 
-                        if (CanGiveAnItem)
-                        {
-                            if (Inv.InventoryObjects.Contains(RewardName))
-                            {
-                                Inv.ItemCount[Inv.InventoryObjects.IndexOf(RewardName)] += 1;
-                            }
+    //                    if (CanGiveAnItem)
+    //                    {
+    //                        if (Inv.InventoryObjects.Contains(RewardName))
+    //                        {
+    //                            Inv.ItemCount[Inv.InventoryObjects.IndexOf(RewardName)] += 1;
+    //                        }
 
-                            else
-                            {
-                                EmptyIndexInInventory = Inv.InventoryObjects.IndexOf("-");
-                                Inv.ItemCount[EmptyIndexInInventory] += 1;
-                                Inv.Icon[EmptyIndexInInventory].sprite = RewardSprite;
-                                Inv.InventoryObjects.Insert(EmptyIndexInInventory, RewardName);
-                                Inv.InventoryObjects.Remove("-");
-                            }
+    //                        else
+    //                        {
+    //                            EmptyIndexInInventory = Inv.InventoryObjects.IndexOf("-");
+    //                            Inv.ItemCount[EmptyIndexInInventory] += 1;
+    //                            Inv.Icon[EmptyIndexInInventory].sprite = RewardSprite;
+    //                            Inv.InventoryObjects.Insert(EmptyIndexInInventory, RewardName);
+    //                            Inv.InventoryObjects.Remove("-");
+    //                        }
 
-                            MM.LastAction = "«акончен квест [" + MissionName + "] и получен предмет [" + RewardName + "]";
-                        }
+    //                        MM.LastAction = "«акончен квест [" + MissionName + "] и получен предмет [" + RewardName + "]";
+    //                    }
 
-                        MM.Money = MM.Money + MoneyForMission; //добавление денег за выполнение квеста;
-                        vis = false; // диалоговое окно закрываетс€;
-                        PinD.InDialoge = false;
-                        MissionDone = true;
+    //                    MM.Money = MM.Money + MoneyForMission; //добавление денег за выполнение квеста;
+    //                    vis = false; // диалоговое окно закрываетс€;
+    //                    PinD.InDialoge = false;
+    //                    MissionDone = true;
 
-                        DialogeExit();
-                    }
-                }
+    //                    DialogeExit();
+    //                }
+    //            }
 
-                else
-                { // если вы еще не подобрали объект;
-                    if (GUI.Button(new Rect( // ответ 1
-                    Screen.width * 3 / 4,
-                    Screen.height * 3 / 4 - 15,
-                    200,
-                    Screen.height / 4 / 4),
-                    "я зайду позже")) // то вместо кнопки да, будет кнопка нет;
-                    {
-                        vis = false; // при нажатии на которую, окно просто закроетс€;
-                        PinD.InDialoge = false;
+    //            else
+    //            { // если вы еще не подобрали объект;
+    //                if (GUI.Button(new Rect( // ответ 1
+    //                Screen.width * 3 / 4,
+    //                Screen.height * 3 / 4 - 15,
+    //                200,
+    //                Screen.height / 4 / 4),
+    //                "я зайду позже")) // то вместо кнопки да, будет кнопка нет;
+    //                {
+    //                    vis = false; // при нажатии на которую, окно просто закроетс€;
+    //                    PinD.InDialoge = false;
 
-                        DialogeExit();
-                    }
-                }
-            }
-        }
-    }
+    //                    DialogeExit();
+    //                }
+    //            }
+    //        }
+    //    }
+    //}
 }
    

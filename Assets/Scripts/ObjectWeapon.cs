@@ -21,18 +21,9 @@ public class ObjectWeapon : MonoBehaviour
 {
     private MissionManager MM;
     public bool trigger = false;
-    public string Type;
-    public string ObjectName;
-    public string Stats;
-    public int Attack;
-    public int Durability;
-    public double EnergyReduction;
+    public Object Item;
 
     private Inventory Inv;
-    public SpriteRenderer ThisObjectSprite;
-    public int EmptyIndexInInventory;
-    public GameObject ObjectItem;
-    public Recipe[] recipes;
 
     private OpenInventory OI;
     private OpenMagicBook MB;
@@ -45,8 +36,6 @@ public class ObjectWeapon : MonoBehaviour
         MB = GameObject.Find("MagicBook").GetComponent<OpenMagicBook>();
         OI = GameObject.Find("InventoryCanvas").GetComponent<OpenInventory>();
         OC = GameObject.Find("Craft").GetComponent<OpenCraft>();
-        ThisObjectSprite = gameObject.GetComponent<SpriteRenderer>();
-        ObjectItem = gameObject;
     }
 
     void OnTriggerStay2D(Collider2D obj) //«Наезд» на объект
@@ -73,24 +62,16 @@ public class ObjectWeapon : MonoBehaviour
             {
                 if (Inv.ObjectsInInventory[i].Amount == 0)
                 {
-                    Inv.ObjectsInInventory[i].Name = ObjectName;
-                    Inv.ObjectsInInventory[i].Type = Type;
-                    Inv.ObjectsInInventory[i].Sprite = ThisObjectSprite.sprite;
-                    Inv.ObjectsInInventory[i].Attack = Attack;
-                    Inv.ObjectsInInventory[i].Durability = Durability;
-                    Inv.ObjectsInInventory[i].EnergyReduction = EnergyReduction;
-                    Inv.ObjectsInInventory[i].Amount = 1;
+                    Inv.ObjectsInInventory[i] = Item;
                     break;
                 }
 
-                if (Inv.ObjectsInInventory[i].Name == ObjectName)
+                if (Inv.ObjectsInInventory[i].Name == Item.Name)
                 {
-                    Inv.ObjectsInInventory[i].Amount += 1;
+                    Inv.ObjectsInInventory[i].Amount += Item.Amount;
                     break;
                 }
             }
-
-            MM.LastAction = "Получено [" + ObjectName + "]";
 
             Destroy(gameObject); // и удаляем этот объект со сцены;
         }

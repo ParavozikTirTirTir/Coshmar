@@ -136,14 +136,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: 0
-  Type: Ring
-  ObjectName: "\u0417\u043E\u043B\u043E\u0442\u043E\u0435 \u043A\u043E\u043B\u044C\u0446\u043E"
-  Stats: 
-  Attack: 0
-  Durability: 0
-  ThisObjectSprite: {fileID: 0}
-  EmptyIndexInInventory: 0
-  ObjectItem: {fileID: 8351463045322685129}
+  Item:
+    Name: "\u0417\u043E\u043B\u043E\u0442\u043E\u0435 \u043A\u043E\u043B\u044C\u0446\u043E"
+    Type: Ring
+    Amount: 1
+    Sprite: {fileID: -627983921, guid: 9f0a94e8777bf51429792a16c2ee827e, type: 3}
+    Attack: 0
+    AdditionalHealth: 0
+    Durability: 200
+    EnergyReduction: 0
+    AddSpeed: 0
+    AddJumpHeight: 10
+    AddJumpsAmount: 1
+    ItemRecipe:
+    - ComponentName: "\u0417\u043E\u043B\u043E\u0442\u043E\u0439 \u0441\u043B\u0438\u0442\u043E\u043A"
+      Amount: 3
+    - ComponentName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
+      Amount: 20
+    ItemPrefab: {fileID: 8351463045322685129}
   recipes:
   - ComponentName: "\u0417\u043E\u043B\u043E\u0442\u043E\u0439 \u0441\u043B\u0438\u0442\u043E\u043A"
     Amount: 3

@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour
 {
     [SerializeField]
     public float maxHealth;
+    public float EnergyConsumptionReduction;
 
     [SerializeField]
     private GameObject

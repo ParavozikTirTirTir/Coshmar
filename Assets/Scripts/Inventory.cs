@@ -14,18 +14,30 @@ public class Object
     public int Amount;
     public Sprite Sprite;
     public int Attack;
+    public int AdditionalHealth;
     public int Durability;
-    public double EnergyReduction;
+    public float EnergyReduction;
+    public float AddSpeed;
+    public float AddJumpHeight;
+    public float AddJumpsAmount;
+    public Recipe[] ItemRecipe;
+    public GameObject ItemPrefab;
 
-    public Object(string name, string type, int amount, Sprite sprite, int attack, int durability, double energyReduction)
+    public Object(string name, string type, int amount, Sprite sprite, int attack, int health, int durability, float energyReduction, float addSpeed, float addJumpHeight, float addJumpsAmount, Recipe[] recipe, GameObject prefab)
     {
         Name = name;
         Type = type;
         Amount = amount;
         Sprite = sprite;
         Attack = attack;
+        AdditionalHealth = health;
         Durability = durability;
         EnergyReduction = energyReduction;
+        AddSpeed = addSpeed;
+        AddJumpHeight = addJumpHeight;
+        AddJumpsAmount = addJumpsAmount;
+        ItemRecipe = recipe;
+        ItemPrefab = prefab;
     }
 }
 

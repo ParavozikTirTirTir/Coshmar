@@ -5,31 +5,15 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 
-[System.Serializable]
-public class Instrument
-{
-    public string Name;
-    public string Type;
-    public int Amount;
-    public Sprite Sprite;
-    public int Attack;
-    public int Durability;
-    public double EnergyReduction;
-
-    public Instrument(string name, string type, int amount, Sprite sprite, int attack, int durability, double energyReduction)
-    {
-        Name = name;
-        Type = type;
-        Amount = amount;
-        Sprite = sprite;
-        Attack = attack;
-        Durability = durability;
-        EnergyReduction = energyReduction;
-    }
-}
-
 public class Instruments : MonoBehaviour
 {
+    public float Speed;
+    public float JumpHeight;
+    public float JumpsAmount;
+    public float Attack;
+    public float Health;
+    public float EnergyConsumptionReduction;
+
     public Sprite EmptySlotSprite;
     public Object SelectedSword;
     public Object SelectedMolot;
@@ -60,6 +44,13 @@ public class Instruments : MonoBehaviour
     private Sprite ChestPlaceSprite;
     private Sprite RingPlaceSprite;
 
+    private float BasicSpeed;
+    private float BasicJumpHeight;
+    private float BasicJumpsAmount;
+    private float BasicAttack;
+    private float BasicHealth;
+    private float BasicEnergyConsumptionReduction;
+
     void Start()
     {
         MM = GameObject.FindGameObjectWithTag("MissionMan").GetComponent<MissionManager>();
@@ -70,50 +61,77 @@ public class Instruments : MonoBehaviour
         ChestPlaceSprite = ChestPlace.sprite;
         RingPlaceSprite = RingPlace.sprite;
 
-        //for (int i = 0; i < InstrumentsInInventory.Length; i++)
-        //{
-        //    ItemCountFields[i].text = "";
-        //}
+        Speed = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().movementSpeed;
+        JumpHeight = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().jumpForce;
+        JumpsAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().amountOfJumps;
+        Attack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>().attack1Damage;
+        Health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().maxHealth;
+        EnergyConsumptionReduction = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().EnergyConsumptionReduction;
+
+        BasicSpeed = Speed;
+        BasicJumpHeight = JumpHeight;
+        BasicJumpsAmount = JumpsAmount;
+        BasicAttack = Attack;
+        BasicHealth = Health;
+        BasicEnergyConsumptionReduction = EnergyConsumptionReduction;
     }
 
     void Update()
     {
+        Speed = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().movementSpeed;
+        JumpHeight = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().jumpForce;
+        JumpsAmount = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().amountOfJumps;
+        Attack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>().attack1Damage;
+        Health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().maxHealth;
+        EnergyConsumptionReduction = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().EnergyConsumptionReduction;
+
         if (SelectedSword.Name != "")
         {
             SwordPlace.sprite = SelectedSword.Sprite;
+            Attack = BasicAttack + SelectedSword.Attack;
         }
         else
         {
             SwordPlace.sprite = SwordPlaceSprite;
+            Attack = BasicAttack;
         }
 
         if (SelectedMolot.Name != "")
         {
             MolotPlace.sprite = SelectedMolot.Sprite;
+            EnergyConsumptionReduction = SelectedMolot.EnergyReduction;
         }
         else
         {
             MolotPlace.sprite = MolotPlaceSprite;
+            EnergyConsumptionReduction = BasicEnergyConsumptionReduction;
         }
 
         if (SelectedChest.Name != "")
         {
             ChestPlace.sprite = SelectedChest.Sprite;
+            Health = BasicHealth + SelectedChest.AdditionalHealth;
         }
         else
         {
             ChestPlace.sprite = ChestPlaceSprite;
+            Health = BasicHealth;
         }
 
         if (SelectedRing.Name != "")
         {
             RingPlace.sprite = SelectedRing.Sprite;
+            Speed = BasicSpeed + SelectedRing.AddSpeed;
+            JumpHeight = BasicJumpHeight + SelectedRing.AddJumpHeight;
+            JumpsAmount = BasicJumpsAmount + SelectedRing.AddJumpsAmount;
         }
         else
         {
             RingPlace.sprite = RingPlaceSprite;
+            Speed = BasicSpeed;
+            JumpHeight = BasicJumpHeight;
+            JumpsAmount = BasicJumpsAmount;
         }
-
 
         var swords = Inv.ObjectsInInventory.Where(obj => obj.Type == "Sword").ToArray();
         SwordsInInventory = swords;

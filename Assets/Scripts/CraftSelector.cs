@@ -8,7 +8,7 @@ public class CraftSelector : MonoBehaviour
 {
     public TMP_Text RecipeText;
     public TMP_Text SelectedName;
-    public GameObject Object;
+    public Object ObjectRecipe;
     public GameObject SlotSprite;
     public GameObject SelectedSlotSprite;
     public int RecipeIndex;
@@ -18,10 +18,10 @@ public class CraftSelector : MonoBehaviour
 
     public void OnButtonClick()
     {
-        CO.ItemForCraft = Object;
+        CO.ItemForCraft = ObjectRecipe;
         string recipesInfo = "";
 
-        foreach (var recipe in Object.GetComponent<ObjectWeapon>().recipes)
+        foreach (var recipe in ObjectRecipe.ItemRecipe)
         {
             var itemInInventory = System.Array.Find(Inv.ObjectsInInventory, obj => obj.Name == recipe.ComponentName);
             int availableAmount = itemInInventory != null ? itemInInventory.Amount : 0;
@@ -29,8 +29,8 @@ public class CraftSelector : MonoBehaviour
         }
 
         RecipeText.text = recipesInfo;
-        SelectedName.text = Object.GetComponent<ObjectWeapon>().ObjectName.ToString();
-        SelectedSlotSprite.GetComponent<Image>().sprite = Object.GetComponent<SpriteRenderer>().sprite;
+        SelectedName.text = ObjectRecipe.Name;
+        SelectedSlotSprite.GetComponent<Image>().sprite = ObjectRecipe.Sprite;
     }
 
     void Start()
@@ -45,7 +45,7 @@ public class CraftSelector : MonoBehaviour
 
     void Update()
     {
-        Object = CO.Objects[RecipeIndex];
-        SlotSprite.GetComponent<Image>().sprite = Object.GetComponent<SpriteRenderer>().sprite;
+        ObjectRecipe = CO.Objects[RecipeIndex].GetComponent<ObjectWeapon>().Item;
+        SlotSprite.GetComponent<Image>().sprite = ObjectRecipe.Sprite;
     }
 }

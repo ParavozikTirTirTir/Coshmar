@@ -136,12 +136,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: 0
-  Type: Material
-  ObjectName: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0441\u043B\u0438\u0442\u043E\u043A"
-  Stats: 
-  Attack: 0
-  Durability: 0
-  ThisObjectSprite: {fileID: 0}
-  EmptyIndexInInventory: 0
-  ObjectItem: {fileID: 8351463045322685129}
+  Item:
+    Name: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0441\u043B\u0438\u0442\u043E\u043A"
+    Type: Material
+    Amount: 1
+    Sprite: {fileID: -6503034749178081580, guid: de19bcc726e92114c9fe5857102fd625, type: 3}
+    Attack: 0
+    AdditionalHealth: 0
+    Durability: 0
+    EnergyReduction: 0
+    AddSpeed: 0
+    AddJumpHeight: 0
+    AddJumpsAmount: 0
+    ItemRecipe:
+    - ComponentName: "\u0416\u0435\u043B\u0435\u0437\u043D\u0430\u044F \u0440\u0443\u0434\u0430"
+      Amount: 2
+    - ComponentName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
+      Amount: 10
+    ItemPrefab: {fileID: 8351463045322685129}
   recipes: []

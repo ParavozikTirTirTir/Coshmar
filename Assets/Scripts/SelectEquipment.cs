@@ -72,6 +72,15 @@ public class SelectEquipment : MonoBehaviour
             GetComponentsInChildren<RectTransform>()[1].localScale = new Vector3(1f, 1f, 1f);
         }
 
+        if (EquipmentInSlot == SelectedEquip)
+        {
+            IsSelected = true;
+
+            gameObject.GetComponent<Image>().sprite = SelectedSlot;
+            gameObject.GetComponent<RectTransform>().localScale = new Vector3(1.2f, 1.2f, 1.2f);
+            GetComponentsInChildren<RectTransform>()[1].localScale = new Vector3(0.835f, 0.835f, 0.835f);
+        }
+
         if (equipSprite == pngSprite)
         {
             EquipmentInSlot = NoEquipInSlot;

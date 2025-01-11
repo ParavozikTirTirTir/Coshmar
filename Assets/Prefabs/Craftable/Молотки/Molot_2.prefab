@@ -136,16 +136,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: 0
-  Type: Molot
-  ObjectName: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u043C\u043E\u043B\u043E\u0442"
-  Stats: "\u0421\u043D\u0438\u0436\u0435\u043D\u0438\u0435 \u0437\u0430\u0442\u0440\u0430\u0442
-    \u044D\u043D\u0435\u0440\u0433\u0438\u0438: 0.8"
-  Attack: 1
-  Durability: 100
-  EnergyReduction: 0.8
-  ThisObjectSprite: {fileID: 0}
-  EmptyIndexInInventory: 0
-  ObjectItem: {fileID: 8351463045322685129}
+  Item:
+    Name: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u043C\u043E\u043B\u043E\u0442"
+    Type: Molot
+    Amount: 1
+    Sprite: {fileID: 163917928393829320, guid: 3a45ac56ae878744890fa3be1dfff786, type: 3}
+    Attack: 0
+    AdditionalHealth: 0
+    Durability: 50
+    EnergyReduction: 10
+    AddSpeed: 0
+    AddJumpHeight: 0
+    AddJumpsAmount: 0
+    ItemRecipe:
+    - ComponentName: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0441\u043B\u0438\u0442\u043E\u043A"
+      Amount: 3
+    - ComponentName: "\u041F\u0430\u043B\u043A\u0430"
+      Amount: 1
+    - ComponentName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
+      Amount: 40
+    ItemPrefab: {fileID: 8351463045322685129}
   recipes:
   - ComponentName: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0441\u043B\u0438\u0442\u043E\u043A"
     Amount: 3

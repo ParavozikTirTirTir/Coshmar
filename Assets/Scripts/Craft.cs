@@ -7,9 +7,8 @@ using TMPro;
 public class Craft : MonoBehaviour
 {
     public GameObject[] Objects; // объекты, которые мы можем скрафтить (рецепты)
-    //public Image[] Icon; // слоты для рецептов
 
-    public GameObject ItemForCraft;
+    public Object ItemForCraft;
 
     private Inventory Inv;
     public TMP_Text RecipeText;
@@ -24,14 +23,14 @@ public class Craft : MonoBehaviour
     {
         string recipesInfo = "";
 
-        foreach (var recipe in ItemForCraft.GetComponent<ObjectWeapon>().recipes)
+        foreach (var recipe in ItemForCraft.ItemRecipe)
         {
             var itemInInventory = System.Array.Find(Inv.ObjectsInInventory, obj => obj.Name == recipe.ComponentName);
             int availableAmount = itemInInventory != null ? itemInInventory.Amount : 0;
             recipesInfo += $"{recipe.ComponentName}: {availableAmount}/{recipe.Amount}\n";
         }
 
-        if (HasComponents(ItemForCraft.GetComponent<ObjectWeapon>().recipes))
+        if (HasComponents(ItemForCraft.ItemRecipe))
         {
             recipesInfo = "";
 
@@ -39,24 +38,18 @@ public class Craft : MonoBehaviour
             {
                 if (Inv.ObjectsInInventory[i].Amount == 0)
                 {
-                    Inv.ObjectsInInventory[i].Name = ItemForCraft.GetComponent<ObjectWeapon>().ObjectName;
-                    Inv.ObjectsInInventory[i].Type = ItemForCraft.GetComponent<ObjectWeapon>().Type;
-                    Inv.ObjectsInInventory[i].Sprite = ItemForCraft.GetComponent<SpriteRenderer>().sprite;
-                    Inv.ObjectsInInventory[i].Attack = ItemForCraft.GetComponent<ObjectWeapon>().Attack;
-                    Inv.ObjectsInInventory[i].Durability = ItemForCraft.GetComponent<ObjectWeapon>().Durability;
-                    Inv.ObjectsInInventory[i].EnergyReduction = ItemForCraft.GetComponent<ObjectWeapon>().EnergyReduction;
-                    Inv.ObjectsInInventory[i].Amount = 1;
+                    Inv.ObjectsInInventory[i] = ItemForCraft;
                     break;
                 }
 
-                if (Inv.ObjectsInInventory[i].Name == ItemForCraft.GetComponent<ObjectWeapon>().ObjectName)
+                if (Inv.ObjectsInInventory[i].Name == ItemForCraft.Name)
                 {
-                    Inv.ObjectsInInventory[i].Amount += 1;
+                    Inv.ObjectsInInventory[i].Amount += ItemForCraft.Amount;
                     break;
                 }
             }
 
-            foreach (var recipe in ItemForCraft.GetComponent<ObjectWeapon>().recipes)
+            foreach (var recipe in ItemForCraft.ItemRecipe)
             {
                 var item = System.Array.Find(Inv.ObjectsInInventory, obj => obj.Name == recipe.ComponentName);
                 if (item != null)
