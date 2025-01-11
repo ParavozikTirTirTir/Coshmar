@@ -155,12 +155,19 @@ MonoBehaviour:
     Amount: 0
     Sprite: {fileID: 0}
     Attack: 0
+    AdditionalHealth: 0
     Durability: 0
     EnergyReduction: 0
+    AddSpeed: 0
+    AddJumpHeight: 0
+    AddJumpsAmount: 0
+    ItemRecipe: []
+    ItemPrefab: {fileID: 0}
   IsSelected: 0
   SelectedSlot: {fileID: 3736619520553653961, guid: 4c37c91459aabae4e82a32ba06c5296d, type: 3}
   BasicSlot: {fileID: 4796889811297207966, guid: 4f0aa0615836f6446852cd162b33c7ce, type: 3}
   Inst: {fileID: 0}
+  pngSprite: {fileID: 0}
 --- !u!1 &6907785853220826816
 GameObject:
   m_ObjectHideFlags: 0

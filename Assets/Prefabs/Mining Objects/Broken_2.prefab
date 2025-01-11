@@ -238,11 +238,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: 0
-  ObjectName: "\u0418\u0437\u0443\u043C\u0440\u0443\u0434"
-  Stats: 
-  Attack: 0
-  Durability: 0
-  ThisObjectSprite: {fileID: 0}
-  EmptyIndexInInventory: 0
-  ObjectItem: {fileID: 0}
-  recipes: []
+  Item:
+    Name: "\u0418\u0437\u0443\u043C\u0440\u0443\u0434"
+    Type: Ore
+    Amount: 1
+    Sprite: {fileID: -4361305939880318393, guid: 970173b3c30203748aa3b30ee103d758, type: 3}
+    Attack: 0
+    AdditionalHealth: 0
+    Durability: 0
+    EnergyReduction: 0
+    AddSpeed: 0
+    AddJumpHeight: 0
+    AddJumpsAmount: 0
+    ItemRecipe: []
+    ItemPrefab: {fileID: 4016484159013596441}

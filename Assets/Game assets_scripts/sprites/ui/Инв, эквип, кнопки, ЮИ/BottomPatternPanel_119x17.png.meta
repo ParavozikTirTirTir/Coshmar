@@ -106,10 +106,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 74
+        width: 119
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,31 +121,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: BottomPatternPanel_119x17_1
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 0
-        width: 45
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5ab83e68d97611a0800000000000000
-      internalID: -6839145013646411171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 72129d4ad05f4a14b8b90b5c41e9393c
     internalID: 0
     vertices: []
     indices: 

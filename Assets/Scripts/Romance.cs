@@ -8,6 +8,7 @@ using TMPro;
 
 public class Romance : MonoBehaviour
 {
+    //public IsPlayerCanMove PlayerCanMove;
     public bool trigger = false;
     public bool vis;
     public int intimacy;
@@ -49,7 +50,7 @@ public class Romance : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D obj) //игрок рядом с НПС
     {
-        if (obj.tag == "Player")
+        if (obj.tag == "Player" && obj.GetComponent<PlayerController>().movementSpeed != 0)
         {
             trigger = true;
         }
@@ -69,11 +70,10 @@ public class Romance : MonoBehaviour
         PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
         PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
 
-        if (Input.GetKeyDown(KeyCode.E) && trigger == true && !vis) // При нажатии на клавишу Е и если игрок рядом с НПС
+        if (Input.GetKeyDown(KeyCode.E) && trigger == true && !vis && OpenInventory.PlayerCanMove) // При нажатии на клавишу Е и если игрок рядом с НПС
         {
             AnswerOption1.SetActive(false);
             AnswerOption2.SetActive(false);
-            DialogeState();
             vis = true;
             PinD.InDialoge = true;
 
@@ -98,7 +98,6 @@ public class Romance : MonoBehaviour
                 AnswerOption2.SetActive(false);
                 if (DF.IsDialogueExit)
                 {
-                    DialogeExit();
                     vis = false;
                     PinD.InDialoge = false;
 
@@ -110,25 +109,9 @@ public class Romance : MonoBehaviour
         }
     }
 
-    void DialogeState()
-    {
-        PC.movementSpeed = 0;
-        PC.jumpForce = 0;
-        PC.dashSpeed = 0;
-        PCC.combatEnabled = false;
-    }
-
-    void DialogeExit()
-    {
-        PC.movementSpeed = 7;
-        PC.jumpForce = 16;
-        PC.dashSpeed = 20;
-        PCC.combatEnabled = true;
-    }
-
     void OnGUI()
     {
-        if (trigger && vis == false)
+        if (trigger && vis == false && OpenInventory.PlayerCanMove)
         {
             GUI.Box(new Rect(Screen.width / 2 + 20, Screen.height / 2 + 40, 110, 25), "[Е] Поговорить");
         }

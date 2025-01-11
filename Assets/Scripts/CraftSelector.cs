@@ -8,6 +8,7 @@ public class CraftSelector : MonoBehaviour
 {
     public TMP_Text RecipeText;
     public TMP_Text SelectedName;
+    public TMP_Text SelectedInfo;
     public Object ObjectRecipe;
     public GameObject SlotSprite;
     public GameObject SelectedSlotSprite;
@@ -15,6 +16,7 @@ public class CraftSelector : MonoBehaviour
 
     private Craft CO;
     private Inventory Inv;
+    private Instruments Inst;
 
     public void OnButtonClick()
     {
@@ -23,13 +25,21 @@ public class CraftSelector : MonoBehaviour
 
         foreach (var recipe in ObjectRecipe.ItemRecipe)
         {
-            var itemInInventory = System.Array.Find(Inv.ObjectsInInventory, obj => obj.Name == recipe.ComponentName);
-            int availableAmount = itemInInventory != null ? itemInInventory.Amount : 0;
-            recipesInfo += $"{recipe.ComponentName}: {availableAmount}/{recipe.Amount}\n";
+            if (recipe.ComponentName != "Ёнерги€")
+            {
+                var itemInInventory = System.Array.Find(Inv.ObjectsInInventory, obj => obj.Name == recipe.ComponentName);
+                int availableAmount = itemInInventory != null ? itemInInventory.Amount : 0;
+                recipesInfo += $"{recipe.ComponentName}: {availableAmount}/{recipe.Amount}\n";
+            }
+            else
+            {
+                recipesInfo += $"{recipe.ComponentName}: {Inst.Energy}/{recipe.Amount}\n";
+            }
         }
 
         RecipeText.text = recipesInfo;
         SelectedName.text = ObjectRecipe.Name;
+        SelectedInfo.text = ObjectRecipe.Description;
         SelectedSlotSprite.GetComponent<Image>().sprite = ObjectRecipe.Sprite;
     }
 
@@ -39,8 +49,10 @@ public class CraftSelector : MonoBehaviour
 
         RecipeText = GameObject.Find("RecipeText").GetComponent<TMP_Text>();
         SelectedName = GameObject.Find("SelectedName").GetComponent<TMP_Text>();
+        SelectedInfo = GameObject.Find("CraftItemInfo").GetComponent<TMP_Text>();
         CO = GameObject.FindGameObjectWithTag("MissionMan").GetComponent<Craft>();
         Inv = GameObject.Find("Inventory").GetComponent<Inventory>();
+        Inst = GameObject.Find("Inventory").GetComponent<Instruments>();
     }
 
     void Update()

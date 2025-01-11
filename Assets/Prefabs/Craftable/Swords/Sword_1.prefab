@@ -138,6 +138,8 @@ MonoBehaviour:
   trigger: 0
   Item:
     Name: "\u041C\u0435\u0447 \u0430\u0431\u043E\u0440\u0438\u0433\u0435\u043D\u0430"
+    Description: "\u041C\u0435\u0447 \u0438\u0437 \u043A\u0430\u043C\u043D\u044F.
+      \u0422\u0432\u0435\u0440\u0434\u044B\u0439 \u0438 \u0442\u044F\u0436\u0435\u043B\u044B\u0439."
     Type: Sword
     Amount: 1
     Sprite: {fileID: 2026383193, guid: da8d9fd3804479644b49901c6ca7854a, type: 3}
@@ -158,12 +160,3 @@ MonoBehaviour:
     - ComponentName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
       Amount: 50
     ItemPrefab: {fileID: 8351463045322685129}
-  recipes:
-  - ComponentName: "\u0411\u0443\u043B\u044B\u0436\u043D\u0438\u043A"
-    Amount: 2
-  - ComponentName: "\u041F\u0430\u043B\u043A\u0430"
-    Amount: 1
-  - ComponentName: "\u041B\u0438\u0430\u043D\u0430"
-    Amount: 1
-  - ComponentName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
-    Amount: 50

@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class OpenCraft : MonoBehaviour
 {
+    //public IsPlayerCanMove PlayerCanMove;
     public Canvas canvas;
     public bool OpenCraftCheck = false;
 
     public GameObject HealBar;
 
-    private PlayerController PC;
     private OpenInventory OI;
     private OpenMagicBook MB;
-    private PlayerCombatController PCC;
+
     private IsPlayerInDialoge PinD;
     private bool State = true;
 
@@ -31,38 +31,20 @@ public class OpenCraft : MonoBehaviour
 
     void Update()
     {
-        PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
         PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
 
         if (Input.GetKeyDown(KeyCode.C) && !PinD.InDialoge && !MB.OpenBookCheck && !OI.OpenInventoryCheck)
         {
-            DialogeState();
+            OpenInventory.PlayerCanMove = false;
             OpenCraftCheck = !OpenCraftCheck;
             State = !State;
             HealBar.SetActive(State);
             canvas.enabled = !canvas.enabled;
         }
 
-        if (!OpenCraftCheck && !MB.OpenBookCheck && !OI.OpenInventoryCheck)
+        if (!OpenCraftCheck && !MB.OpenBookCheck && !OI.OpenInventoryCheck && !PinD.InDialoge)
         {
-            DialogeExit();
+            OpenInventory.PlayerCanMove = true;
         }
-    }
-
-    public void DialogeState()
-    {
-        PC.movementSpeed = 0;
-        PC.jumpForce = 0;
-        PC.dashSpeed = 0;
-        PCC.combatEnabled = false;
-    }
-
-    public void DialogeExit()
-    {
-        PC.movementSpeed = 7;
-        PC.jumpForce = 16;
-        PC.dashSpeed = 20;
-        PCC.combatEnabled = true;
     }
 }

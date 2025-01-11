@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class DialogueField : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class DialogueField : MonoBehaviour
 
     private TMP_Text Answer1;
     private TMP_Text Answer2;
+    private GridLayoutGroup gridLayoutGroup;
     public string[] Answers;
 
     public bool IsDialogueEnded;
@@ -33,6 +36,7 @@ public class DialogueField : MonoBehaviour
         dialogueText.text = string.Empty;
         Answer1 = GameObject.Find("Answer1").GetComponent<TMP_Text>();
         Answer2 = GameObject.Find("Answer2").GetComponent<TMP_Text>();
+        gridLayoutGroup = GameObject.Find("PanelAnswerGrid").GetComponent<GridLayoutGroup>();
     }
 
     public void StartDialogue()
@@ -113,6 +117,7 @@ public class DialogueField : MonoBehaviour
                 IsDialogueEnded = true;
                 Answer1.text = Answers[0];
                 Answer2.text = Answers[1];
+                UpdateSpacing();
             }
         }
 
@@ -151,5 +156,16 @@ public class DialogueField : MonoBehaviour
         StartDialogue();
         GetDialogue(index);
         NpsWhoInDialogue.GetComponent<Romance>().intimacy -= 10;
+    }
+
+    void UpdateSpacing()
+    {
+        float preferredHeight1 = Answer1.preferredHeight*1.4f; //lineCount = 7, 28 пикселей одна строка
+        float preferredHeight2 = Answer2.preferredHeight * 1.4f;
+        float preferredHeight = Math.Max(preferredHeight1, preferredHeight2);
+        int lineCount = Mathf.CeilToInt(preferredHeight / Answer1.fontSize);
+        float spacing = lineCount * 12.5f;
+        gridLayoutGroup.spacing = new Vector2(gridLayoutGroup.spacing.x, 5);
+        gridLayoutGroup.cellSize = new Vector2(gridLayoutGroup.cellSize.x, lineCount * 12.5f);
     }
 }

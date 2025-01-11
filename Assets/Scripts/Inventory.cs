@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class Object
 {
     public string Name;
+    public string Description;
     public string Type;
     public int Amount;
     public Sprite Sprite;
@@ -19,11 +20,11 @@ public class Object
     public float EnergyReduction;
     public float AddSpeed;
     public float AddJumpHeight;
-    public float AddJumpsAmount;
+    public int AddJumpsAmount;
     public Recipe[] ItemRecipe;
     public GameObject ItemPrefab;
 
-    public Object(string name, string type, int amount, Sprite sprite, int attack, int health, int durability, float energyReduction, float addSpeed, float addJumpHeight, float addJumpsAmount, Recipe[] recipe, GameObject prefab)
+    public Object(string name, string type, int amount, Sprite sprite, int attack, int health, int durability, float energyReduction, float addSpeed, float addJumpHeight, int addJumpsAmount, Recipe[] recipe, GameObject prefab)
     {
         Name = name;
         Type = type;

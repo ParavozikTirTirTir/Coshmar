@@ -140,7 +140,7 @@ MonoBehaviour:
     Name: "\u041A\u043E\u0441\u0442\u044C"
     Type: Material
     Amount: 1
-    Sprite: {fileID: 0}
+    Sprite: {fileID: 4639506938558671751, guid: 63b118d55722da142acb975ed29f97b4, type: 3}
     Attack: 0
     AdditionalHealth: 0
     Durability: 0
@@ -150,4 +150,3 @@ MonoBehaviour:
     AddJumpsAmount: 0
     ItemRecipe: []
     ItemPrefab: {fileID: 8351463045322685129}
-  recipes: []

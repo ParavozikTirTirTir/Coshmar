@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class OpenInventory : MonoBehaviour
 {
-	public Canvas canvas;
+    public static bool PlayerCanMove;
+    public bool PCM;
+    public Canvas canvas;
     public bool OpenInventoryCheck = false;
 
     public GameObject HealBar;
@@ -18,6 +20,7 @@ public class OpenInventory : MonoBehaviour
     private OpenMagicBook MB;
     private OpenCraft OC;
     private OpenEquipment OE;
+    private Instruments Inst;
 
     private bool State = true;
 
@@ -29,42 +32,49 @@ public class OpenInventory : MonoBehaviour
         MB = GameObject.Find("MagicBook").GetComponent<OpenMagicBook>();
         OC = GameObject.Find("Craft").GetComponent<OpenCraft>();
         OE = GameObject.Find("Equipment").GetComponent<OpenEquipment>();
+        Inst = GameObject.Find("Inventory").GetComponent<Instruments>();
     }
 
     void Update()
 	{
+        PCM = PlayerCanMove;
         PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
         PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
 
         if (Input.GetKeyDown(KeyCode.I) && !PinD.InDialoge && !MB.OpenBookCheck && !OC.OpenCraftCheck && !OE.OpenEquipmentCheck)
 		{
-            DialogeState();
+            //DialogeState();
+            PlayerCanMove = false;
             OpenInventoryCheck = !OpenInventoryCheck;
             State = !State;
             HealBar.SetActive(State);
             canvas.enabled = !canvas.enabled;
         }
 
-        if (!OpenInventoryCheck && !MB.OpenBookCheck && !OC.OpenCraftCheck && !OE.OpenEquipmentCheck)
-        {  
-             DialogeExit();         
+        if (!OpenInventoryCheck && !MB.OpenBookCheck && !OC.OpenCraftCheck && !OE.OpenEquipmentCheck && !PinD.InDialoge)
+        {
+            PlayerCanMove = true;
+            //DialogeExit();         
         }
-    }
+        else
+        {
+            PlayerCanMove = false;
+        }
 
-    public void DialogeState()
-    {
-        PC.movementSpeed = 0;
-        PC.jumpForce = 0;
-        PC.dashSpeed = 0;
-        PCC.combatEnabled = false;
-    }
-
-    public void DialogeExit()
-    {
-        PC.movementSpeed = 7;
-        PC.jumpForce = 16;
-        PC.dashSpeed = 20;
-        PCC.combatEnabled = true;
+        if (PlayerCanMove)
+        {
+            PC.movementSpeed = Inst.Speed;
+            PC.jumpForce = Inst.JumpHeight;
+            PC.dashSpeed = 20;
+            PCC.combatEnabled = true;
+        }
+        else
+        {
+            PC.movementSpeed = 0;
+            PC.jumpForce = 0;
+            PC.dashSpeed = 0;
+            PCC.combatEnabled = false;
+        }
     }
 }

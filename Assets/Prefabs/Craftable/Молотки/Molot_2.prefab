@@ -138,6 +138,8 @@ MonoBehaviour:
   trigger: 0
   Item:
     Name: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u043C\u043E\u043B\u043E\u0442"
+    Description: "\u0422\u044F\u0436\u0435\u043B\u044B\u0439, \u043D\u043E \u044D\u0444\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u044B\u0439
+      \u043C\u043E\u043B\u043E\u0442."
     Type: Molot
     Amount: 1
     Sprite: {fileID: 163917928393829320, guid: 3a45ac56ae878744890fa3be1dfff786, type: 3}
@@ -156,10 +158,3 @@ MonoBehaviour:
     - ComponentName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
       Amount: 40
     ItemPrefab: {fileID: 8351463045322685129}
-  recipes:
-  - ComponentName: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0441\u043B\u0438\u0442\u043E\u043A"
-    Amount: 3
-  - ComponentName: "\u041F\u0430\u043B\u043A\u0430"
-    Amount: 1
-  - ComponentName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
-    Amount: 40

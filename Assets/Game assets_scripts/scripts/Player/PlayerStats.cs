@@ -28,6 +28,11 @@ public class PlayerStats : MonoBehaviour
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+    void Update()
+    {
+        fillBar.fillAmount = currentHealth / maxHealth;
+    }
+
     public void DecreaseHealth(float amount)
     {
         currentHealth -= amount;

@@ -136,9 +136,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: 0
-  ObjectName: 
-  Stats: 
-  Attack: 0
-  Durability: 0
-  EmptyIndexInInventory: 0
-  recipes: []
+  Item:
+    Name: 
+    Type: 
+    Amount: 0
+    Sprite: {fileID: 21300000, guid: 98bbfe2b430dd8c499bac63416da9855, type: 2}
+    Attack: 0
+    AdditionalHealth: 0
+    Durability: 0
+    EnergyReduction: 0
+    AddSpeed: 0
+    AddJumpHeight: 0
+    AddJumpsAmount: 0
+    ItemRecipe: []
+    ItemPrefab: {fileID: 0}

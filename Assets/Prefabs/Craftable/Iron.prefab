@@ -138,6 +138,7 @@ MonoBehaviour:
   trigger: 0
   Item:
     Name: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0441\u043B\u0438\u0442\u043E\u043A"
+    Description: "\u0418\u0437 \u0436\u0435\u043B\u0435\u0437\u0430."
     Type: Material
     Amount: 1
     Sprite: {fileID: -6503034749178081580, guid: de19bcc726e92114c9fe5857102fd625, type: 3}
@@ -154,4 +155,3 @@ MonoBehaviour:
     - ComponentName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
       Amount: 10
     ItemPrefab: {fileID: 8351463045322685129}
-  recipes: []

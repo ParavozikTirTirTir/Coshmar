@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using TMPro;
 
-public class SelectEquipment : MonoBehaviour
+public class SelectEquipment : MonoBehaviour, IPointerEnterHandler//, IPointerExitHandler
 {
     public string InstrumentType; //InvSword, InvMolot, InvChest, InvRing
 
@@ -22,11 +24,25 @@ public class SelectEquipment : MonoBehaviour
 
     private Object SelectedEquip;
 
+    private Image InfoField;
+    private TMP_Text NamePlace;
+    private TMP_Text StatsNamesPlace;
+    private TMP_Text StatsPlace;
+
     void Start()
     {
         InstrumentType = gameObject.tag;
 
         Inst = GameObject.Find("Inventory").GetComponent<Instruments>();
+
+        InfoField = GameObject.Find("InfoAboutEquip").GetComponent<Image>();
+        InfoField.enabled = false;
+        NamePlace = GameObject.Find("EquipNameInfo").GetComponent<TMP_Text>();
+        StatsNamesPlace = GameObject.Find("EquipStatsName").GetComponent<TMP_Text>();
+        StatsPlace = GameObject.Find("EquipStatsInfo").GetComponent<TMP_Text>();
+        NamePlace.text = "";
+        StatsNamesPlace.text = "";
+        StatsPlace.text = "";
 
         images = GetComponentsInChildren<Image>();
         pngSprite = images[1].sprite;
@@ -114,4 +130,37 @@ public class SelectEquipment : MonoBehaviour
             GetComponentsInChildren<RectTransform>()[1].localScale = new Vector3(0.835f, 0.835f, 0.835f);
         }
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(EquipmentInSlot.Name != "")
+        {
+            InfoField.enabled = true;
+            NamePlace.text = EquipmentInSlot.Name;
+            switch (EquipmentInSlot.Type)
+            {
+                case "Sword":
+                    StatsNamesPlace.text = $"Сила атаки\nПрочность";
+                    StatsPlace.text = $"{EquipmentInSlot.Attack}\n{EquipmentInSlot.Durability}";
+                    break;
+                case "Molot":
+                    StatsNamesPlace.text = $"Эффективность\nПрочность";
+                    StatsPlace.text = $"{EquipmentInSlot.EnergyReduction}%\n{EquipmentInSlot.Durability}";
+                    break;
+                case "Chest":
+                    StatsNamesPlace.text = $"Здоровье\nПрочность";
+                    StatsPlace.text = $"{EquipmentInSlot.AdditionalHealth}\n{EquipmentInSlot.Durability}";
+                    break;
+                case "Ring":
+                    StatsNamesPlace.text = $"Скорость\nВысота прыжков\nКоличество прыжков";
+                    StatsPlace.text = $"{EquipmentInSlot.AddSpeed}\n{EquipmentInSlot.AddJumpHeight}\n{EquipmentInSlot.AddJumpsAmount}";
+                    break;
+            }
+        }
+    }
+
+    //public void OnPointerExit(PointerEventData eventData)
+    //{
+    //    InfoField.enabled = false;
+    //}
 }
