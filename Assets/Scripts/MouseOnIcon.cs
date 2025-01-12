@@ -18,14 +18,21 @@ public class MouseOnIcon : MonoBehaviour, IPointerDownHandler
         {
             Inv.ObjectsInInventory[ButtonIndex].Name = "";
             Inv.ObjectsInInventory[ButtonIndex].Type = "";
+            Inv.ObjectsInInventory[ButtonIndex].Description = "";
             Inv.ObjectsInInventory[ButtonIndex].Amount = 0;
-            Inv.ObjectsInInventory[ButtonIndex].Sprite = Inv.Sprites[4];
+            Inv.ObjectsInInventory[ButtonIndex].Sprite = null;
             Inv.ObjectsInInventory[ButtonIndex].Attack = 0;
+            Inv.ObjectsInInventory[ButtonIndex].AdditionalHealth = 0;
             Inv.ObjectsInInventory[ButtonIndex].Durability = 0;
             Inv.ObjectsInInventory[ButtonIndex].EnergyReduction = 0;
+            Inv.ObjectsInInventory[ButtonIndex].AddSpeed = 0;
+            Inv.ObjectsInInventory[ButtonIndex].AddJumpHeight = 0;
+            Inv.ObjectsInInventory[ButtonIndex].AddJumpsAmount = 0;
+            Inv.ObjectsInInventory[ButtonIndex].ItemRecipe = new Recipe[0];
+            Inv.ObjectsInInventory[ButtonIndex].ItemPrefab = null;
 
             Inv.Icon[ButtonIndex].sprite = Inv.Sprites[4];
-            MM.LastAction = "Выброшен предмет [" + Inv.ObjectsInInventory[ButtonIndex].Name + "]";
+            //MM.LastAction = "Выброшен предмет [" + Inv.ObjectsInInventory[ButtonIndex].Name + "]";
         }
     }
 

@@ -24,9 +24,10 @@ public class Object
     public Recipe[] ItemRecipe;
     public GameObject ItemPrefab;
 
-    public Object(string name, string type, int amount, Sprite sprite, int attack, int health, int durability, float energyReduction, float addSpeed, float addJumpHeight, int addJumpsAmount, Recipe[] recipe, GameObject prefab)
+    public Object(string name, string desc, string type, int amount, Sprite sprite, int attack, int health, int durability, float energyReduction, float addSpeed, float addJumpHeight, int addJumpsAmount, Recipe[] recipe, GameObject prefab)
     {
         Name = name;
+        Description = desc;
         Type = type;
         Amount = amount;
         Sprite = sprite;
@@ -78,9 +79,19 @@ public class Inventory : MonoBehaviour
 
             else
             {
+                ObjectsInInventory[i].Type = "";
+                ObjectsInInventory[i].Description = "";
                 ObjectsInInventory[i].Amount = 0;
+                ObjectsInInventory[i].Sprite = null;
                 ObjectsInInventory[i].Attack = 0;
+                ObjectsInInventory[i].AdditionalHealth = 0;
                 ObjectsInInventory[i].Durability = 0;
+                ObjectsInInventory[i].EnergyReduction = 0;
+                ObjectsInInventory[i].AddSpeed = 0;
+                ObjectsInInventory[i].AddJumpHeight = 0;
+                ObjectsInInventory[i].AddJumpsAmount = 0;
+                ObjectsInInventory[i].ItemRecipe = new Recipe[0];
+                ObjectsInInventory[i].ItemPrefab = null;
 
                 Icon[i].sprite = Sprites[4];
                 ItemCountFields[i].text = "";

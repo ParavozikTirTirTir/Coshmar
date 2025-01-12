@@ -29,6 +29,8 @@ public class SelectEquipment : MonoBehaviour, IPointerEnterHandler//, IPointerEx
     private TMP_Text StatsNamesPlace;
     private TMP_Text StatsPlace;
 
+    public Object EmptyObject;
+
     void Start()
     {
         InstrumentType = gameObject.tag;
@@ -105,21 +107,25 @@ public class SelectEquipment : MonoBehaviour, IPointerEnterHandler//, IPointerEx
 
     public void SelectEquipmentClick()
     {
-        if (EquipmentInSlot.Name != "")
+        if (EquipmentInSlot.Name != "" && !IsSelected)
         {
             switch (InstrumentType)
             {
                 case "InvSword":
-                    Inst.SelectedSword = equip;
+                    var equipSword = System.Array.Find(Inst.SwordsInInventory, obj => obj.Sprite == equipSprite);
+                    Inst.SelectedSword = equipSword;
                     break;
                 case "InvMolot":
-                    Inst.SelectedMolot = equip;
+                    var equipMolot = System.Array.Find(Inst.MolotsInInventory, obj => obj.Sprite == equipSprite);
+                    Inst.SelectedMolot = equipMolot;
                     break;
                 case "InvChest":
-                    Inst.SelectedChest = equip;
+                    var equipChest = System.Array.Find(Inst.MolotsInInventory, obj => obj.Sprite == equipSprite);
+                    Inst.SelectedChest = equipChest;
                     break;
                 case "InvRing":
-                    Inst.SelectedRing = equip;
+                    var equipRing = System.Array.Find(Inst.MolotsInInventory, obj => obj.Sprite == equipSprite);
+                    Inst.SelectedRing = equipRing;
                     break;
             }
 
@@ -128,6 +134,31 @@ public class SelectEquipment : MonoBehaviour, IPointerEnterHandler//, IPointerEx
             gameObject.GetComponent<Image>().sprite = SelectedSlot;
             gameObject.GetComponent<RectTransform>().localScale = new Vector3(1.2f, 1.2f, 1.2f);
             GetComponentsInChildren<RectTransform>()[1].localScale = new Vector3(0.835f, 0.835f, 0.835f);
+        }
+
+        else
+        {
+            switch (InstrumentType)
+            {
+                case "InvSword":
+                    Inst.SelectedSword = EmptyObject;
+                    break;
+                case "InvMolot":
+                    Inst.SelectedMolot = EmptyObject;
+                    break;
+                case "InvChest":
+                    Inst.SelectedChest = EmptyObject;
+                    break;
+                case "InvRing":
+                    Inst.SelectedRing = EmptyObject;
+                    break;
+            }
+
+            IsSelected = false;
+
+            gameObject.GetComponent<Image>().sprite = SelectedSlot;
+            gameObject.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
+            GetComponentsInChildren<RectTransform>()[1].localScale = new Vector3(1f, 1f, 1f);
         }
     }
 
