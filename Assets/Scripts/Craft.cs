@@ -72,7 +72,7 @@ public class Craft : MonoBehaviour
             {
                 if (Inv.ObjectsInInventory[i].Amount == 0)
                 {
-                    Inv.ObjectsInInventory[i] = ItemForCraft;
+                    Inv.ObjectsInInventory[i] = ItemForCraft.Clone();
                     break;
                 }
 

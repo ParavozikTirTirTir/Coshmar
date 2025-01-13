@@ -20,6 +20,7 @@ public class OpenInventory : MonoBehaviour
     private OpenMagicBook MB;
     private OpenCraft OC;
     private OpenEquipment OE;
+    private OpenShop OS;
     private Instruments Inst;
 
     private bool State = true;
@@ -32,6 +33,7 @@ public class OpenInventory : MonoBehaviour
         MB = GameObject.Find("MagicBook").GetComponent<OpenMagicBook>();
         OC = GameObject.Find("Craft").GetComponent<OpenCraft>();
         OE = GameObject.Find("Equipment").GetComponent<OpenEquipment>();
+        OS = GameObject.Find("GoblinShop").GetComponent<OpenShop>();
         Inst = GameObject.Find("Inventory").GetComponent<Instruments>();
     }
 
@@ -42,9 +44,8 @@ public class OpenInventory : MonoBehaviour
         PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
         PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
 
-        if (Input.GetKeyDown(KeyCode.I) && !PinD.InDialoge && !MB.OpenBookCheck && !OC.OpenCraftCheck && !OE.OpenEquipmentCheck)
+        if (Input.GetKeyDown(KeyCode.I) && !PinD.InDialoge && !MB.OpenBookCheck && !OC.OpenCraftCheck && !OE.OpenEquipmentCheck && !OS.OpenShopCheck)
 		{
-            //DialogeState();
             PlayerCanMove = false;
             OpenInventoryCheck = !OpenInventoryCheck;
             State = !State;
@@ -52,10 +53,9 @@ public class OpenInventory : MonoBehaviour
             canvas.enabled = !canvas.enabled;
         }
 
-        if (!OpenInventoryCheck && !MB.OpenBookCheck && !OC.OpenCraftCheck && !OE.OpenEquipmentCheck && !PinD.InDialoge)
+        if (!OpenInventoryCheck && !MB.OpenBookCheck && !OC.OpenCraftCheck && !OE.OpenEquipmentCheck && !PinD.InDialoge && !OS.OpenShopCheck)
         {
-            PlayerCanMove = true;
-            //DialogeExit();         
+            PlayerCanMove = true;         
         }
         else
         {

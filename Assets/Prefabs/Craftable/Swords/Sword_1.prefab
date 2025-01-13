@@ -159,4 +159,4 @@ MonoBehaviour:
       Amount: 1
     - ComponentName: "\u042D\u043D\u0435\u0440\u0433\u0438\u044F"
       Amount: 50
-    ItemPrefab: {fileID: 8351463045322685129}
+    ItemPrefab: {fileID: 0}

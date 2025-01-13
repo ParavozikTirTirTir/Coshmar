@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5312704187130184298}
   - component: {fileID: 6166494543113280040}
   - component: {fileID: 3445226523382181064}
+  - component: {fileID: 6010410065814341966}
   m_Layer: 0
   m_Name: MissionMan
   m_TagString: MissionMan
@@ -82,39 +83,81 @@ MonoBehaviour:
   - {fileID: 8351463045322685129, guid: c5076e6e0ea2b6d4c9e48b69c4f93a45, type: 3}
   - {fileID: 8351463045322685129, guid: c5076e6e0ea2b6d4c9e48b69c4f93a45, type: 3}
   - {fileID: 8351463045322685129, guid: c5076e6e0ea2b6d4c9e48b69c4f93a45, type: 3}
-  Icon:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Sprites:
-  - {fileID: 2026383193, guid: da8d9fd3804479644b49901c6ca7854a, type: 3}
-  - {fileID: -90086433, guid: da8d9fd3804479644b49901c6ca7854a, type: 3}
-  - {fileID: -2065387922, guid: da8d9fd3804479644b49901c6ca7854a, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  CraftRecepti:
-  - "\u041C\u0435\u0447 \u0430\u0431\u043E\u0440\u0438\u0433\u0435\u043D\u0430"
-  - "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u043C\u0435\u0447"
-  - "\u0416\u0435\u043B\u0435\u0437\u043D\u0430\u044F \u0441\u0430\u0431\u043B\u044F"
-  - "\u041A\u0443\u043B\u043E\u043D \u0441 \u0440\u0443\u0431\u0438\u043D\u043E\u043C"
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  ItemForCraft:
+    Name: 
+    Description: 
+    Type: 
+    Amount: 0
+    Sprite: {fileID: 0}
+    Attack: 0
+    AdditionalHealth: 0
+    Durability: 0
+    EnergyReduction: 0
+    AddSpeed: 0
+    AddJumpHeight: 0
+    AddJumpsAmount: 0
+    ItemRecipe: []
+    ItemPrefab: {fileID: 0}
+  RecipeText: {fileID: 0}
+  PNGpicture: {fileID: 0}
+--- !u!114 &6010410065814341966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2802291677489030514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5245350808000245b72d64b4ab33f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemsInShop:
+  - ItemForBuy: {fileID: 8351463045322685129, guid: 8a16cba43dae03843977fa7de3d2d303, type: 3}
+    Cost: 5
+  - ItemForBuy: {fileID: 8351463045322685129, guid: 722fccb0ab9dd6c4c8dcec872db88b8d, type: 3}
+    Cost: 10
+  - ItemForBuy: {fileID: 8351463045322685129, guid: 63d94d0b09918174288fc1c9306a2ba6, type: 3}
+    Cost: 10
+  - ItemForBuy: {fileID: 8351463045322685129, guid: 17af7011570182e46bbe4960fae395c1, type: 3}
+    Cost: 10
+  - ItemForBuy: {fileID: 8351463045322685129, guid: cf695683de8648d42bbf3347d32706c8, type: 3}
+    Cost: 20
+  - ItemForBuy: {fileID: 8351463045322685129, guid: 55d38d9c6e3d22f429a5c94149dc7765, type: 3}
+    Cost: 40
+  - ItemForBuy: {fileID: 8351463045322685129, guid: 7392466d612158c4c8e8a0b4a082e2cb, type: 3}
+    Cost: 100
+  - ItemForBuy: {fileID: 8351463045322685129, guid: c5076e6e0ea2b6d4c9e48b69c4f93a45, type: 3}
+    Cost: 0
+  - ItemForBuy: {fileID: 8351463045322685129, guid: c5076e6e0ea2b6d4c9e48b69c4f93a45, type: 3}
+    Cost: 0
+  - ItemForBuy: {fileID: 8351463045322685129, guid: c5076e6e0ea2b6d4c9e48b69c4f93a45, type: 3}
+    Cost: 0
+  - ItemForBuy: {fileID: 8351463045322685129, guid: c5076e6e0ea2b6d4c9e48b69c4f93a45, type: 3}
+    Cost: 0
+  - ItemForBuy: {fileID: 8351463045322685129, guid: c5076e6e0ea2b6d4c9e48b69c4f93a45, type: 3}
+    Cost: 0
+  - ItemForBuy: {fileID: 8351463045322685129, guid: c5076e6e0ea2b6d4c9e48b69c4f93a45, type: 3}
+    Cost: 0
+  - ItemForBuy: {fileID: 8351463045322685129, guid: c5076e6e0ea2b6d4c9e48b69c4f93a45, type: 3}
+    Cost: 0
+  - ItemForBuy: {fileID: 8351463045322685129, guid: c5076e6e0ea2b6d4c9e48b69c4f93a45, type: 3}
+    Cost: 0
+  ItemForBuy:
+    Name: 
+    Description: 
+    Type: 
+    Amount: 0
+    Sprite: {fileID: 0}
+    Attack: 0
+    AdditionalHealth: 0
+    Durability: 0
+    EnergyReduction: 0
+    AddSpeed: 0
+    AddJumpHeight: 0
+    AddJumpsAmount: 0
+    ItemRecipe: []
+    ItemPrefab: {fileID: 0}
+  ItemForBuyCost: 0
+  RecipeText: {fileID: 0}
+  PNGpicture: {fileID: 0}

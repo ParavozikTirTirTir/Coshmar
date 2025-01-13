@@ -41,6 +41,26 @@ public class Object
         ItemRecipe = recipe;
         ItemPrefab = prefab;
     }
+
+    public Object Clone()
+    {
+        return new Object(
+            name: this.Name,
+            desc: this.Description,
+            type: this.Type,
+            amount: this.Amount,
+            sprite: this.Sprite,
+            attack: this.Attack,
+            health: this.AdditionalHealth,
+            durability: this.Durability,
+            energyReduction: this.EnergyReduction,
+            addSpeed: this.AddSpeed,
+            addJumpHeight: this.AddJumpHeight,
+            addJumpsAmount: this.AddJumpsAmount,
+            recipe: this.ItemRecipe != null ? (Recipe[])this.ItemRecipe.Clone() : null,
+            prefab: this.ItemPrefab
+        );
+    }
 }
 
 public class Inventory : MonoBehaviour

@@ -23,8 +23,6 @@ public class Romance : MonoBehaviour
 
     private MissionManager MM;
     private Inventory Inv;
-    private PlayerController PC;
-    private PlayerCombatController PCC;
     private IsPlayerInDialoge PinD;
 
     private DialogueField DF;
@@ -66,8 +64,6 @@ public class Romance : MonoBehaviour
 
     void Update()
     {
-        PC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        PCC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>();
         PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
 
         if (Input.GetKeyDown(KeyCode.E) && trigger == true && !vis && OpenInventory.PlayerCanMove) // При нажатии на клавишу Е и если игрок рядом с НПС

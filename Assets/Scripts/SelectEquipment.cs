@@ -120,11 +120,11 @@ public class SelectEquipment : MonoBehaviour, IPointerEnterHandler//, IPointerEx
                     Inst.SelectedMolot = equipMolot;
                     break;
                 case "InvChest":
-                    var equipChest = System.Array.Find(Inst.MolotsInInventory, obj => obj.Sprite == equipSprite);
+                    var equipChest = System.Array.Find(Inst.ChestsInInventory, obj => obj.Sprite == equipSprite);
                     Inst.SelectedChest = equipChest;
                     break;
                 case "InvRing":
-                    var equipRing = System.Array.Find(Inst.MolotsInInventory, obj => obj.Sprite == equipSprite);
+                    var equipRing = System.Array.Find(Inst.RingsInInventory, obj => obj.Sprite == equipSprite);
                     Inst.SelectedRing = equipRing;
                     break;
             }

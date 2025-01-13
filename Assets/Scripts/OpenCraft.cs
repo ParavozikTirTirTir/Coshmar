@@ -14,6 +14,7 @@ public class OpenCraft : MonoBehaviour
 
     private OpenInventory OI;
     private OpenMagicBook MB;
+    private OpenShop OS;
 
     private IsPlayerInDialoge PinD;
     private bool State = true;
@@ -25,6 +26,7 @@ public class OpenCraft : MonoBehaviour
 
         MB = GameObject.Find("MagicBook").GetComponent<OpenMagicBook>();
         OI = GameObject.Find("InventoryCanvas").GetComponent<OpenInventory>();
+        OS = GameObject.Find("GoblinShop").GetComponent<OpenShop>();
         HealBar = GameObject.Find("UI health");
     }
 
@@ -33,18 +35,18 @@ public class OpenCraft : MonoBehaviour
     {
         PinD = GameObject.FindGameObjectWithTag("Player").GetComponent<IsPlayerInDialoge>();
 
-        if (Input.GetKeyDown(KeyCode.C) && !PinD.InDialoge && !MB.OpenBookCheck && !OI.OpenInventoryCheck)
+        if (Input.GetKeyDown(KeyCode.C) && !PinD.InDialoge && !MB.OpenBookCheck && !OI.OpenInventoryCheck && !OS.OpenShopCheck)
         {
-            OpenInventory.PlayerCanMove = false;
+            OpenInventory.PlayerCanMove = OpenInventory.PlayerCanMove;
             OpenCraftCheck = !OpenCraftCheck;
             State = !State;
             HealBar.SetActive(State);
             canvas.enabled = !canvas.enabled;
         }
 
-        if (!OpenCraftCheck && !MB.OpenBookCheck && !OI.OpenInventoryCheck && !PinD.InDialoge)
-        {
-            OpenInventory.PlayerCanMove = true;
-        }
+        //if (!OpenCraftCheck && !MB.OpenBookCheck && !OI.OpenInventoryCheck && !PinD.InDialoge)
+        //{
+        //    OpenInventory.PlayerCanMove = true;
+        //}
     }
 }

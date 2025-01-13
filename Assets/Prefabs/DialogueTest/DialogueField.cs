@@ -60,7 +60,7 @@ public class DialogueField : MonoBehaviour
         started = false;
         waitForNext = false;
         StopAllCoroutines();
-        dialogueText.text = string.Empty;
+        //dialogueText.text = string.Empty;
     }
 
     IEnumerator Writing() // правила перебора коллекции строк диалога
@@ -81,7 +81,18 @@ public class DialogueField : MonoBehaviour
         }
         else
         {
-            waitForNext = true;
+            if (currentDialogue != dialogues[dialogues.Length - 1] || ButtonPressed)
+            {
+                waitForNext = true;
+            }
+            else
+            {
+                IsDialogueEnded = true;
+                Answer1.text = Answers[0];
+                Answer2.text = Answers[1];
+                UpdateSpacing();
+                //EndDialogue();
+            }
         }
     }
 
@@ -102,7 +113,16 @@ public class DialogueField : MonoBehaviour
         //    Answer2.text = Answers[1];
         //}
 
-        if (waitForNext && Input.GetKeyDown(KeyCode.E) && !IsDialogueEnded)
+        //if (index == dialogues.Length - 1)
+        //{
+        //    IsDialogueEnded = true;
+        //    Answer1.text = Answers[0];
+        //    Answer2.text = Answers[1];
+        //    UpdateSpacing();
+        //    EndDialogue();
+        //}
+
+        if (waitForNext && Input.GetKeyDown(KeyCode.E) && !IsDialogueEnded )
         {
             waitForNext = false;
             index++;
@@ -111,14 +131,15 @@ public class DialogueField : MonoBehaviour
             {
                 GetDialogue(index);
             }
-            else
-            {
-                EndDialogue();
-                IsDialogueEnded = true;
-                Answer1.text = Answers[0];
-                Answer2.text = Answers[1];
-                UpdateSpacing();
-            }
+
+            //else
+            //{
+            //    IsDialogueEnded = true;
+            //    Answer1.text = Answers[0];
+            //    Answer2.text = Answers[1];
+            //    UpdateSpacing();
+            //    EndDialogue();
+            //}
         }
 
         if (waitForNext && Input.GetKeyDown(KeyCode.E) && IsDialogueEnded && ButtonPressed)

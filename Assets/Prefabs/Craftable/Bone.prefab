@@ -138,6 +138,8 @@ MonoBehaviour:
   trigger: 0
   Item:
     Name: "\u041A\u043E\u0441\u0442\u044C"
+    Description: "\u0414\u043B\u044F \u043A\u043E\u0433\u043E-\u0442\u043E \u043E\u043D\u0438
+      \u0431\u044B\u043B\u0438 \u043E\u043F\u043E\u0440\u043E\u0439."
     Type: Material
     Amount: 1
     Sprite: {fileID: 4639506938558671751, guid: 63b118d55722da142acb975ed29f97b4, type: 3}

@@ -106,7 +106,7 @@ TextureImporter:
         width: 79
         height: 130
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cec05bb38ddd0c74e9568ca3b56b87d9
     internalID: 0
     vertices: []
     indices: 
@@ -130,6 +130,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       RectangleBoxInsideLong_96x96_0: 8704541062429944510
+      RectangleBoxInsideLong_96x96_1: -821455941
+      RectangleBoxInsideLong_96x96_2: -704742522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

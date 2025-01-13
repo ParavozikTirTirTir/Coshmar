@@ -399,9 +399,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 146
-        y: 914
+        y: 929
         width: 163
-        height: 124
+        height: 109
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,9 +420,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 421
-        y: 914
+        y: 935
         width: 163
-        height: 131
+        height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,9 +441,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 709
-        y: 914
+        y: 941
         width: 124
-        height: 124
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,9 +461,9 @@ TextureImporter:
       name: ores_9
       rect:
         serializedVersion: 2
-        x: 959
+        x: 947
         y: 939
-        width: 111
+        width: 123
         height: 99
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -525,9 +525,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1131
-        y: 690
+        y: 704
         width: 157
-        height: 169
+        height: 157
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -588,9 +588,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 735
-        y: 683
+        y: 705
         width: 182
-        height: 168
+        height: 146
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -692,7 +692,7 @@ TextureImporter:
       name: ores_46
       rect:
         serializedVersion: 2
-        x: 779
+        x: 778
         y: 435
         width: 157
         height: 168
@@ -735,9 +735,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 95
-        y: 408
+        y: 429
         width: 169
-        height: 131
+        height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -756,9 +756,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 427
-        y: 408
+        y: 430
         width: 157
-        height: 144
+        height: 122
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -861,9 +861,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 101
-        y: 133
+        y: 160
         width: 144
-        height: 163
+        height: 136
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -882,9 +882,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 773
-        y: 127
+        y: 154
         width: 150
-        height: 143
+        height: 116
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -903,9 +903,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 421
-        y: 139
+        y: 161
         width: 156
-        height: 125
+        height: 103
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1104,6 +1104,69 @@ TextureImporter:
       bones: []
       spriteID: 522d6de6f92788e4cac896fef0f409c0
       internalID: 3980307627822178394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_10
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1048
+        width: 118
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c5d46b92e881543bd93ccc6dae0873
+      internalID: -6332166770112583456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_12
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1049
+        width: 122
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a529cd52cfb25104bb6344e0254a3142
+      internalID: 7421968287707335744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ores_13
+      rect:
+        serializedVersion: 2
+        x: 1445
+        y: 939
+        width: 131
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de8983e9f2f2044aab037a64106723e
+      internalID: -6765049012558329592
       vertices: []
       indices: 
       edges: []

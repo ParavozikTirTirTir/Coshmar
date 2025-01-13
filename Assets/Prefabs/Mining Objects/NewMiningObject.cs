@@ -21,7 +21,7 @@ public class NewMiningObject : MonoBehaviour
 
     private PlayerController pc;
     private Rigidbody2D rbAlive, rbBrokenTop;
-    private Animator aliveAnim;
+    //private Animator aliveAnim;
 
     private void Start()
     {
@@ -29,12 +29,11 @@ public class NewMiningObject : MonoBehaviour
 
         pc = GameObject.Find("Player").GetComponent<PlayerController>();
 
-        aliveAnim = aliveGO.GetComponent<Animator>();
+        //aliveAnim = aliveGO.GetComponent<Animator>();
         rbAlive = aliveGO.GetComponent<Rigidbody2D>();
         rbBrokenTop = brokenTopGO.GetComponent<Rigidbody2D>();
 
         aliveGO.SetActive(true);
-        //brokenTopGO.SetActive(false);
     }
 
     private void Update()
@@ -48,7 +47,7 @@ public class NewMiningObject : MonoBehaviour
 
         playerFacingDirection = pc.GetFacingDirection();
 
-        Instantiate(hitParticle, aliveAnim.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
+        Instantiate(hitParticle, rbAlive.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
 
         if (playerFacingDirection == 1)
         {
@@ -59,8 +58,8 @@ public class NewMiningObject : MonoBehaviour
             playerOnLeft = false;
         }
 
-        aliveAnim.SetBool("PlayerOnLeft", playerOnLeft);
-        aliveAnim.SetTrigger("damage");
+        //aliveAnim.SetBool("PlayerOnLeft", playerOnLeft);
+        //aliveAnim.SetTrigger("damage");
 
         if (applyKnockback && currentHealth > 0.0f)
         {

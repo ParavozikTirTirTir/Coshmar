@@ -19,7 +19,10 @@ public class Instruments : MonoBehaviour
     public Object SelectedMolot;
     public Object SelectedChest;
     public Object SelectedRing;
+
     public float Energy;
+    public int Coins;
+    public TMP_Text CoinsTextShop;
 
     public Image SwordPlace;
     public Image MolotPlace;
@@ -50,10 +53,6 @@ public class Instruments : MonoBehaviour
     private Sprite ChestPlaceSprite;
     private Sprite RingPlaceSprite;
 
-    private GameObject SwordRemove;
-    private GameObject MolotRemove;
-    private GameObject ChestRemove;
-    private GameObject RingRemove;
     private Object EmptyObject;
 
     private float BasicSpeed;
@@ -68,16 +67,12 @@ public class Instruments : MonoBehaviour
         MM = GameObject.FindGameObjectWithTag("MissionMan").GetComponent<MissionManager>();
         Inv = GetComponent<Inventory>();
         Stats = GameObject.Find("PlayerStatsNumbers").GetComponent<TMP_Text>();
+        CoinsTextShop = GameObject.Find("CoinsInInventoryShop").GetComponent<TMP_Text>();
 
         SwordPlaceSprite = SwordPlace.sprite;
         MolotPlaceSprite = MolotPlace.sprite;
         ChestPlaceSprite = ChestPlace.sprite;
         RingPlaceSprite = RingPlace.sprite;
-
-        SwordRemove = GameObject.Find("ButtonSwordRemove");
-        MolotRemove = GameObject.Find("ButtonMolotRemove");
-        ChestRemove = GameObject.Find("ButtonChestRemove");
-        RingRemove = GameObject.Find("ButtonRingRemove");
 
         Speed = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().movementSpeed;
         JumpHeight = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().jumpForce;
@@ -96,6 +91,7 @@ public class Instruments : MonoBehaviour
 
     void Update()
     {
+        CoinsTextShop.text = Coins.ToString();
         Stats.text = $"{GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().currentHealth} / {GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().maxHealth}" +
             $"\n{GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>().attack1Damage}" +
             $"\n{Speed}" +
@@ -106,46 +102,39 @@ public class Instruments : MonoBehaviour
         if (SelectedSword.Name != "")
         {
             SwordPlace.sprite = SelectedSword.Sprite;
-            SwordRemove.SetActive(true);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>().attack1Damage = BasicAttack + SelectedSword.Attack;
         }
         else
         {
             SwordPlace.sprite = SwordPlaceSprite;
-            SwordRemove.SetActive(false);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>().attack1Damage = BasicAttack;
         }
 
         if (SelectedMolot.Name != "")
         {
             MolotPlace.sprite = SelectedMolot.Sprite;
-            MolotRemove.SetActive(true);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().EnergyConsumptionReduction = SelectedMolot.EnergyReduction;
         }
         else
         {
             MolotPlace.sprite = MolotPlaceSprite;
-            MolotRemove.SetActive(false);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().EnergyConsumptionReduction = BasicEnergyConsumptionReduction;
         }
 
         if (SelectedChest.Name != "")
         {
             ChestPlace.sprite = SelectedChest.Sprite;
-            ChestRemove.SetActive(true);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().maxHealth = BasicHealth + SelectedChest.AdditionalHealth;
         }
         else
         {
             ChestPlace.sprite = ChestPlaceSprite;
-            ChestRemove.SetActive(false);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().maxHealth = BasicHealth;
         }
 
         if (SelectedRing.Name != "")
         {
             RingPlace.sprite = SelectedRing.Sprite;
-            RingRemove.SetActive(true);
             if (OpenInventory.PlayerCanMove)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().movementSpeed = BasicSpeed + SelectedRing.AddSpeed;
@@ -159,7 +148,6 @@ public class Instruments : MonoBehaviour
         else
         {
             RingPlace.sprite = RingPlaceSprite;
-            RingRemove.SetActive(false);
             if (OpenInventory.PlayerCanMove)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().movementSpeed = BasicSpeed;
@@ -226,29 +214,5 @@ public class Instruments : MonoBehaviour
                 IconRings[i].sprite = EmptySlotSprite;
             }
         }
-    }
-
-    public void SwordRemoveClick()
-    {
-        var equippedSword = SelectedSword;
-        equippedSword.Name = "";
-    }
-
-    public void MolotRemoveClick()
-    {
-        SelectedMolot = EmptyObject;
-        SelectedMolot.Sprite = MolotPlaceSprite;
-    }
-
-    public void ChestRemoveClick()
-    {
-        SelectedChest = EmptyObject;
-        SelectedChest.Sprite = ChestPlaceSprite;
-    }
-
-    public void RingRemoveClick()
-    {
-        SelectedRing = EmptyObject;
-        SelectedRing.Sprite = RingPlaceSprite;
     }
 }
