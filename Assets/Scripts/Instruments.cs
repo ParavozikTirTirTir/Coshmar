@@ -23,6 +23,8 @@ public class Instruments : MonoBehaviour
     public float Energy;
     public int Coins;
     public TMP_Text CoinsTextShop;
+    public TMP_Text CoinInvText;
+    public TMP_Text EnergyInvText;
 
     public Image SwordPlace;
     public Image MolotPlace;
@@ -68,8 +70,10 @@ public class Instruments : MonoBehaviour
         Inv = GetComponent<Inventory>();
         Stats = GameObject.Find("PlayerStatsNumbers").GetComponent<TMP_Text>();
         CoinsTextShop = GameObject.Find("CoinsInInventoryShop").GetComponent<TMP_Text>();
+        CoinInvText = GameObject.Find("CoinInvText").GetComponent<TMP_Text>();
+        EnergyInvText = GameObject.Find("EnergyInvText").GetComponent<TMP_Text>();
 
-        SwordPlaceSprite = SwordPlace.sprite;
+    SwordPlaceSprite = SwordPlace.sprite;
         MolotPlaceSprite = MolotPlace.sprite;
         ChestPlaceSprite = ChestPlace.sprite;
         RingPlaceSprite = RingPlace.sprite;
@@ -92,6 +96,9 @@ public class Instruments : MonoBehaviour
     void Update()
     {
         CoinsTextShop.text = Coins.ToString();
+        CoinInvText.text = Coins.ToString();
+        EnergyInvText.text = Energy.ToString();
+
         Stats.text = $"{GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().currentHealth} / {GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().maxHealth}" +
             $"\n{GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombatController>().attack1Damage}" +
             $"\n{Speed}" +

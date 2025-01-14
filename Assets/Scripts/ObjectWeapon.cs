@@ -58,18 +58,42 @@ public class ObjectWeapon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && trigger == true) // если игрок рядом с объектом и нажал Е
         {
+            //for (int i = 0; i < Inv.ObjectsInInventory.Length; i++)
+            //{
+            //    if (Inv.ObjectsInInventory[i].Amount == 0)
+            //    {
+            //        Inv.ObjectsInInventory[i] = Item;
+            //        break;
+            //    }
+
+            //    if (Inv.ObjectsInInventory[i].Name == Item.Name)
+            //    {
+            //        Inv.ObjectsInInventory[i].Amount += Item.Amount;
+            //        break;
+            //    }
+            //}
+
+            bool itemFound = false;
+
             for (int i = 0; i < Inv.ObjectsInInventory.Length; i++)
             {
-                if (Inv.ObjectsInInventory[i].Amount == 0)
-                {
-                    Inv.ObjectsInInventory[i] = Item;
-                    break;
-                }
-
                 if (Inv.ObjectsInInventory[i].Name == Item.Name)
                 {
                     Inv.ObjectsInInventory[i].Amount += Item.Amount;
+                    itemFound = true;
                     break;
+                }
+            }
+
+            if (!itemFound)
+            {
+                for (int i = 0; i < Inv.ObjectsInInventory.Length; i++)
+                {
+                    if (Inv.ObjectsInInventory[i].Amount == 0)
+                    {
+                        Inv.ObjectsInInventory[i] = Item;
+                        break;
+                    }
                 }
             }
 

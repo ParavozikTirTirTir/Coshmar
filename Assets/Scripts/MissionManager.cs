@@ -39,44 +39,43 @@ public class MissionManager : MonoBehaviour
 
     void OnGUI()
     {
-        if (!OI.OpenInventoryCheck && !MB.OpenBookCheck && !OC.OpenCraftCheck)
-        {
-            GUI.Label(new Rect(27, 57, 1000, 30), "" + Money);
-            GUI.Label(new Rect(5, 55, 25, 25), Coin);
-            //GUI.Label(new Rect(5, Screen.height - 25, 1000, 25), LastAction);
+        //if (!OI.OpenInventoryCheck && !MB.OpenBookCheck && !OC.OpenCraftCheck)
+        //{
+        //    //GUI.Label(new Rect(5, Screen.height - 25, 1000, 25), LastAction);
 
-            foreach (string mission in MissionsInProgress)
-            {
-                if (MissionsPriority[MissionsInProgress.IndexOf(mission)] == "1")
-                {
-                    MissionIcon = MissionIcon1;
-                }
+        //    foreach (string mission in MissionsInProgress)
+        //    {
+        //        if (MissionsPriority[MissionsInProgress.IndexOf(mission)] == "1")
+        //        {
+        //            MissionIcon = MissionIcon1;
+        //        }
 
-                if (MissionsPriority[MissionsInProgress.IndexOf(mission)] == "2")
-                {
-                    MissionIcon = MissionIcon2;
-                }
+        //        if (MissionsPriority[MissionsInProgress.IndexOf(mission)] == "2")
+        //        {
+        //            MissionIcon = MissionIcon2;
+        //        }
 
-                if (GUI.Button(new Rect(5, 80 + 25 * MissionsInProgress.IndexOf(mission), 30, 30), MissionIcon, "Label") || GUI.Button(new Rect(35, 85 + 25 * MissionsInProgress.IndexOf(mission), 200, 25), mission + "\n", "Label"))
-                {
-                    MissionInformationOnScreen = true;
-                    MissionID = MissionsInProgress.IndexOf(mission);
-                    break;
-                }
+        //        if (GUI.Button(new Rect(5, 80 + 25 * MissionsInProgress.IndexOf(mission), 30, 30), MissionIcon, "Label") || GUI.Button(new Rect(35, 85 + 25 * MissionsInProgress.IndexOf(mission), 200, 25), mission + "\n", "Label"))
+        //        {
+        //            MissionInformationOnScreen = true;
+        //            MissionID = MissionsInProgress.IndexOf(mission);
+        //            break;
+        //        }
 
-                if (MissionInformationOnScreen == true && MissionID == MissionsInProgress.IndexOf(mission)) // ¬€¬Œƒ »Õ‘Œ–Ã¿÷»» Œ Ã»——»»
-                {
-                    GUI.Box(new Rect((Screen.width - 300) / 2, (Screen.height - 300) / 2, 300, 300), mission);
-                    GUI.Label(new Rect((Screen.width - 300) / 2 + 10, (Screen.height - 300) / 2 + 25, 290, 250), MissionsInformation[MissionsInProgress.IndexOf(mission)]);
-                    GUI.Label(new Rect((Screen.width - 300) / 2 + 10, (Screen.height - 300) / 2 + 50, 290, 250), "“Â·ÛÂÏ˚È ÔÂ‰ÏÂÚ: [" + MissionsObjectName[MissionsInProgress.IndexOf(mission)] + "]x1");
+        //        if (MissionInformationOnScreen == true && MissionID == MissionsInProgress.IndexOf(mission)) // ¬€¬Œƒ »Õ‘Œ–Ã¿÷»» Œ Ã»——»»
+        //        {
+        //            GUI.Box(new Rect((Screen.width - 300) / 2, (Screen.height - 300) / 2, 300, 300), mission);
+        //            GUI.Label(new Rect((Screen.width - 300) / 2 + 10, (Screen.height - 300) / 2 + 25, 290, 250), MissionsInformation[MissionsInProgress.IndexOf(mission)]);
+        //            GUI.Label(new Rect((Screen.width - 300) / 2 + 10, (Screen.height - 300) / 2 + 50, 290, 250), "“Â·ÛÂÏ˚È ÔÂ‰ÏÂÚ: [" + MissionsObjectName[MissionsInProgress.IndexOf(mission)] + "]x1");
 
-                    if (GUI.Button(new Rect((Screen.width - 100) / 2 - 25, (Screen.height - 300) / 2 + 250, 150, 40), "«‡Í˚Ú¸"))
-                    {
-                        MissionInformationOnScreen = false;
-                    }
-                }
-            }
-        }
+        //            if (GUI.Button(new Rect((Screen.width - 100) / 2 - 25, (Screen.height - 300) / 2 + 250, 150, 40), "«‡Í˚Ú¸"))
+        //            {
+        //                MissionInformationOnScreen = false;
+        //            }
+        //        }
+        //    }
+        //}
+
         //GUIStyle style = GUI.skin.GetStyle("Label");
         //style.fontSize = (int)(K_Screen);
     }

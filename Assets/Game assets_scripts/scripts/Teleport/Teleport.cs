@@ -11,12 +11,16 @@ public class Teleport : MonoBehaviour
 {
     public Transform point;
     public Transform CaveEntrance;
+    public bool IsPlayerInCave;
+    public bool IsPlayerInIceCave;
     public string music;
     public  bool trigger;
     public GameObject Obj;
 
     public bool IsCaveTeleport;
-    public Canvas ExitCanvasButton;
+    public bool IsIceCaveTeleport;
+    public Canvas ExitCanvasButtonCave;
+    public Canvas ExitCanvasButtonIceCave;
 
     public Sprite LocSignSprite; //спрайт таблички с названием локации куда телепортирует
 
@@ -24,6 +28,7 @@ public class Teleport : MonoBehaviour
     private LocationSign LS;
     private OpenInventory OI;
     private Button ExitButtonInteractable;
+    private Button ExitButtonInteractableIce;
 
     void OnTriggerStay2D(Collider2D collision)
     {
@@ -40,11 +45,16 @@ public class Teleport : MonoBehaviour
         MM = GameObject.FindGameObjectWithTag("MissionMan").GetComponent<MissionManager>();
         LS = GameObject.FindGameObjectWithTag("LocSign").GetComponent<LocationSign>();
         OI = GameObject.Find("InventoryCanvas").GetComponent<OpenInventory>();
-        ExitCanvasButton = GameObject.Find("ExitCanvasButton").GetComponent<Canvas>();
-        ExitCanvasButton.enabled = false;
+
+        ExitCanvasButtonCave = GameObject.Find("ExitCanvasButton").GetComponent<Canvas>();
+        ExitCanvasButtonCave.enabled = false;
+        ExitCanvasButtonIceCave = GameObject.Find("ExitCanvasButtonIce").GetComponent<Canvas>();
+        ExitCanvasButtonIceCave.enabled = false;
 
         ExitButtonInteractable = GameObject.Find("ExitCaveButton").GetComponent<Button>();
         ExitButtonInteractable.interactable = false;
+        ExitButtonInteractableIce = GameObject.Find("ExitIceCaveButton").GetComponent<Button>();
+        ExitButtonInteractableIce.interactable = false;
     }
 
     void Update()
@@ -57,16 +67,44 @@ public class Teleport : MonoBehaviour
             LS.LocSignSprite = LocSignSprite;
             LS.IsTeleportationCommited = true;
 
-            if (IsCaveTeleport && !OI.OpenInventoryCheck)
+            if (IsCaveTeleport)
             {
-                ExitCanvasButton.enabled = true;
-                ExitButtonInteractable.interactable = true;
+                IsPlayerInCave = true;
+                if (!OI.OpenInventoryCheck)
+                {
+                    ExitCanvasButtonCave.enabled = true;
+                    ExitButtonInteractable.interactable = true;
+                }
+            }
+
+            if (IsIceCaveTeleport)
+            {
+                IsPlayerInIceCave = true;
+                if (!OI.OpenInventoryCheck)
+                {
+                    ExitCanvasButtonIceCave.enabled = true;
+                    ExitButtonInteractableIce.interactable = true;
+                }
             }
         }
 
         if (OI.OpenInventoryCheck)
         {
-            ExitCanvasButton.enabled = false;
+            ExitCanvasButtonCave.enabled = false;
+            ExitCanvasButtonIceCave.enabled = false;
+        }
+
+        if (!OI.OpenInventoryCheck)
+        {
+            if (IsPlayerInCave)
+            {
+                ExitCanvasButtonCave.enabled = true;
+            }
+
+            if (IsPlayerInIceCave)
+            {
+                ExitCanvasButtonIceCave.enabled = true;
+            }
         }
     }
 
@@ -80,10 +118,15 @@ public class Teleport : MonoBehaviour
 
     public void OnButtonClick()
     {
-        ExitCanvasButton.enabled = false;
+        ExitCanvasButtonCave.enabled = false;
         ExitButtonInteractable.interactable = false;
+        IsPlayerInCave = false;
 
-        if (IsCaveTeleport)
+        ExitCanvasButtonIceCave.enabled = false;
+        ExitButtonInteractableIce.interactable = false;
+        IsPlayerInIceCave = false;
+
+        if (IsCaveTeleport || IsIceCaveTeleport)
         {
             Obj = GameObject.FindGameObjectWithTag("Player");
             Obj.transform.position = CaveEntrance.transform.position;

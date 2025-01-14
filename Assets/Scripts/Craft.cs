@@ -68,18 +68,27 @@ public class Craft : MonoBehaviour
         {
             recipesInfo = "";
 
+            bool itemFound = false;
+
             for (int i = 0; i < Inv.ObjectsInInventory.Length; i++)
             {
-                if (Inv.ObjectsInInventory[i].Amount == 0)
-                {
-                    Inv.ObjectsInInventory[i] = ItemForCraft.Clone();
-                    break;
-                }
-
                 if (Inv.ObjectsInInventory[i].Name == ItemForCraft.Name)
                 {
                     Inv.ObjectsInInventory[i].Amount += ItemForCraft.Amount;
+                    itemFound = true;
                     break;
+                }
+            }
+
+            if (!itemFound)
+            {
+                for (int i = 0; i < Inv.ObjectsInInventory.Length; i++)
+                {
+                    if (Inv.ObjectsInInventory[i].Amount == 0)
+                    {
+                        Inv.ObjectsInInventory[i] = ItemForCraft.Clone();
+                        break;
+                    }
                 }
             }
 
@@ -110,6 +119,7 @@ public class Craft : MonoBehaviour
                 else
                 {
                     Inst.Energy -= (float)Math.Floor(recipe.Amount*(1 - Inst.SelectedMolot.EnergyReduction/100));
+                    Inst.SelectedMolot.Durability -= 1;
                     recipesInfo += $"{recipe.ComponentName}: {Inst.Energy}/{recipe.Amount}\n";
                 }
             }

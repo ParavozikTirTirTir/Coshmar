@@ -48,23 +48,31 @@ public class Shop : MonoBehaviour
 
     public void BuyButtonClick()
     {
-        if (ItemForBuy.Name != "" && ItemForBuyCost<Inst.Coins)
+        if (ItemForBuy.Name != "" && ItemForBuyCost<=Inst.Coins)
         {
             Inst.Coins -= ItemForBuyCost;
 
+            bool itemFound = false;
 
             for (int i = 0; i < Inv.ObjectsInInventory.Length; i++)
             {
-                if (Inv.ObjectsInInventory[i].Amount == 0)
-                {
-                    Inv.ObjectsInInventory[i] = ItemForBuy.Clone();
-                    break;
-                }
-
                 if (Inv.ObjectsInInventory[i].Name == ItemForBuy.Name)
                 {
                     Inv.ObjectsInInventory[i].Amount += ItemForBuy.Amount;
+                    itemFound = true;
                     break;
+                }
+            }
+
+            if (!itemFound)
+            {
+                for (int i = 0; i < Inv.ObjectsInInventory.Length; i++)
+                {
+                    if (Inv.ObjectsInInventory[i].Amount == 0)
+                    {
+                        Inv.ObjectsInInventory[i] = ItemForBuy.Clone();
+                        break;
+                    }
                 }
             }
         }
