@@ -41,59 +41,59 @@ public class GrassDecoration : MonoBehaviour
             _decorationsParent.SetParent(transform);
         }
 
-        if (targetTilemap == null)
-        {
-            Debug.LogError("Tilemap не установлен!");
-            enabled = false;
-            return;
-        }
-        if (decorationTypes == null || decorationTypes.Count == 0)
-        {
-            Debug.LogError("Список префабов декораций пуст или не установлен!");
-            enabled = false;
-            return;
-        }
-        foreach (DecorationType decorationType in decorationTypes)
-        {
-            if (decorationType.prefab == null)
-            {
-                Debug.LogError("Один из префабов декораций не установлен!");
-                enabled = false;
-                return;
-            }
-        }
+        //if (targetTilemap == null)
+        //{
+        //    Debug.LogError("Tilemap не установлен!");
+        //    enabled = false;
+        //    return;
+        //}
+        //if (decorationTypes == null || decorationTypes.Count == 0)
+        //{
+        //    Debug.LogError("Список префабов декораций пуст или не установлен!");
+        //    enabled = false;
+        //    return;
+        //}
+        //foreach (DecorationType decorationType in decorationTypes)
+        //{
+        //    if (decorationType.prefab == null)
+        //    {
+        //        Debug.LogError("Один из префабов декораций не установлен!");
+        //        enabled = false;
+        //        return;
+        //    }
+        //}
 
-        if (decorationTypesBottom == null || decorationTypesBottom.Count == 0)
-        {
-            Debug.LogError("Список префабов декораций пуст или не установлен!");
-            enabled = false;
-            return;
-        }
-        foreach (DecorationType decorationType in decorationTypesBottom)
-        {
-            if (decorationType.prefab == null)
-            {
-                Debug.LogError("Один из префабов декораций не установлен!");
-                enabled = false;
-                return;
-            }
-        }
+        //if (decorationTypesBottom == null || decorationTypesBottom.Count == 0)
+        //{
+        //    Debug.LogError("Список префабов декораций пуст или не установлен!");
+        //    enabled = false;
+        //    return;
+        //}
+        //foreach (DecorationType decorationType in decorationTypesBottom)
+        //{
+        //    if (decorationType.prefab == null)
+        //    {
+        //        Debug.LogError("Один из префабов декораций не установлен!");
+        //        enabled = false;
+        //        return;
+        //    }
+        //}
 
-        if (decorationTypesLarge == null || decorationTypesLarge.Count == 0)
-        {
-            Debug.LogError("Список префабов декораций пуст или не установлен!");
-            enabled = false;
-            return;
-        }
-        foreach (DecorationType decorationType in decorationTypesLarge)
-        {
-            if (decorationType.prefab == null)
-            {
-                Debug.LogError("Один из префабов декораций не установлен!");
-                enabled = false;
-                return;
-            }
-        }
+        //if (decorationTypesLarge == null || decorationTypesLarge.Count == 0)
+        //{
+        //    Debug.LogError("Список префабов декораций пуст или не установлен!");
+        //    enabled = false;
+        //    return;
+        //}
+        //foreach (DecorationType decorationType in decorationTypesLarge)
+        //{
+        //    if (decorationType.prefab == null)
+        //    {
+        //        Debug.LogError("Один из префабов декораций не установлен!");
+        //        enabled = false;
+        //        return;
+        //    }
+        //}
 
         if (caveTexture == null)
         {
@@ -107,7 +107,7 @@ public class GrassDecoration : MonoBehaviour
 
     public void SpawnDecorations(Vector3Int startPosition, int mapWidth, int mapHeight)
     {
-        if (targetTilemap == null || decorationTypes == null || decorationTypes.Count == 0 || caveTexture == null)
+        if (targetTilemap == null ||  caveTexture == null)
         {
             Debug.LogWarning("Не удалось создать декорации!");
             return;
@@ -122,7 +122,7 @@ public class GrassDecoration : MonoBehaviour
                 TileBase currentTile = targetTilemap.GetTile(currentPosition);
 
 
-                if (currentTile != null && caveTexture.IsGrassTile(currentTile) && IsHorizontalSurface(currentPosition))
+                if (currentTile != null && caveTexture.IsGrassTile(currentTile) && decorationTypes.Count != 0 && IsHorizontalSurface(currentPosition))
                 {
                     float randomValue = Random.value;
                     if (randomValue < overallSpawnProbability)
@@ -132,7 +132,7 @@ public class GrassDecoration : MonoBehaviour
 
                 }
 
-                if (currentTile != null && caveTexture.IsGrassTile(currentTile) && IsHorizontalSurfaceBottom(currentPosition))
+                if (currentTile != null && caveTexture.IsGrassTile(currentTile) && decorationTypesBottom.Count != 0 && IsHorizontalSurfaceBottom(currentPosition))
                 {
                     float randomValue = Random.value;
                     if (randomValue < overallSpawnProbabilityBottom)
@@ -142,7 +142,7 @@ public class GrassDecoration : MonoBehaviour
 
                 }
 
-                if (currentTile != null && caveTexture.IsGrassTile(currentTile) && IsHorizontalSurfaceLarge(currentPosition))
+                if (currentTile != null && caveTexture.IsGrassTile(currentTile) && decorationTypesLarge.Count != 0 && IsHorizontalSurfaceLarge(currentPosition))
                 {
                     float randomValue = Random.value;
                     if (randomValue < overallSpawnProbabilityLarge)

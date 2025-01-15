@@ -17,75 +17,14 @@ public class StoneDecoration : MonoBehaviour
     [SerializeField][Range(0f, 1f)] private float overallSpawnProbabilityBottom = 0.1f;
     [SerializeField][Range(0f, 1f)] private float overallSpawnProbabilityLarge = 0.1f;
 
-
     [SerializeField] private CaveTexture caveTexture;
+
     [SerializeField] private string parentObjectName = "DecorationsParent";//
 
     private Transform _decorationsParent;//
 
     void Awake()
     {
-        if (targetTilemap == null)
-        {
-            Debug.LogError("Tilemap не установлен!");
-            enabled = false;
-            return;
-        }
-        if (decorationTypes == null || decorationTypes.Count == 0)
-        {
-            Debug.LogError("Список префабов декораций пуст или не установлен!");
-            enabled = false;
-            return;
-        }
-        foreach (DecorationType decorationType in decorationTypes)
-        {
-            if (decorationType.prefab == null)
-            {
-                Debug.LogError("Один из префабов декораций не установлен!");
-                enabled = false;
-                return;
-            }
-        }
-
-        if (decorationTypesBottom == null || decorationTypesBottom.Count == 0)
-        {
-            Debug.LogError("Список префабов декораций пуст или не установлен!");
-            enabled = false;
-            return;
-        }
-        foreach (DecorationType decorationType in decorationTypesBottom)
-        {
-            if (decorationType.prefab == null)
-            {
-                Debug.LogError("Один из префабов декораций не установлен!");
-                enabled = false;
-                return;
-            }
-        }
-
-        if (decorationTypesLarge == null || decorationTypesLarge.Count == 0)
-        {
-            Debug.LogError("Список префабов декораций пуст или не установлен!");
-            enabled = false;
-            return;
-        }
-        foreach (DecorationType decorationType in decorationTypesLarge)
-        {
-            if (decorationType.prefab == null)
-            {
-                Debug.LogError("Один из префабов декораций не установлен!");
-                enabled = false;
-                return;
-            }
-        }
-
-        if (caveTexture == null)
-        {
-            Debug.LogError("CaveTexture не установлен!");
-            enabled = false;
-            return;
-        }
-
         // Ищем или создаем объект родителя
         _decorationsParent = transform.Find(parentObjectName);//
         if (_decorationsParent == null)
@@ -95,11 +34,73 @@ public class StoneDecoration : MonoBehaviour
             _decorationsParent.SetParent(transform);
         }
 
+        //if (targetTilemap == null)
+        //{
+        //    Debug.LogError("Tilemap не установлен!");
+        //    enabled = false;
+        //    return;
+        //}
+        //if (decorationTypes == null || decorationTypes.Count == 0)
+        //{
+        //    Debug.LogError("Список префабов декораций пуст или не установлен!");
+        //    enabled = false;
+        //    return;
+        //}
+        //foreach (DecorationType decorationType in decorationTypes)
+        //{
+        //    if (decorationType.prefab == null)
+        //    {
+        //        Debug.LogError("Один из префабов декораций не установлен!");
+        //        enabled = false;
+        //        return;
+        //    }
+        //}
+
+        //if (decorationTypesBottom == null || decorationTypesBottom.Count == 0)
+        //{
+        //    Debug.LogError("Список префабов декораций пуст или не установлен!");
+        //    enabled = false;
+        //    return;
+        //}
+        //foreach (DecorationType decorationType in decorationTypesBottom)
+        //{
+        //    if (decorationType.prefab == null)
+        //    {
+        //        Debug.LogError("Один из префабов декораций не установлен!");
+        //        enabled = false;
+        //        return;
+        //    }
+        //}
+
+        //if (decorationTypesLarge == null || decorationTypesLarge.Count == 0)
+        //{
+        //    Debug.LogError("Список префабов декораций пуст или не установлен!");
+        //    enabled = false;
+        //    return;
+        //}
+        //foreach (DecorationType decorationType in decorationTypesLarge)
+        //{
+        //    if (decorationType.prefab == null)
+        //    {
+        //        Debug.LogError("Один из префабов декораций не установлен!");
+        //        enabled = false;
+        //        return;
+        //    }
+        //}
+
+        if (caveTexture == null)
+        {
+            Debug.LogError("CaveTexture не установлен!");
+            enabled = false;
+            return;
+        }
+
+
     }
 
     public void SpawnDecorations(Vector3Int startPosition, int mapWidth, int mapHeight)
     {
-        if (targetTilemap == null || decorationTypes == null || decorationTypes.Count == 0 || caveTexture == null)
+        if (targetTilemap == null ||  caveTexture == null)
         {
             Debug.LogWarning("Не удалось создать декорации!");
             return;
@@ -114,7 +115,7 @@ public class StoneDecoration : MonoBehaviour
                 TileBase currentTile = targetTilemap.GetTile(currentPosition);
 
 
-                if (currentTile != null && caveTexture.IsStoneTile(currentTile) && IsHorizontalSurface(currentPosition))
+                if (currentTile != null && caveTexture.IsStoneTile(currentTile) && decorationTypes.Count != 0 && IsHorizontalSurface(currentPosition))
                 {
                     float randomValue = Random.value;
                     if (randomValue < overallSpawnProbability)
@@ -124,7 +125,7 @@ public class StoneDecoration : MonoBehaviour
 
                 }
 
-                if (currentTile != null && caveTexture.IsStoneTile(currentTile) && IsHorizontalSurfaceBottom(currentPosition))
+                if (currentTile != null && caveTexture.IsStoneTile(currentTile) && decorationTypesBottom.Count != 0 && IsHorizontalSurfaceBottom(currentPosition))
                 {
                     float randomValue = Random.value;
                     if (randomValue < overallSpawnProbabilityBottom)
@@ -134,7 +135,7 @@ public class StoneDecoration : MonoBehaviour
 
                 }
 
-                if (currentTile != null && caveTexture.IsStoneTile(currentTile) && IsHorizontalSurfaceLarge(currentPosition))
+                if (currentTile != null && caveTexture.IsStoneTile(currentTile) && decorationTypesLarge.Count != 0 && IsHorizontalSurfaceLarge(currentPosition))
                 {
                     float randomValue = Random.value;
                     if (randomValue < overallSpawnProbabilityLarge)
